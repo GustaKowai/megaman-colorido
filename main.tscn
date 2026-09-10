@@ -8,6 +8,7 @@
 [ext_resource type="Shader" uid="uid://bnkmu4bygacl2" path="res://main2.gdshader" id="3_272bh"]
 [ext_resource type="Script" uid="uid://b67rk0efjvy10" path="res://sprite_2d.gd" id="5_5vw27"]
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="9_kek77"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5vw27"]
 atlas = ExtResource("2_5vw27")
@@ -2204,3 +2205,6 @@ shadow_enabled = true
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1883628589]
 color = Color(0.48506868, 0.00017115295, 0.48695165, 1)
+
+[node name="CharacterBody2D2" parent="." unique_id=423340236 instance=ExtResource("9_kek77")]
+position = Vector2(343, 500)
