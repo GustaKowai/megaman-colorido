@@ -1,6 +1,5 @@
 extends Camera2D
 @export var player:Node2D
-@onready var sprite_2d: Sprite2D = $"../Parallax2D/Sprite2D"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

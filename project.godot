@@ -77,3 +77,5 @@ shoot={
 
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true
+textures/decals/filter=0
+textures/light_projectors/filter=0

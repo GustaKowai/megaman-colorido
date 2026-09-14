@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://bl6v8q8705nla"]
 
 [ext_resource type="Script" uid="uid://diukgx1kqtphs" path="res://character_body_2d.gd" id="1_lnxje"]
+[ext_resource type="Texture2D" uid="uid://qmigeoaa55e1" path="res://Sprites/Protagonista/adjustment1.png" id="2_03edm"]
 [ext_resource type="Texture2D" uid="uid://cgsdxwr620ond" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - mort2.png" id="3_vsclo"]
 [ext_resource type="Texture2D" uid="uid://bnq2mhvgb3wdi" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - tard2.png" id="4_xeeyi"]
 [ext_resource type="Texture2D" uid="uid://b2ajabfe4vdow" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - vita.png" id="5_qcjdm"]
-[ext_resource type="Texture2D" uid="uid://b2ya7e56ga1ko" path="res://Sprites/Protagonista/ExportedLayers.png" id="6_03edm"]
+[ext_resource type="Texture2D" uid="uid://b5ap4pyo4kt2e" path="res://Sprites/Protagonista/adjustments2.png" id="6_03edm"]
 [ext_resource type="Texture2D" uid="uid://u54nw6o0tj1h" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 9/449.png" id="6_08yp7"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/state_machine.gd" id="7_w3lgh"]
 [ext_resource type="Script" uid="uid://b08x5anyr8prf" path="res://estados/walk.gd" id="8_jf1wn"]
@@ -17,7 +18,7 @@
 [ext_resource type="Script" uid="uid://bupk6vwvwqpim" path="res://estados/fall2.gd" id="15_x5f4j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyqjk"]
-size = Vector2(25, 57.333336)
+size = Vector2(18, 57.333336)
 
 [sub_resource type="Animation" id="Animation_qnedo"]
 length = 0.001
@@ -104,8 +105,9 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ebjds"]
 resource_name = "walk"
+length = 0.8
 loop_mode = 1
-step = 0.2
+step = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -113,10 +115,10 @@ tracks/0/path = NodePath("Sprite2D:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
-"values": [4, 5, 6, 7, 8]
+"values": [10, 8, 6, 8]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k85er"]
@@ -231,7 +233,7 @@ fill_to = Vector2(0.9450867, 0.5231214)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706]
 texture_filter = 3
 script = ExtResource("1_lnxje")
-sprite_blue = ExtResource("6_03edm")
+sprite_blue = ExtResource("2_03edm")
 sprite_red = ExtResource("3_vsclo")
 sprite_yellow = ExtResource("4_xeeyi")
 sprite_green = ExtResource("5_qcjdm")
@@ -239,8 +241,7 @@ sprite_green = ExtResource("5_qcjdm")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=701491346]
 modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
 texture = ExtResource("6_03edm")
-hframes = 2
-vframes = 2
+hframes = 14
 
 [node name="mira" type="Marker2D" parent="Sprite2D" unique_id=1948623122]
 position = Vector2(8.666667, 0)
@@ -293,9 +294,8 @@ script = ExtResource("7_w3lgh")
 initial_state = NodePath("fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="walk" type="Node" parent="red" unique_id=820179084 node_paths=PackedStringArray("player")]
+[node name="walk" type="Node" parent="red" unique_id=820179084]
 script = ExtResource("8_jf1wn")
-player = NodePath("../..")
 metadata/_custom_type_script = "uid://b08x5anyr8prf"
 
 [node name="idle" type="Node" parent="red" unique_id=1998161187 node_paths=PackedStringArray("player")]

@@ -40,6 +40,6 @@ func on_child_transition(state:State, new_state_name):
 		current_state.Exit()
 		
 	new_state.Enter()
-	print_debug(new_state)
+	#print_debug(new_state)
 		
 	current_state = new_state
