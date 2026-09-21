@@ -2,11 +2,14 @@
 
 [ext_resource type="Script" uid="uid://cckunixtvck0o" path="res://inimigo.gd" id="1_nl6oo"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/state_machine.gd" id="2_o28i7"]
-[ext_resource type="Script" uid="uid://cuate20qfi753" path="res://Idle.gd" id="3_p3p3w"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="4_o28i7"]
-[ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://fall_enemy.gd" id="4_p3p3w"]
-[ext_resource type="Script" uid="uid://rex2amr3hsmf" path="res://enemy_walk.gd" id="5_07jyb"]
+[ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://enemy_fall_state.gd" id="4_p3p3w"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="5_ctylw"]
+[ext_resource type="Script" uid="uid://ctrymr3ux3ytm" path="res://idle_enemy_timer.gd" id="6_f0ibb"]
+[ext_resource type="Script" uid="uid://b2ed2oeiyaq1w" path="res://jump_enemy.gd" id="6_pyopx"]
+[ext_resource type="Script" uid="uid://cyapse54ky01g" path="res://walk_enemy_timer.gd" id="6_s1e7n"]
+[ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="9_pyopx"]
+[ext_resource type="Texture2D" uid="uid://cdak7iycypo6k" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="9_s1e7n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua4xa"]
 atlas = ExtResource("5_ctylw")
@@ -56,6 +59,62 @@ region = Rect2(192, 0, 32, 32)
 atlas = ExtResource("4_o28i7")
 region = Rect2(224, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_el0tk"]
+atlas = ExtResource("9_pyopx")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b333s"]
+atlas = ExtResource("9_pyopx")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylrji"]
+atlas = ExtResource("9_pyopx")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bj6hh"]
+atlas = ExtResource("9_pyopx")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyopx"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bx0b3"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_chafa"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_621nn"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dntop"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ws0ki"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdm8w"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j6whj"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5udu7"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2tii"]
+atlas = ExtResource("9_s1e7n")
+region = Rect2(288, 0, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_e2r5q"]
 animations = [{
 "frames": [{
@@ -103,6 +162,58 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_el0tk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b333s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylrji")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bj6hh")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyopx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bx0b3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_chafa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_621nn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dntop")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ws0ki")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdm8w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j6whj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5udu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2tii")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
@@ -117,29 +228,35 @@ script = ExtResource("2_o28i7")
 initial_state = NodePath("Fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="Idle" type="Node" parent="State_machine" unique_id=1385788895 node_paths=PackedStringArray("enemy")]
-script = ExtResource("3_p3p3w")
+[node name="Idle" type="Node" parent="State_machine" unique_id=976594802 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_f0ibb")
 enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+metadata/_custom_type_script = "uid://cuate20qfi753"
 
 [node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=793759562]
 
-[node name="Fall" type="Node" parent="State_machine" unique_id=1676361571 node_paths=PackedStringArray("enemy")]
+[node name="Fall" type="Node" parent="State_machine" unique_id=440130134 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_p3p3w")
 enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+metadata/_custom_type_script = "uid://d3bikxrs38522"
 
-[node name="Walk" type="Node" parent="State_machine" unique_id=1673645822 node_paths=PackedStringArray("enemy")]
-script = ExtResource("5_07jyb")
+[node name="Walk" type="Node" parent="State_machine" unique_id=467177971 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_s1e7n")
 enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://rex2amr3hsmf"
 
 [node name="Timer" type="Timer" parent="State_machine/Walk" unique_id=1239513751]
+
+[node name="Jump" type="Node" parent="State_machine" unique_id=656249287 node_paths=PackedStringArray("enemy")]
+script = ExtResource("6_pyopx")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://b2ed2oeiyaq1w"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e2r5q")
-animation = &"fall"
-frame_progress = 0.7239562
+animation = &"jump"
+frame_progress = 0.41488957
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]
 position = Vector2(-0.5, 3.5)

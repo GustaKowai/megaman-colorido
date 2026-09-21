@@ -27,7 +27,7 @@ func _physics_process(delta: float) -> void:
 		current_state.Physics_update(delta)
 
 func on_child_transition(state:State, new_state_name):
-	print_debug(state," ",new_state_name)
+	#print_debug(state," ",new_state_name)
 	if state != current_state:
 		return
 	var new_state = states.get(new_state_name.to_lower())
@@ -40,6 +40,6 @@ func on_child_transition(state:State, new_state_name):
 		current_state.Exit()
 		
 	new_state.Enter()
-	print_debug(new_state)
+	#print_debug(new_state)
 		
 	current_state = new_state

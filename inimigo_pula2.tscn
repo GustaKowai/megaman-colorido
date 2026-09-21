@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://cckunixtvck0o" path="res://inimigo.gd" id="1_73r0c"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/state_machine.gd" id="2_738ev"]
-[ext_resource type="Script" uid="uid://cuate20qfi753" path="res://Idle.gd" id="3_apcsb"]
-[ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://fall_enemy.gd" id="4_el0tk"]
+[ext_resource type="Script" uid="uid://da8qnqbb3amio" path="res://idle_enemy_timer_jump.gd" id="4_apcsb"]
+[ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://enemy_fall_state.gd" id="4_el0tk"]
 [ext_resource type="Script" uid="uid://b2ed2oeiyaq1w" path="res://jump_enemy.gd" id="5_738ev"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="5_b333s"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="6_ylrji"]
@@ -151,20 +151,23 @@ script = ExtResource("2_738ev")
 initial_state = NodePath("Fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="Idle" type="Node" parent="State_machine" unique_id=1385788895 node_paths=PackedStringArray("enemy")]
-script = ExtResource("3_apcsb")
-enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
-
-[node name="Fall" type="Node" parent="State_machine" unique_id=1676361571 node_paths=PackedStringArray("enemy")]
-script = ExtResource("4_el0tk")
-enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
-
-[node name="Jump" type="Node" parent="State_machine" unique_id=1992926592 node_paths=PackedStringArray("enemy")]
+[node name="Jump" type="Node" parent="State_machine" unique_id=1333320386 node_paths=PackedStringArray("enemy")]
 script = ExtResource("5_738ev")
 enemy = NodePath("../..")
-metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+metadata/_custom_type_script = "uid://b2ed2oeiyaq1w"
+
+[node name="Idle" type="Node" parent="State_machine" unique_id=589032605 node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_apcsb")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://cuate20qfi753"
+
+[node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=821057074]
+wait_time = 2.0
+
+[node name="Fall" type="Node" parent="State_machine" unique_id=929155691 node_paths=PackedStringArray("enemy")]
+script = ExtResource("4_el0tk")
+enemy = NodePath("../..")
+metadata/_custom_type_script = "uid://d3bikxrs38522"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
@@ -176,7 +179,4 @@ frame_progress = 0.35743228
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_hgjhj")
 
-[node name="Timer" type="Timer" parent="." unique_id=821057074]
-wait_time = 2.0
-
-[connection signal="timeout" from="Timer" to="State_machine/Idle" method="_on_timer_timeout"]
+[connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
