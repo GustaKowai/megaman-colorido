@@ -2,9 +2,11 @@ extends State
 class_name WalkEnemy
 
 @export var enemy:Enemy
-@onready var timer = $"../../Timer"
+@onready var timer: Timer = $Timer
+var walk_jump : bool
 
 func Enter():
+	print_debug("state transition ong")
 	if enemy.sprite:
 		enemy.sprite.play("idle")
 	if timer:
@@ -21,4 +23,9 @@ func Physics_update(_delta: float):
 
 
 func _on_timer_timeout():
-	Transitioned.emit(self,"Jump")
+	if walk_jump : 
+		walk_jump = false
+		Transitioned.emit(self,"Jump")
+	else:
+		walk_jump = true
+		Transitioned.emit(self,"Walk")

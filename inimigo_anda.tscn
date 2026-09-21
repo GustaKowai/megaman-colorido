@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://cuate20qfi753" path="res://Idle.gd" id="3_p3p3w"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="4_o28i7"]
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://fall_enemy.gd" id="4_p3p3w"]
+[ext_resource type="Script" uid="uid://rex2amr3hsmf" path="res://enemy_walk.gd" id="5_07jyb"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="5_ctylw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua4xa"]
@@ -107,7 +108,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(9, 17)
 
-[node name="InimigoPula" type="CharacterBody2D" unique_id=164572135]
+[node name="InimigoAnda" type="CharacterBody2D" unique_id=164572135]
 scale = Vector2(2, 2)
 script = ExtResource("1_nl6oo")
 
@@ -121,10 +122,18 @@ script = ExtResource("3_p3p3w")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
+[node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=793759562]
+
 [node name="Fall" type="Node" parent="State_machine" unique_id=1676361571 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_p3p3w")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
+[node name="Walk" type="Node" parent="State_machine" unique_id=1673645822 node_paths=PackedStringArray("enemy")]
+script = ExtResource("5_07jyb")
+enemy = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="State_machine/Walk" unique_id=1239513751]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
@@ -136,4 +145,5 @@ frame_progress = 0.7239562
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_hgjhj")
 
-[node name="Timer" type="Timer" parent="." unique_id=793759562]
+[connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
+[connection signal="timeout" from="State_machine/Walk/Timer" to="State_machine/Walk" method="_on_timer_timeout"]

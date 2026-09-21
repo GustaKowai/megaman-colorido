@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="4_2lcb2"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_8u11s"]
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="5_a0rq6"]
-[ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://inimigo_pula.tscn" id="7_8u11s"]
+[ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://inimigo_anda.tscn" id="7_8u11s"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_gl042"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://exit.tscn" id="9_8v1wn"]
 
