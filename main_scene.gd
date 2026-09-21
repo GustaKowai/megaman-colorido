@@ -9,7 +9,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _load_level(level_number:int)->void:
@@ -34,4 +34,4 @@ func _on_exit_exit_level(body,level_number):
 	if body.is_in_group("Player"):
 		print_debug(body)
 		print_debug(level_number)
-		_load_level(level_number)
+		call_deferred("_load_level",level_number)
