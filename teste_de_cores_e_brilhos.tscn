@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="5_a0rq6"]
 [ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://inimigo_pula.tscn" id="7_8u11s"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_gl042"]
+[ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://exit.tscn" id="9_8v1wn"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2324,7 +2325,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_a0rq6")
 sources/1 = SubResource("TileSetAtlasSource_gl042")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8u11s"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v1wn"]
 texture = ExtResource("5_8u11s")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -2381,7 +2382,7 @@ texture_region_size = Vector2i(32, 32)
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -15.5, 15.5, -15.5, 15.5, 15.5, -15.5, 15.5)
 6:3/0 = 0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v1wn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl8m1"]
 texture = ExtResource("8_gl042")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
@@ -2408,10 +2409,10 @@ texture_region_size = Vector2i(32, 32)
 [sub_resource type="TileSet" id="TileSet_hgjhj"]
 tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_8u11s")
-sources/2 = SubResource("TileSetAtlasSource_8v1wn")
+sources/0 = SubResource("TileSetAtlasSource_8v1wn")
+sources/2 = SubResource("TileSetAtlasSource_kl8m1")
 
-[node name="TesteDeCoresEBrilhos" type="Node2D" unique_id=628030147]
+[node name="LevelRoot" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1231470294 node_paths=PackedStringArray("player")]
 position = Vector2(88, 847)
@@ -2480,7 +2481,7 @@ tile_set = SubResource("TileSet_hgjhj")
 
 [node name="vermelho2" type="TileMapLayer" parent="." unique_id=423916678]
 modulate = Color(2.253, 0, 0, 1)
-tile_map_data = PackedByteArray("AAAiABIAAgAAAAAAAAAjABIAAgABAAAAAAAkABIAAgABAAAAAAAlABIAAgABAAAAAAAmABIAAgABAAAAAAAjABMAAAABAAEAAAAqABAAAAABAAEAAAAhABMAAAABAAAAAAAgABMAAAABAAAAAAAfABMAAAABAAAAAAAeABMAAAABAAAAAAAdABMAAAABAAAAAAAcABMAAAABAAAAAAAGABMAAAABAAAAAAAFABMAAAABAAAAAAAEABMAAAABAAAAAAADABMAAAABAAAAAAACABMAAAABAAAAAAABABMAAAABAAAAAAAAABMAAAABAAAAAAAVAAwAAAAEAAEAAAATAA8AAgAAAAMAAAAUAA8AAgABAAMAAAAVAA8AAgABAAMAAAAWAA8AAgABAAMAAAAXAA8AAgACAAMAAAA=")
+tile_map_data = PackedByteArray("AAAiABIAAgAAAAAAAAAjABIAAgABAAAAAAAkABIAAgABAAAAAAAlABIAAgABAAAAAAAmABIAAgABAAAAAAAjABMAAAABAAEAAAAqABAAAAABAAEAAAAhABMAAAABAAAAAAAgABMAAAABAAAAAAAfABMAAAABAAAAAAAeABMAAAABAAAAAAAdABMAAAABAAAAAAAcABMAAAABAAAAAAAGABMAAAABAAAAAAAFABMAAAABAAAAAAAEABMAAAABAAAAAAADABMAAAABAAAAAAACABMAAAABAAAAAAABABMAAAABAAAAAAAAABMAAAABAAAAAAAVAAwAAAAEAAEAAAATAA8AAgAAAAMAAAAUAA8AAgABAAMAAAAVAA8AAgABAAMAAAAWAA8AAgABAAMAAAAXAA8AAgACAAMAAABIAAwAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_hgjhj")
 
 [node name="amarelo" type="TileMapLayer" parent="." unique_id=2087604785]
@@ -2490,7 +2491,7 @@ tile_set = SubResource("TileSet_hgjhj")
 
 [node name="ciano" type="TileMapLayer" parent="." unique_id=610179675]
 modulate = Color(0, 2.0302074, 2.253293, 1)
-tile_map_data = PackedByteArray("AAAqABAAAAABAAEAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAQABMAAAABAAAAAAAXAAoAAAAEAAEAAAA=")
+tile_map_data = PackedByteArray("AAAqABAAAAABAAEAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAQABMAAAABAAAAAAAXAAoAAAAEAAEAAABMAAwAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_hgjhj")
 
 [node name="verde" type="TileMapLayer" parent="." unique_id=143243486]
@@ -2502,3 +2503,12 @@ tile_set = SubResource("TileSet_hgjhj")
 modulate = Color(2.253293, 0.79465604, 1.5239744, 1)
 tile_map_data = PackedByteArray("AAAqABAAAAABAAEAAAAWABMAAAABAAAAAAAXABMAAAABAAAAAAAYABMAAAABAAAAAAAZABMAAAABAAAAAAAaABMAAAABAAAAAAAbABMAAAABAAAAAAATAAsAAAAEAAEAAAA=")
 tile_set = SubResource("TileSet_hgjhj")
+
+[node name="Exits" type="Node2D" parent="." unique_id=138475286]
+
+[node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("9_8v1wn")]
+position = Vector2(2448, 420)
+
+[node name="Exit" parent="Exits" unique_id=1854873059 instance=ExtResource("9_8v1wn")]
+position = Vector2(2322, 419)
+level_number = 1

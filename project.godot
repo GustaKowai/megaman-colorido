@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Fase=""
+Player=""
+
 [input]
 
 ui_left={

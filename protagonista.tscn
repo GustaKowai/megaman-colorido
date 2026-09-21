@@ -230,7 +230,7 @@ fill = 1
 fill_from = Vector2(0.48554912, 0.5953757)
 fill_to = Vector2(0.9450867, 0.5231214)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706]
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
 script = ExtResource("1_lnxje")
 sprite_blue = ExtResource("2_03edm")

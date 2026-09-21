@@ -38,5 +38,5 @@ func shoot():
 	var b = bullet.instantiate()
 	if player.sprite.flip_h:
 		b.speed *= -1
-	get_tree().root.get_node("Main").add_child(b)
+	get_tree().get_first_node_in_group("Fase").add_child(b)
 	b.transform = mira.global_transform
