@@ -14,7 +14,7 @@ class_name Player
 @export var sprite_green:Texture2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -450.0
 
 func _ready() -> void:
 	#print_debug(blue,red)
