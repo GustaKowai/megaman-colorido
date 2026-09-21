@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b2ajabfe4vdow" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - vita.png" id="5_qcjdm"]
 [ext_resource type="Texture2D" uid="uid://b5ap4pyo4kt2e" path="res://Sprites/Protagonista/adjustments2.png" id="6_03edm"]
 [ext_resource type="Texture2D" uid="uid://u54nw6o0tj1h" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 9/449.png" id="6_08yp7"]
+[ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://vida.gd" id="6_vsclo"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/state_machine.gd" id="7_w3lgh"]
 [ext_resource type="Script" uid="uid://b08x5anyr8prf" path="res://estados/walk.gd" id="8_jf1wn"]
 [ext_resource type="Script" uid="uid://78jsshc00u13" path="res://estados/idle.gd" id="9_fr6an"]
@@ -237,6 +238,9 @@ sprite_blue = ExtResource("2_03edm")
 sprite_red = ExtResource("3_vsclo")
 sprite_yellow = ExtResource("4_xeeyi")
 sprite_green = ExtResource("5_qcjdm")
+
+[node name="Vida" type="Node" parent="." unique_id=282358021]
+script = ExtResource("6_vsclo")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=701491346]
 modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
