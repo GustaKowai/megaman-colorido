@@ -234,6 +234,7 @@ enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://cuate20qfi753"
 
 [node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=793759562]
+one_shot = true
 
 [node name="Fall" type="Node" parent="State_machine" unique_id=440130134 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_p3p3w")
@@ -246,6 +247,7 @@ enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://rex2amr3hsmf"
 
 [node name="Timer" type="Timer" parent="State_machine/Walk" unique_id=1239513751]
+one_shot = true
 
 [node name="Jump" type="Node" parent="State_machine" unique_id=656249287 node_paths=PackedStringArray("enemy")]
 script = ExtResource("6_pyopx")

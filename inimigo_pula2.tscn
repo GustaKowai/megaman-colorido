@@ -163,6 +163,7 @@ metadata/_custom_type_script = "uid://cuate20qfi753"
 
 [node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=821057074]
 wait_time = 2.0
+one_shot = true
 
 [node name="Fall" type="Node" parent="State_machine" unique_id=929155691 node_paths=PackedStringArray("enemy")]
 script = ExtResource("4_el0tk")

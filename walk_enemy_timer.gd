@@ -11,5 +11,5 @@ func Enter():
 
 
 func _on_timer_timeout() -> void:
-	print_debug("timeout pro idle")
+	#print_debug("timeout pro idle")
 	Transitioned.emit(self,"Idle")

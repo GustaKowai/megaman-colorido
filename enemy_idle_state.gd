@@ -4,7 +4,7 @@ class_name IdleEnemy
 @export var enemy:Enemy
 
 func Enter():
-	print_debug("Idle geral")
+	#print_debug("Idle geral")
 	if enemy.sprite:
 		enemy.sprite.play("idle")
 	
