@@ -16,6 +16,7 @@ class_name Player
 @export var max_speed = 300.0
 const JUMP_VELOCITY = -450.0
 
+
 func _ready() -> void:
 	#print_debug(blue,red)
 	sprite.texture = sprite_blue

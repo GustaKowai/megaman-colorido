@@ -2,7 +2,7 @@ extends CharacterBody2D
 class_name Enemy
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 
-const SPEED = 300.0
+@export var speed = 300.0
 const JUMP_VELOCITY = -400.0
 
 func _ready() -> void:

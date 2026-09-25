@@ -226,6 +226,7 @@ size = Vector2(10, 17.5)
 [node name="InimigoAnda" type="CharacterBody2D" unique_id=164572135]
 scale = Vector2(2, 2)
 script = ExtResource("1_nl6oo")
+speed = 200.0
 
 [node name="State_machine" type="Node" parent="." unique_id=1093209048 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_o28i7")

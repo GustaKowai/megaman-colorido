@@ -247,6 +247,7 @@ sprite_green = ExtResource("5_qcjdm")
 script = ExtResource("6_vsclo")
 target = NodePath("..")
 max_life = 10
+knockback = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_box" unique_id=445343094]
 position = Vector2(0, -2.5)
@@ -346,3 +347,9 @@ scale = Vector2(0.83593756, 0.90625)
 color = Color(0, 1, 1, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_03edm")
+
+[connection signal="damaged" from="Hurt_box" to="blue/walk" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="blue/idle" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="blue/jump" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="blue/fall" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="blue/shoot" method="_on_hurt_box_damaged"]

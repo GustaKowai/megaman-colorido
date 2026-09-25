@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="5_b333s"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="6_ylrji"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="8_apcsb"]
+[ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://damage_area.gd" id="9_el0tk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua4xa"]
 atlas = ExtResource("5_b333s")
@@ -142,6 +143,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(9, 17)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e2r5q"]
+size = Vector2(10, 18)
+
 [node name="InimigoPula" type="CharacterBody2D" unique_id=164572135]
 scale = Vector2(2, 2)
 script = ExtResource("1_73r0c")
@@ -180,4 +184,15 @@ frame_progress = 0.35743228
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_hgjhj")
 
+[node name="DamageBox" type="Area2D" parent="." unique_id=992552286]
+script = ExtResource("9_el0tk")
+damage_to = "Player"
+damage = 1
+metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=277990275]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_e2r5q")
+
 [connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
+[connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]

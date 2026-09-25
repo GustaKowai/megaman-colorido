@@ -40,3 +40,7 @@ func shoot():
 		b.speed *= -1
 	get_tree().get_first_node_in_group("Fase").add_child(b)
 	b.transform = mira.global_transform
+
+
+func _on_hurt_box_damaged() -> void:
+	Transitioned.emit(self,"damage")
