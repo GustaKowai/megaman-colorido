@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://bt2o0j8bo45av" path="res://bullet.tscn" id="13_gt6pu"]
 [ext_resource type="Script" uid="uid://dkqd0bo622t6q" path="res://jump2.gd" id="14_g24kp"]
 [ext_resource type="Script" uid="uid://bupk6vwvwqpim" path="res://estados/fall2.gd" id="15_x5f4j"]
+[ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://damage_state.gd" id="16_xeeyi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
+size = Vector2(20, 57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wyqjk"]
 size = Vector2(18, 57.333336)
@@ -239,8 +243,14 @@ sprite_red = ExtResource("3_vsclo")
 sprite_yellow = ExtResource("4_xeeyi")
 sprite_green = ExtResource("5_qcjdm")
 
-[node name="Vida" type="Node" parent="." unique_id=282358021]
+[node name="Hurt_box" type="Area2D" parent="." unique_id=1430758203 node_paths=PackedStringArray("target") groups=["Player"]]
 script = ExtResource("6_vsclo")
+target = NodePath("..")
+max_life = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_box" unique_id=445343094]
+position = Vector2(0, -2.5)
+shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=701491346]
 modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
@@ -290,6 +300,11 @@ metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
 script = ExtResource("12_lwusa")
 player = NodePath("../..")
 bullet = ExtResource("13_gt6pu")
+metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
+[node name="damage" type="Node" parent="blue" unique_id=861153007 node_paths=PackedStringArray("target")]
+script = ExtResource("16_xeeyi")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
 [node name="red" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]

@@ -13,7 +13,7 @@ class_name Player
 @export var sprite_yellow:Texture2D
 @export var sprite_green:Texture2D
 
-const SPEED = 300.0
+@export var max_speed = 300.0
 const JUMP_VELOCITY = -450.0
 
 func _ready() -> void:

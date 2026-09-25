@@ -1,6 +1,7 @@
-extends Node
+extends Area2D
+class_name HurtBox
 
-@export var player:Player
+@export var target:CharacterBody2D
 @export var max_life:int
 var life
 
@@ -8,13 +9,12 @@ var life
 func _ready() -> void:
 	life = max_life
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
-func take_damage(damage:int):
+func take_damage(damage:int,push_direction):
 	life -= damage
+	target.animation_player.play("damage")
+	target.velocity.x = -push_direction*500
+	target.velocity.y = -500
+	print_debug(push_direction," ", life," ", target.velocity.x)
 	
 func give_heal(heal:int):
 	if life + heal <= max_life:
@@ -23,4 +23,5 @@ func give_heal(heal:int):
 		life = max_life
 		
 func die():
-	player.animation_player.play("die")
+	target.animation_player.play("die")
+	target.queue_free()
