@@ -1,6 +1,11 @@
 extends State
 class_name jump
-@export var player:Player
+var player:Player
+
+func _ready() -> void:
+	super()
+	player = target
+
 
 func Enter():
 	if player.animation_player:

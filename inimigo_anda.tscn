@@ -336,36 +336,36 @@ script = ExtResource("2_o28i7")
 initial_state = NodePath("Fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="Idle" type="Node" parent="State_machine" unique_id=976594802 node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="State_machine" unique_id=976594802 node_paths=PackedStringArray("target")]
 script = ExtResource("6_f0ibb")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://cuate20qfi753"
 
 [node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=793759562]
 one_shot = true
 
-[node name="Fall" type="Node" parent="State_machine" unique_id=440130134 node_paths=PackedStringArray("enemy")]
+[node name="Fall" type="Node" parent="State_machine" unique_id=440130134 node_paths=PackedStringArray("target")]
 script = ExtResource("4_p3p3w")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://d3bikxrs38522"
 
-[node name="Walk" type="Node" parent="State_machine" unique_id=467177971 node_paths=PackedStringArray("enemy")]
+[node name="Walk" type="Node" parent="State_machine" unique_id=467177971 node_paths=PackedStringArray("target")]
 script = ExtResource("6_s1e7n")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://rex2amr3hsmf"
 
 [node name="Timer" type="Timer" parent="State_machine/Walk" unique_id=1239513751]
 one_shot = true
 
-[node name="Jump" type="Node" parent="State_machine" unique_id=656249287 node_paths=PackedStringArray("enemy")]
+[node name="Jump" type="Node" parent="State_machine" unique_id=656249287 node_paths=PackedStringArray("target")]
 script = ExtResource("6_pyopx")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2ed2oeiyaq1w"
 
 [node name="Damage" type="Node" parent="State_machine" unique_id=1428294312 node_paths=PackedStringArray("target")]
 script = ExtResource("7_621nn")
-target = NodePath("../..")
 damage_color = Color(1.4369954, 1.4369954, 1.4369954, 1)
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
 [node name="Died" type="Node" parent="State_machine" unique_id=1952547689 node_paths=PackedStringArray("target")]
@@ -406,12 +406,3 @@ shape = SubResource("RectangleShape2D_mbmut")
 [connection signal="timeout" from="State_machine/Walk/Timer" to="State_machine/Walk" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageArea" to="DamageArea" method="_on_area_entered"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Idle" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Fall" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Walk" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Jump" method="_on_hurt_box_damaged"]
-[connection signal="died" from="HurtBox" to="State_machine/Idle" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Fall" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Walk" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Jump" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Damage" method="_on_hurt_box_died"]

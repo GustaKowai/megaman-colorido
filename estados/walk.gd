@@ -1,6 +1,10 @@
 extends State
 class_name walk
-@export var player:Player
+var player:Player
+
+func _ready() -> void:
+	super()
+	player = target
 
 func Enter():
 	player.animation_player.play("walk")

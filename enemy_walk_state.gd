@@ -1,8 +1,12 @@
 extends State
 class_name WalkEnemy
 
-@export var enemy:Enemy
+var enemy:Enemy
 var direction = 1
+
+func _ready() -> void:
+	super()
+	enemy = target
 
 func Enter():
 	if enemy.sprite:

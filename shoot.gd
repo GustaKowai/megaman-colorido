@@ -1,8 +1,11 @@
 extends State
-@export var player:Player
+var player:Player
 @export var bullet:PackedScene
 @onready var mira: Marker2D = $"../../Sprite2D/mira"
 
+func _ready() -> void:
+	super()
+	player = target
 
 func Enter():
 	if player.animation_player:

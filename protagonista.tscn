@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://dkqd0bo622t6q" path="res://jump2.gd" id="14_g24kp"]
 [ext_resource type="Script" uid="uid://bupk6vwvwqpim" path="res://estados/fall2.gd" id="15_x5f4j"]
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://damage_state.gd" id="16_xeeyi"]
+[ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://died.gd" id="17_qcjdm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(20, 57)
@@ -320,37 +321,42 @@ script = ExtResource("7_w3lgh")
 initial_state = NodePath("fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="walk" type="Node" parent="blue" unique_id=13118992 node_paths=PackedStringArray("player")]
+[node name="walk" type="Node" parent="blue" unique_id=13118992 node_paths=PackedStringArray("target")]
 script = ExtResource("8_jf1wn")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://b08x5anyr8prf"
 
-[node name="idle" type="Node" parent="blue" unique_id=210462566 node_paths=PackedStringArray("player")]
+[node name="idle" type="Node" parent="blue" unique_id=210462566 node_paths=PackedStringArray("target")]
 script = ExtResource("9_fr6an")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://78jsshc00u13"
 
-[node name="jump" type="Node" parent="blue" unique_id=306761982 node_paths=PackedStringArray("player")]
+[node name="jump" type="Node" parent="blue" unique_id=306761982 node_paths=PackedStringArray("target")]
 script = ExtResource("10_yl78u")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://drxidm0h68s70"
 
-[node name="fall" type="Node" parent="blue" unique_id=1031077697 node_paths=PackedStringArray("player")]
+[node name="fall" type="Node" parent="blue" unique_id=1031077697 node_paths=PackedStringArray("target")]
 script = ExtResource("11_wp1p8")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
 
-[node name="shoot" type="Node" parent="blue" unique_id=1647233800 node_paths=PackedStringArray("player")]
+[node name="shoot" type="Node" parent="blue" unique_id=1647233800 node_paths=PackedStringArray("target")]
 script = ExtResource("12_lwusa")
-player = NodePath("../..")
 bullet = ExtResource("13_gt6pu")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
 [node name="damage" type="Node" parent="blue" unique_id=861153007 node_paths=PackedStringArray("target")]
 script = ExtResource("16_xeeyi")
-target = NodePath("../..")
 damage_color = Color(1.4758431, 1.4758431, 1.4758431, 1)
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
+[node name="Died" type="Node" parent="blue" unique_id=1991280502 node_paths=PackedStringArray("target")]
+script = ExtResource("17_qcjdm")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
 [node name="red" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]
 process_mode = 4
@@ -358,23 +364,24 @@ script = ExtResource("7_w3lgh")
 initial_state = NodePath("fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="walk" type="Node" parent="red" unique_id=820179084]
+[node name="walk" type="Node" parent="red" unique_id=820179084 node_paths=PackedStringArray("target")]
 script = ExtResource("8_jf1wn")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://b08x5anyr8prf"
 
-[node name="idle" type="Node" parent="red" unique_id=1998161187 node_paths=PackedStringArray("player")]
+[node name="idle" type="Node" parent="red" unique_id=1998161187 node_paths=PackedStringArray("target")]
 script = ExtResource("9_fr6an")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://78jsshc00u13"
 
-[node name="jump" type="Node" parent="red" unique_id=1532634754 node_paths=PackedStringArray("player")]
+[node name="jump" type="Node" parent="red" unique_id=1532634754 node_paths=PackedStringArray("target")]
 script = ExtResource("14_g24kp")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://drxidm0h68s70"
 
-[node name="fall" type="Node" parent="red" unique_id=255731652 node_paths=PackedStringArray("player")]
+[node name="fall" type="Node" parent="red" unique_id=255731652 node_paths=PackedStringArray("target")]
 script = ExtResource("15_x5f4j")
-player = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=26329952]

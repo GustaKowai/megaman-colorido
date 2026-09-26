@@ -1,7 +1,6 @@
 extends State
 class_name DiedState
 var sprite
-@export var target:CharacterBody2D
 
 func Enter():
 	if target.is_in_group("Player"):

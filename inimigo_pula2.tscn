@@ -258,23 +258,23 @@ script = ExtResource("2_738ev")
 initial_state = NodePath("Fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="Jump" type="Node" parent="State_machine" unique_id=1333320386 node_paths=PackedStringArray("enemy")]
+[node name="Jump" type="Node" parent="State_machine" unique_id=1333320386 node_paths=PackedStringArray("target")]
 script = ExtResource("5_738ev")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2ed2oeiyaq1w"
 
-[node name="Idle" type="Node" parent="State_machine" unique_id=589032605 node_paths=PackedStringArray("enemy")]
+[node name="Idle" type="Node" parent="State_machine" unique_id=589032605 node_paths=PackedStringArray("target")]
 script = ExtResource("4_apcsb")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://cuate20qfi753"
 
 [node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=821057074]
 wait_time = 2.0
 one_shot = true
 
-[node name="Fall" type="Node" parent="State_machine" unique_id=929155691 node_paths=PackedStringArray("enemy")]
+[node name="Fall" type="Node" parent="State_machine" unique_id=929155691 node_paths=PackedStringArray("target")]
 script = ExtResource("4_el0tk")
-enemy = NodePath("../..")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://d3bikxrs38522"
 
 [node name="Damage" type="Node" parent="State_machine" unique_id=1663549977 node_paths=PackedStringArray("target")]
@@ -282,8 +282,9 @@ script = ExtResource("6_b333s")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="Died" type="Node" parent="State_machine" unique_id=873990796]
+[node name="Died" type="Node" parent="State_machine" unique_id=873990796 node_paths=PackedStringArray("target")]
 script = ExtResource("7_y5n2g")
+target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
@@ -319,10 +320,3 @@ shape = SubResource("RectangleShape2D_mbmut")
 [connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Jump" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Idle" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="HurtBox" to="State_machine/Fall" method="_on_hurt_box_damaged"]
-[connection signal="died" from="HurtBox" to="State_machine/Jump" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Idle" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Fall" method="_on_hurt_box_died"]
-[connection signal="died" from="HurtBox" to="State_machine/Damage" method="_on_hurt_box_died"]

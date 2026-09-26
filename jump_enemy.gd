@@ -1,7 +1,11 @@
 extends State
 class_name JumpEnemy
 
-@export var enemy:Enemy
+var enemy:Enemy
+
+func _ready() -> void:
+	super()
+	enemy = target
 
 func Enter():
 	if enemy.sprite:
