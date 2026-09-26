@@ -2413,7 +2413,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8u11s")
 sources/2 = SubResource("TileSetAtlasSource_8v1wn")
 
-[node name="Main" type="Node2D" unique_id=628030147]
+[node name="Main" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1231470294 node_paths=PackedStringArray("player")]
 position = Vector2(88, 847)
@@ -2468,7 +2468,6 @@ tile_map_data = PackedByteArray("AAD+/x4AAAAAAAIAAAD+/x8AAAAAAAIAAAD+/yAAAAAAAAI
 tile_set = SubResource("TileSet_qp2o8")
 
 [node name="CharacterBody2D2" parent="." unique_id=1014654085 instance=ExtResource("6_ac47k")]
-modulate = Color(1.3626418, 1.3626418, 1.3626418, 1)
 light_mask = 2
 position = Vector2(52, 537)
 
@@ -2488,7 +2487,7 @@ tile_set = SubResource("TileSet_hgjhj")
 position = Vector2(2884, 509)
 
 [node name="InimigoAnda" parent="." unique_id=164572135 instance=ExtResource("7_iju0m")]
-position = Vector2(880, 266)
+position = Vector2(869, 280)
 
 [node name="InimigoPula" parent="." unique_id=866933769 instance=ExtResource("9_biof3")]
 position = Vector2(1119, 542)

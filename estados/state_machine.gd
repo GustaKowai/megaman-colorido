@@ -17,7 +17,7 @@ func _ready() -> void:
 		current_state = initial_state
 		
 func _process(delta: float) -> void:
-	##print_debug(current_state)
+	#print_debug(current_state)
 	if current_state:
 		current_state.Update(delta)
 	
@@ -31,7 +31,7 @@ func on_child_transition(state:State, new_state_name):
 		return
 	#print_debug(state," ",new_state_name," ",get_parent())
 	var new_state = states.get(new_state_name.to_lower())
-	##print_debug(states.get_children)
+	#print_debug(states.get_children)
 	if !new_state:
 		print_debug("não achei o ",new_state)
 		return

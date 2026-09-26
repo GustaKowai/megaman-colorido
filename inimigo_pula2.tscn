@@ -6,9 +6,65 @@
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://enemy_fall_state.gd" id="4_el0tk"]
 [ext_resource type="Script" uid="uid://b2ed2oeiyaq1w" path="res://jump_enemy.gd" id="5_738ev"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="5_b333s"]
+[ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://damage_state.gd" id="6_b333s"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="6_ylrji"]
+[ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="7_bj6hh"]
+[ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://died.gd" id="7_y5n2g"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="8_apcsb"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://damage_area.gd" id="9_el0tk"]
+[ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://vida.gd" id="11_ylrji"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a64oe"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(0, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28flh"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(64, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a86bv"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(128, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gswgl"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(192, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga47a"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(256, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edqcb"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(320, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ayyt"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(384, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_36orf"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(448, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvyqy"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(512, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87jfs"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(576, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_msjnv"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(640, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rofa"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(704, 128, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7go8"]
+atlas = ExtResource("7_bj6hh")
+region = Rect2(768, 128, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ua4xa"]
 atlas = ExtResource("5_b333s")
@@ -76,6 +132,50 @@ region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e2r5q"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a64oe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28flh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a86bv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gswgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga47a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edqcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ayyt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_36orf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvyqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87jfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_msjnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rofa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7go8")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 23.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ua4xa")
@@ -146,7 +246,10 @@ size = Vector2(9, 17)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2r5q"]
 size = Vector2(10, 18)
 
-[node name="InimigoPula" type="CharacterBody2D" unique_id=164572135]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbmut"]
+size = Vector2(10, 18)
+
+[node name="InimigoPula" type="CharacterBody2D" unique_id=164572135 groups=["Enemy"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_73r0c")
 
@@ -174,11 +277,19 @@ script = ExtResource("4_el0tk")
 enemy = NodePath("../..")
 metadata/_custom_type_script = "uid://d3bikxrs38522"
 
+[node name="Damage" type="Node" parent="State_machine" unique_id=1663549977 node_paths=PackedStringArray("target")]
+script = ExtResource("6_b333s")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b2s26rpxfiul2"
+
+[node name="Died" type="Node" parent="State_machine" unique_id=873990796]
+script = ExtResource("7_y5n2g")
+metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e2r5q")
-animation = &"jump"
-frame_progress = 0.35743228
+animation = &"die"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]
 position = Vector2(-0.5, 3.5)
@@ -194,5 +305,24 @@ metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_e2r5q")
 
+[node name="HurtBox" type="Area2D" parent="." unique_id=1973790716 node_paths=PackedStringArray("target") groups=["Enemy"]]
+script = ExtResource("11_ylrji")
+target = NodePath("..")
+max_life = 2
+knockback = 300
+metadata/_custom_type_script = "uid://b4ks34rhdjoli"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=299168029]
+position = Vector2(-0.5, 3.5)
+shape = SubResource("RectangleShape2D_mbmut")
+
 [connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]
+[connection signal="damaged" from="HurtBox" to="State_machine/Jump" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="HurtBox" to="State_machine/Idle" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="HurtBox" to="State_machine/Fall" method="_on_hurt_box_damaged"]
+[connection signal="died" from="HurtBox" to="State_machine/Jump" method="_on_hurt_box_died"]
+[connection signal="died" from="HurtBox" to="State_machine/Idle" method="_on_hurt_box_died"]
+[connection signal="died" from="HurtBox" to="State_machine/Fall" method="_on_hurt_box_died"]
+[connection signal="died" from="HurtBox" to="State_machine/Damage" method="_on_hurt_box_died"]

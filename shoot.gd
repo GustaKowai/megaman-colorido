@@ -20,10 +20,10 @@ func Physics_update(_delta: float):
 	
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
-		player.velocity.x = direction * player.SPEED
+		player.velocity.x = direction * player.max_speed
 		player.sprite.flip_h = player.velocity.x < 0
 	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.SPEED)
+		player.velocity.x = move_toward(player.velocity.x, 0, player.max_speed)
  
 func end_shoot():
 	if !player.is_on_floor():
@@ -40,7 +40,3 @@ func shoot():
 		b.speed *= -1
 	get_tree().get_first_node_in_group("Fase").add_child(b)
 	b.transform = mira.global_transform
-
-
-func _on_hurt_box_damaged() -> void:
-	Transitioned.emit(self,"damage")

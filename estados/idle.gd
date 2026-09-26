@@ -23,7 +23,3 @@ func Physics_update(_delta: float):
 		Transitioned.emit(self,"fall")
 	if Input.is_action_just_pressed("shoot"):
 		Transitioned.emit(self,"shoot")
-
-
-func _on_hurt_box_damaged() -> void:
-	Transitioned.emit(self,"damage")

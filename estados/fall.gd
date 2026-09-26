@@ -24,7 +24,3 @@ func Physics_update(_delta: float):
 		player.velocity.x = move_toward(player.velocity.x, 0, player.max_speed)
 	if Input.is_action_just_pressed("shoot"):
 		Transitioned.emit(self,"shoot")
-
-
-func _on_hurt_box_damaged() -> void:
-	Transitioned.emit(self,"damage")

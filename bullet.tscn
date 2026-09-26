@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnjabhefswoiq" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/03.png" id="1_v8qja"]
 [ext_resource type="Script" uid="uid://cobocbprc0trk" path="res://bullet.gd" id="2_t4vbm"]
+[ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://damage_area.gd" id="3_t4vbm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2b2rl"]
 atlas = ExtResource("1_v8qja")
@@ -60,10 +61,13 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b7duk")
 }],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 9.0
 }]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_e2r5q"]
+radius = 25.079872
 
 [node name="Node2D" type="AnimatedSprite2D" unique_id=1670673235]
 sprite_frames = SubResource("SpriteFrames_4bibm")
@@ -74,4 +78,15 @@ speed = 200.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=582098113]
 
+[node name="DamageBox" type="Area2D" parent="." unique_id=787630589]
+script = ExtResource("3_t4vbm")
+damage_to = "Enemy"
+damage = 1
+metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=1583376466]
+shape = SubResource("CircleShape2D_e2r5q")
+
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
+[connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]
+[connection signal="dealed_damage" from="DamageBox" to="." method="_on_damage_box_dealed_damage"]

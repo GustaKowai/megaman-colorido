@@ -1,6 +1,7 @@
 extends Area2D
 class_name HurtBox
 signal damaged
+signal died
 
 @export var target:CharacterBody2D
 @export var max_life:int
@@ -13,10 +14,15 @@ func _ready() -> void:
 
 func take_damage(damage:int,push_direction):
 	life -= damage
+	if life <= 0:
+		die()
+		return
 	#target.animation_player.play("damage")
 	damaged.emit()
+	print_debug(life)
 	target.velocity.x = push_direction*knockback/2
 	target.velocity.y = -knockback
+
 	#print_debug(push_direction," ", life," ", target.velocity)
 	
 func give_heal(heal:int):
@@ -26,5 +32,4 @@ func give_heal(heal:int):
 		life = max_life
 		
 func die():
-	target.animation_player.play("die")
-	target.queue_free()
+	died.emit()

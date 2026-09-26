@@ -18,3 +18,6 @@ func Physics_update(_delta: float):
 	enemy.velocity.x = direction * enemy.speed
 	if not enemy.is_on_floor():
 		Transitioned.emit(self,"Fall")
+
+func _on_hurt_box_damaged() -> void:
+	Transitioned.emit(self,"damage")

@@ -39,6 +39,48 @@ tracks/0/keys = {
 "update": 1,
 "values": [0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_xeeyi"]
+resource_name = "die"
+length = 1.0333333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.46666667, 1),
+"transitions": PackedFloat32Array(25.106709, 0.07966011, 14.420013),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(5.329863, 5.329863, 5.329863, 1), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1.0333333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"queue_free"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_wyqjk"]
 resource_name = "idle"
@@ -129,6 +171,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k85er"]
 _data = {
 &"RESET": SubResource("Animation_qnedo"),
+&"die": SubResource("Animation_xeeyi"),
 &"idle": SubResource("Animation_wyqjk"),
 &"jump": SubResource("Animation_k85er"),
 &"shoot": SubResource("Animation_y1dt5"),
@@ -306,6 +349,7 @@ metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 [node name="damage" type="Node" parent="blue" unique_id=861153007 node_paths=PackedStringArray("target")]
 script = ExtResource("16_xeeyi")
 target = NodePath("../..")
+damage_color = Color(1.4758431, 1.4758431, 1.4758431, 1)
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
 [node name="red" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]
