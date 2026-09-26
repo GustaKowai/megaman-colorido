@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://c2tkqivlot6y3"]
 
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="1_lyybd"]
+[ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://ui_jogador.tscn" id="1_stb3a"]
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="2_biof3"]
 [ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="3_m613i"]
 [ext_resource type="Texture2D" uid="uid://cf1h6qoaun33d" path="res://Sprites/dhb1jbx-b8a645c3-7f45-4aef-b43a-7cc4fa6fe703.png" id="4_stb3a"]
@@ -2414,6 +2415,9 @@ sources/0 = SubResource("TileSetAtlasSource_8u11s")
 sources/2 = SubResource("TileSetAtlasSource_8v1wn")
 
 [node name="Main" type="Node2D" unique_id=628030147 groups=["Fase"]]
+
+[node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("1_stb3a")]
+player = NodePath("../CharacterBody2D2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1231470294 node_paths=PackedStringArray("player")]
 position = Vector2(88, 847)

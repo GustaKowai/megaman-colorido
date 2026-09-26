@@ -25,7 +25,7 @@ func Update(_delta: float):
 func Physics_update(_delta: float):
 	pass
 
-func on_hurt_box_damaged() -> void:
+func on_hurt_box_damaged(_life) -> void:
 	Transitioned.emit(self,"damage")
 	
 func on_hurt_box_died() -> void:

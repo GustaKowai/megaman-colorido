@@ -18,7 +18,7 @@ func take_damage(damage:int,push_direction):
 		die()
 		return
 	#target.animation_player.play("damage")
-	damaged.emit()
+	damaged.emit(life)
 	print_debug(life)
 	target.velocity.x = push_direction*knockback/2
 	target.velocity.y = -knockback

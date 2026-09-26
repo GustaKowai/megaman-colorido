@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ygtxmot352ec"]
+
+[ext_resource type="Script" uid="uid://dh714s7hvg8ix" path="res://ui_jogador.gd" id="1_3511r"]
+
+[node name="UI_jogador" type="CanvasLayer" unique_id=840519676]
+script = ExtResource("1_3511r")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=867696797]
+offset_right = 441.0
+offset_bottom = 27.0
+max_value = 10.0
+metadata/_edit_use_anchors_ = true
