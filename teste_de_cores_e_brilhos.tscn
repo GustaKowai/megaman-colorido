@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="4_2lcb2"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_8u11s"]
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="5_a0rq6"]
+[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="5_gl042"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_gl042"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://exit.tscn" id="9_8v1wn"]
 
@@ -78,6 +79,60 @@ texture_region_size = Vector2i(32, 32)
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -15.5, 15.5, -15.5, 15.5, 15.5, -15.5, 15.5)
 6:3/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3whd"]
+texture = ExtResource("5_gl042")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:2/0 = 0
+4:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:2/0 = 0
+5:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+4:3/0 = 0
+4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+5:3/0 = 0
+5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl8m1"]
 texture = ExtResource("8_gl042")
 texture_region_size = Vector2i(32, 32)
@@ -107,6 +162,7 @@ tile_size = Vector2i(32, 32)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_8v1wn")
 sources/2 = SubResource("TileSetAtlasSource_kl8m1")
+sources/1 = SubResource("TileSetAtlasSource_w3whd")
 
 [node name="LevelRoot" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
@@ -141,6 +197,7 @@ texture = SubResource("GradientTexture1D_g6jd5")
 scroll_scale = Vector2(0, 1)
 
 [node name="Sol" type="Sprite2D" parent="Parallax2D" unique_id=671824561]
+visible = false
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
 position = Vector2(621, 314.00003)
 scale = Vector2(0.9265625, 0.9265625)
@@ -153,13 +210,14 @@ repeat_size = Vector2(800, 0)
 repeat_times = 3
 
 [node name="Montanha" type="Sprite2D" parent="Parallax2D2" unique_id=1993104356]
+visible = false
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
 position = Vector2(580, 467)
 texture = ExtResource("3_qp2o8")
 
 [node name="branco" type="TileMapLayer" parent="." unique_id=540755105]
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
-tile_map_data = PackedByteArray("AAAqABAAAAABAAEAAAAAABMAAAADAAIAAAAAABIAAAACAAEAAAAAABEAAAACAAEAAAAAABAAAAACAAEAAAAAAA8AAAACAAEAAAAAAA4AAAACAAEAAAAAAA0AAAACAAEAAAAAAAwAAAACAAEAAAAAAAsAAAACAAEAAAAAAAoAAAACAAEAAAAAAAkAAAACAAEAAAAAAAgAAAACAAEAAAAAAAcAAAACAAEAAAABABMAAAABAAAAAAACABMAAAABAAAAAAADABMAAAABAAAAAAAEABMAAAABAAAAAAAFABMAAAABAAAAAAAGABMAAAABAAAAAAAHABMAAAABAAAAAAAIABMAAAABAAAAAAAJABMAAAABAAAAAAAKABMAAAABAAAAAAALABMAAAABAAAAAAAMABMAAAABAAAAAAANABMAAAABAAAAAAAOABMAAAABAAAAAAAPABMAAAABAAAAAAAQABMAAAABAAAAAAARABMAAAABAAAAAAASABMAAAABAAAAAAATABMAAAABAAAAAAAUABMAAAABAAAAAAAVABMAAAABAAAAAAAWABMAAAABAAAAAAAXABMAAAABAAAAAAAYABMAAAABAAAAAAAZABMAAAABAAAAAAAaABMAAAABAAAAAAAbABMAAAABAAAAAAAcABMAAAABAAAAAAAdABMAAAABAAAAAAAeABMAAAABAAAAAAAfABMAAAABAAAAAAAgABMAAAABAAAAAAAhABMAAAABAAAAAAAjABMAAAAFAAIAAAAiABMAAAAEAAIAAAAjABIAAAAFAAEAAAAjABEAAAAFAAEAAAAjABAAAAAFAAEAAAAjAA8AAAAFAAEAAAAjAA4AAAAFAAEAAAAjAA0AAAAFAAEAAAAjAAwAAAAFAAEAAAAjAAsAAAAFAAEAAAAjAAoAAAAFAAEAAAAjAAkAAAAFAAEAAAAjAAgAAAAFAAEAAAAjAAcAAAAFAAEAAAAjAAUAAAAFAAEAAAAjAAQAAAAFAAEAAAAjAAMAAAAFAAEAAAAjAAIAAAAFAAEAAAAjAAEAAAAFAAEAAAAjAAYAAAAFAAEAAAAAAAYAAAACAAEAAAAAAAUAAAACAAEAAAAAAAQAAAACAAEAAAAAAAMAAAACAAEAAAAAAAEAAAACAAEAAAAAAAIAAAACAAEAAAAIABAAAAABAAAAAAAJABAAAAABAAAAAAAKABAAAAABAAAAAAALABAAAAABAAAAAAAMABAAAAABAAAAAAANABAAAAABAAAAAAAWABAAAAABAAAAAAAXABAAAAABAAAAAAAYABAAAAABAAAAAAAZABAAAAABAAAAAAAaABAAAAABAAAAAAAbABAAAAABAAAAAAA=")
+tile_map_data = PackedByteArray("AAAqABAAAAABAAEAAAAAABMAAQADAAIAAAAAABIAAQACAAEAAAAAABEAAQACAAEAAAAAABAAAQACAAEAAAAAAA8AAQACAAEAAAAAAA4AAQACAAEAAAAAAA0AAQACAAEAAAAAAAwAAQACAAEAAAAAAAsAAQACAAEAAAAAAAoAAQACAAEAAAAAAAkAAQACAAEAAAAAAAgAAQACAAEAAAAAAAcAAQACAAEAAAABABMAAQABAAAAAAACABMAAQABAAAAAAADABMAAQABAAAAAAAEABMAAQABAAAAAAAFABMAAQABAAAAAAAGABMAAQABAAAAAAAHABMAAQABAAAAAAAIABMAAQABAAAAAAAJABMAAQABAAAAAAAKABMAAQABAAAAAAALABMAAQABAAAAAAAMABMAAQABAAAAAAANABMAAQABAAAAAAAOABMAAQABAAAAAAAPABMAAQABAAAAAAAQABMAAQABAAAAAAARABMAAQABAAAAAAASABMAAQABAAAAAAATABMAAQABAAAAAAAUABMAAAABAAAAAAAVABMAAAABAAAAAAAWABMAAAABAAAAAAAXABMAAAABAAAAAAAYABMAAAABAAAAAAAZABMAAAABAAAAAAAaABMAAAABAAAAAAAbABMAAAABAAAAAAAcABMAAAABAAAAAAAdABMAAAABAAAAAAAeABMAAAABAAAAAAAfABMAAAABAAAAAAAgABMAAAABAAAAAAAhABMAAAABAAAAAAAjABMAAAAFAAIAAAAiABMAAAAEAAIAAAAjABIAAAAFAAEAAAAjABEAAAAFAAEAAAAjABAAAAAFAAEAAAAjAA8AAAAFAAEAAAAjAA4AAAAFAAEAAAAjAA0AAAAFAAEAAAAjAAwAAAAFAAEAAAAjAAsAAAAFAAEAAAAjAAoAAAAFAAEAAAAjAAkAAAAFAAEAAAAjAAgAAAAFAAEAAAAjAAcAAAAFAAEAAAAjAAUAAAAFAAEAAAAjAAQAAAAFAAEAAAAjAAMAAAAFAAEAAAAjAAIAAAAFAAEAAAAjAAEAAAAFAAEAAAAjAAYAAAAFAAEAAAAAAAYAAQACAAEAAAAAAAUAAQACAAEAAAAAAAQAAQACAAEAAAAAAAMAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAIABAAAQABAAAAAAAJABAAAQABAAAAAAAKABAAAQABAAAAAAALABAAAQABAAAAAAAMABAAAQABAAAAAAANABAAAQABAAAAAAAWABAAAAABAAAAAAAXABAAAAABAAAAAAAYABAAAAABAAAAAAAZABAAAAABAAAAAAAaABAAAAABAAAAAAAbABAAAAABAAAAAAALAA4AAgAEAAEAAAAZAA4AAgAEAAEAAAA=")
 tile_set = SubResource("TileSet_hgjhj")
 
 [node name="CharacterBody2D" parent="." unique_id=2054658706 instance=ExtResource("3_g6jd5")]
@@ -168,8 +226,8 @@ position = Vector2(95, 392)
 [node name="Exits" type="Node2D" parent="." unique_id=138475286]
 
 [node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("9_8v1wn")]
-position = Vector2(353, 463)
+position = Vector2(367, 462)
 
 [node name="Exit" parent="Exits" unique_id=1854873059 instance=ExtResource("9_8v1wn")]
-position = Vector2(799, 459)
+position = Vector2(816, 463)
 level_number = 1
