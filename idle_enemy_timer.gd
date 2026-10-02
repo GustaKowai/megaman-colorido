@@ -14,7 +14,7 @@ func _on_timer_timeout():
 	#print_debug("timeout")
 	if walk_jump : 
 		walk_jump = false
-		Transitioned.emit(self,"Jump")
+		Transitioned.emit(self,"Shoot")
 	else:
 		walk_jump = true
 		Transitioned.emit(self,"Walk")

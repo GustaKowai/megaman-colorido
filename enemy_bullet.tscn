@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bfu800jtnysoh"]
+
+[ext_resource type="PackedScene" uid="uid://bt2o0j8bo45av" path="res://bullet.tscn" id="1_1xapl"]
+
+[node name="Node2D" unique_id=1670673235 instance=ExtResource("1_1xapl")]
+frame_progress = 0.0
+
+[node name="DamageBox" parent="." index="1" unique_id=787630589]
+damage_to = "Player"

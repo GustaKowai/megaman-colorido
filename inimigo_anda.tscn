@@ -12,7 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="8_dntop"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://died.gd" id="8_ws0ki"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="9_pyopx"]
+[ext_resource type="Script" uid="uid://cp4gbasyd3ja1" path="res://enemy_shoot.gd" id="9_rdm8w"]
 [ext_resource type="Texture2D" uid="uid://cdak7iycypo6k" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/2_Cat_Run-Sheet.png" id="9_s1e7n"]
+[ext_resource type="PackedScene" uid="uid://bfu800jtnysoh" path="res://enemy_bullet.tscn" id="10_j6whj"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://damage_area.gd" id="11_bx0b3"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://vida.gd" id="12_chafa"]
 
@@ -373,10 +375,21 @@ script = ExtResource("8_ws0ki")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
+[node name="Shoot" type="Node" parent="State_machine" unique_id=292798977 node_paths=PackedStringArray("target")]
+script = ExtResource("9_rdm8w")
+bullet = ExtResource("10_j6whj")
+target = NodePath("../..")
+
+[node name="Timer" type="Timer" parent="State_machine/Shoot" unique_id=2098592835]
+one_shot = true
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e2r5q")
 animation = &"fall"
+
+[node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
+position = Vector2(8.667, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]
 position = Vector2(-0.5, 3.5)
@@ -404,5 +417,6 @@ shape = SubResource("RectangleShape2D_mbmut")
 
 [connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
 [connection signal="timeout" from="State_machine/Walk/Timer" to="State_machine/Walk" method="_on_timer_timeout"]
+[connection signal="timeout" from="State_machine/Shoot/Timer" to="State_machine/Shoot" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageArea" to="DamageArea" method="_on_area_entered"]
