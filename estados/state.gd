@@ -30,3 +30,16 @@ func on_hurt_box_damaged(_life) -> void:
 	
 func on_hurt_box_died() -> void:
 	Transitioned.emit(self,"died")
+
+		
+func do_action():
+	print_debug(get_parent())
+	match get_parent().name:
+		"red":
+			Transitioned.emit(self,"shoot")
+		"green":
+			Transitioned.emit(self,"heal")
+		"yellow":
+			Transitioned.emit(self,"shield")
+		_:
+			pass

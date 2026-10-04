@@ -1,6 +1,7 @@
 extends Area2D
 class_name HurtBox
 signal damaged
+signal healed
 signal died
 
 @export var target:CharacterBody2D
@@ -27,6 +28,7 @@ func take_damage(damage:int,push_direction):
 func give_heal(heal:int):
 	if life + heal <= max_life:
 		life += heal
+		healed.emit(life)
 	else:
 		life = max_life
 		

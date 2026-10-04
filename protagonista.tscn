@@ -16,6 +16,10 @@
 [ext_resource type="Script" uid="uid://bupk6vwvwqpim" path="res://estados/fall2.gd" id="15_x5f4j"]
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://damage_state.gd" id="16_xeeyi"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://died.gd" id="17_qcjdm"]
+[ext_resource type="Script" uid="uid://ciqayrcwf7p5s" path="res://heal.gd" id="17_vsclo"]
+
+[sub_resource type="Gradient" id="Gradient_hgjhj"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(20, 57)
@@ -80,6 +84,22 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_qcjdm"]
+resource_name = "heal"
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [3, 4]
+}
+
 [sub_resource type="Animation" id="Animation_wyqjk"]
 resource_name = "idle"
 length = 0.6
@@ -133,7 +153,7 @@ tracks/0/keys = {
 tracks/1/type = "method"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("blue/shoot")
+tracks/1/path = NodePath("red/shoot")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -170,6 +190,7 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_qnedo"),
 &"die": SubResource("Animation_xeeyi"),
+&"heal": SubResource("Animation_qcjdm"),
 &"idle": SubResource("Animation_wyqjk"),
 &"jump": SubResource("Animation_k85er"),
 &"shoot": SubResource("Animation_y1dt5"),
@@ -231,6 +252,34 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_03edm"]
+resource_name = "transform_green"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../efeitos:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3), Vector2i(5, 3), Vector2i(6, 3), Vector2i(7, 3), Vector2i(8, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../efeitos:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="Animation" id="Animation_sxias"]
 resource_name = "transform_red"
 length = 0.3
@@ -259,11 +308,41 @@ tracks/1/keys = {
 "values": [true, false]
 }
 
+[sub_resource type="Animation" id="Animation_vsclo"]
+resource_name = "transform_yellow"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../efeitos:frame_coords")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.10000001, 0.13333334, 0.16666667, 0.20000002, 0.23333335, 0.26666668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(6, 4), Vector2i(7, 4), Vector2i(8, 4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../efeitos:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_sxias"]
 _data = {
 &"RESET": SubResource("Animation_au0nh"),
 &"transform_blue": SubResource("Animation_76bt2"),
-&"transform_red": SubResource("Animation_sxias")
+&"transform_green": SubResource("Animation_03edm"),
+&"transform_red": SubResource("Animation_sxias"),
+&"transform_yellow": SubResource("Animation_vsclo")
 }
 
 [sub_resource type="Gradient" id="Gradient_lnxje"]
@@ -279,10 +358,24 @@ fill_to = Vector2(0.9450867, 0.5231214)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
 script = ExtResource("1_lnxje")
-sprite_blue = ExtResource("4_03edm")
-sprite_red = ExtResource("2_lnxje")
-sprite_yellow = ExtResource("2_lnxje")
 sprite_green = ExtResource("2_lnxje")
+sprite_red = ExtResource("2_lnxje")
+sprite_blue = ExtResource("4_03edm")
+sprite_yellow = ExtResource("2_lnxje")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1381449939]
+position = Vector2(3, -5)
+emitting = false
+amount = 15
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 3.23
+direction = Vector2(0, -1)
+gravity = Vector2(0, 50)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+color = Color(0, 3.3372512, 0, 1)
+color_ramp = SubResource("Gradient_hgjhj")
 
 [node name="Hurt_box" type="Area2D" parent="." unique_id=1430758203 node_paths=PackedStringArray("target") groups=["Player"]]
 script = ExtResource("6_vsclo")
@@ -313,80 +406,160 @@ frame = 18
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_wyqjk")
 
-[node name="blue" type="Node" parent="." unique_id=1905334472 node_paths=PackedStringArray("initial_state")]
+[node name="red" type="Node" parent="." unique_id=1905334472 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_w3lgh")
 initial_state = NodePath("fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="walk" type="Node" parent="blue" unique_id=13118992 node_paths=PackedStringArray("target")]
+[node name="walk" type="Node" parent="red" unique_id=13118992 node_paths=PackedStringArray("target")]
 script = ExtResource("8_jf1wn")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b08x5anyr8prf"
 
-[node name="idle" type="Node" parent="blue" unique_id=210462566 node_paths=PackedStringArray("target")]
+[node name="idle" type="Node" parent="red" unique_id=210462566 node_paths=PackedStringArray("target")]
 script = ExtResource("9_fr6an")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://78jsshc00u13"
 
-[node name="jump" type="Node" parent="blue" unique_id=306761982 node_paths=PackedStringArray("target")]
+[node name="jump" type="Node" parent="red" unique_id=306761982 node_paths=PackedStringArray("target")]
 script = ExtResource("10_yl78u")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://drxidm0h68s70"
 
-[node name="fall" type="Node" parent="blue" unique_id=1031077697 node_paths=PackedStringArray("target")]
+[node name="fall" type="Node" parent="red" unique_id=1031077697 node_paths=PackedStringArray("target")]
 script = ExtResource("11_wp1p8")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
 
-[node name="shoot" type="Node" parent="blue" unique_id=1647233800 node_paths=PackedStringArray("target")]
+[node name="shoot" type="Node" parent="red" unique_id=1647233800 node_paths=PackedStringArray("target")]
 script = ExtResource("12_lwusa")
 bullet = ExtResource("13_gt6pu")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
-[node name="damage" type="Node" parent="blue" unique_id=861153007 node_paths=PackedStringArray("target")]
+[node name="damage" type="Node" parent="red" unique_id=861153007 node_paths=PackedStringArray("target")]
 script = ExtResource("16_xeeyi")
 damage_color = Color(1.4758431, 1.4758431, 1.4758431, 1)
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
-[node name="Died" type="Node" parent="blue" unique_id=1991280502 node_paths=PackedStringArray("target")]
+[node name="Died" type="Node" parent="red" unique_id=1991280502 node_paths=PackedStringArray("target")]
 script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="red" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]
+[node name="blue" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]
 process_mode = 4
 script = ExtResource("7_w3lgh")
 initial_state = NodePath("fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
 
-[node name="walk" type="Node" parent="red" unique_id=820179084 node_paths=PackedStringArray("target")]
+[node name="walk" type="Node" parent="blue" unique_id=820179084 node_paths=PackedStringArray("target")]
 script = ExtResource("8_jf1wn")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b08x5anyr8prf"
 
-[node name="idle" type="Node" parent="red" unique_id=1998161187 node_paths=PackedStringArray("target")]
+[node name="idle" type="Node" parent="blue" unique_id=1998161187 node_paths=PackedStringArray("target")]
 script = ExtResource("9_fr6an")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://78jsshc00u13"
 
-[node name="jump" type="Node" parent="red" unique_id=1532634754 node_paths=PackedStringArray("target")]
+[node name="jump" type="Node" parent="blue" unique_id=1532634754 node_paths=PackedStringArray("target")]
 script = ExtResource("14_g24kp")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://drxidm0h68s70"
 
-[node name="fall" type="Node" parent="red" unique_id=255731652 node_paths=PackedStringArray("target")]
+[node name="fall" type="Node" parent="blue" unique_id=255731652 node_paths=PackedStringArray("target")]
 script = ExtResource("15_x5f4j")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
 
-[node name="Damage" type="Node" parent="red" unique_id=1597042273 node_paths=PackedStringArray("target")]
+[node name="Damage" type="Node" parent="blue" unique_id=1597042273 node_paths=PackedStringArray("target")]
 script = ExtResource("16_xeeyi")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="Die" type="Node" parent="red" unique_id=1434600836 node_paths=PackedStringArray("target")]
+[node name="Die" type="Node" parent="blue" unique_id=1434600836 node_paths=PackedStringArray("target")]
+script = ExtResource("17_qcjdm")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://8jxdtwajk3d6"
+
+[node name="green" type="Node" parent="." unique_id=1597604594 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_w3lgh")
+initial_state = NodePath("fall")
+metadata/_custom_type_script = "uid://1pt326tnyysx"
+
+[node name="walk" type="Node" parent="green" unique_id=352392940 node_paths=PackedStringArray("target")]
+script = ExtResource("8_jf1wn")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b08x5anyr8prf"
+
+[node name="jump" type="Node" parent="green" unique_id=1417429356 node_paths=PackedStringArray("target")]
+script = ExtResource("10_yl78u")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://drxidm0h68s70"
+
+[node name="idle" type="Node" parent="green" unique_id=1467997241 node_paths=PackedStringArray("target")]
+script = ExtResource("9_fr6an")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://78jsshc00u13"
+
+[node name="fall" type="Node" parent="green" unique_id=665501530 node_paths=PackedStringArray("target")]
+script = ExtResource("11_wp1p8")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
+
+[node name="Damage" type="Node" parent="green" unique_id=1666242088 node_paths=PackedStringArray("target")]
+script = ExtResource("16_xeeyi")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b2s26rpxfiul2"
+
+[node name="Die" type="Node" parent="green" unique_id=673430237 node_paths=PackedStringArray("target")]
+script = ExtResource("17_qcjdm")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://8jxdtwajk3d6"
+
+[node name="heal" type="Node" parent="green" unique_id=1191231804 node_paths=PackedStringArray("hurtbox", "particles", "target")]
+script = ExtResource("17_vsclo")
+heal_amount = 1
+heal_speed = 1.0
+heal_bar_max = 5
+hurtbox = NodePath("../../Hurt_box")
+particles = NodePath("../../CPUParticles2D")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
+[node name="yellow" type="Node" parent="." unique_id=284677086 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_w3lgh")
+initial_state = NodePath("fall")
+metadata/_custom_type_script = "uid://1pt326tnyysx"
+
+[node name="walk" type="Node" parent="yellow" unique_id=537367049 node_paths=PackedStringArray("target")]
+script = ExtResource("8_jf1wn")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b08x5anyr8prf"
+
+[node name="jump" type="Node" parent="yellow" unique_id=1740683949 node_paths=PackedStringArray("target")]
+script = ExtResource("10_yl78u")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://drxidm0h68s70"
+
+[node name="idle" type="Node" parent="yellow" unique_id=854896640 node_paths=PackedStringArray("target")]
+script = ExtResource("9_fr6an")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://78jsshc00u13"
+
+[node name="fall" type="Node" parent="yellow" unique_id=1358768193 node_paths=PackedStringArray("target")]
+script = ExtResource("11_wp1p8")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
+
+[node name="Damage" type="Node" parent="yellow" unique_id=674878869 node_paths=PackedStringArray("target")]
+script = ExtResource("16_xeeyi")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b2s26rpxfiul2"
+
+[node name="Die" type="Node" parent="yellow" unique_id=616122881 node_paths=PackedStringArray("target")]
 script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
@@ -406,8 +579,8 @@ color = Color(0, 1, 1, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_03edm")
 
-[connection signal="damaged" from="Hurt_box" to="blue/walk" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="Hurt_box" to="blue/idle" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="Hurt_box" to="blue/jump" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="Hurt_box" to="blue/fall" method="_on_hurt_box_damaged"]
-[connection signal="damaged" from="Hurt_box" to="blue/shoot" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="red/walk" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="red/idle" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="red/jump" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="red/fall" method="_on_hurt_box_damaged"]
+[connection signal="damaged" from="Hurt_box" to="red/shoot" method="_on_hurt_box_damaged"]

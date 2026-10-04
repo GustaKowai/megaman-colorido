@@ -25,5 +25,5 @@ func Physics_update(_delta: float):
 		Transitioned.emit(self,"walk")
 	if !player.is_on_floor():
 		Transitioned.emit(self,"fall")
-	if Input.is_action_just_pressed("shoot"):
-		Transitioned.emit(self,"shoot")
+	if Input.is_action_just_pressed("action"):
+		do_action()

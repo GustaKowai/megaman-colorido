@@ -9,13 +9,14 @@ func _ready() -> void:
 	for children in target_childrens:
 		if children is HurtBox:
 			#print_debug("achei hurtBox ",name)
-			children.damaged.connect(on_hurt_box_damaged)
+			children.damaged.connect(on_hurt_box_changed)
+			children.healed.connect(on_hurt_box_changed)
 			children.died.connect(on_hurt_box_died)
 			progress_bar.max_value = children.max_life
 			progress_bar.value = progress_bar.max_value
 
 
-func on_hurt_box_damaged(life):
+func on_hurt_box_changed(life):
 	progress_bar.value = life
 	
 func on_hurt_box_died():

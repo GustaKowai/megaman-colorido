@@ -14,7 +14,7 @@ func Enter():
 	if enemy.sprite:
 		enemy.sprite.play("shoot")
 	
-	print_debug("atirei!")
+	#print_debug("atirei!")
 	var b = bullet.instantiate()
 	if enemy.sprite.flip_h:
 		b.speed *= -1
@@ -23,5 +23,5 @@ func Enter():
 	timer.start()
 
 func _on_timer_timeout() -> void:
-	print_debug("timeout pro idle")
+	#print_debug("timeout pro idle")
 	Transitioned.emit(self,"Idle")
