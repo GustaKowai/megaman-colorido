@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://diukgx1kqtphs" path="res://character_body_2d.gd" id="1_lnxje"]
 [ext_resource type="Texture2D" uid="uid://df4ci0xy7r4m3" path="res://Sprites/Protagonista/wrun2.png" id="2_lnxje"]
 [ext_resource type="Texture2D" uid="uid://dml22urfalj67" path="res://Sprites/Protagonista/wrun3-sheet.png" id="4_03edm"]
+[ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://shield_player.tscn" id="4_qcjdm"]
 [ext_resource type="Texture2D" uid="uid://u54nw6o0tj1h" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 9/449.png" id="6_08yp7"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://vida.gd" id="6_vsclo"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/state_machine.gd" id="7_w3lgh"]
@@ -17,6 +18,7 @@
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://damage_state.gd" id="16_xeeyi"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://died.gd" id="17_qcjdm"]
 [ext_resource type="Script" uid="uid://ciqayrcwf7p5s" path="res://heal.gd" id="17_vsclo"]
+[ext_resource type="Script" uid="uid://yc265nbm3beb" path="res://shield_state.gd" id="18_xeeyi"]
 
 [sub_resource type="Gradient" id="Gradient_hgjhj"]
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -563,6 +565,13 @@ metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
+
+[node name="Shield" type="Node" parent="yellow" unique_id=1714459837 node_paths=PackedStringArray("target")]
+script = ExtResource("18_xeeyi")
+shield_type = ExtResource("4_qcjdm")
+shield_time_max = 2.0
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=26329952]
 libraries/ = SubResource("AnimationLibrary_k85er")

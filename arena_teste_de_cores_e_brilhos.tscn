@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_vtlim"]
 [ext_resource type="PackedScene" uid="uid://hsff7xas1s35" path="res://inimigo_pula2.tscn" id="9_biof3"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://exit.tscn" id="10_m613i"]
+[ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://shield_player.tscn" id="13_ac47k"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2551,3 +2552,6 @@ position = Vector2(869, 280)
 
 [node name="InimigoPula" parent="." unique_id=866933769 instance=ExtResource("9_biof3")]
 position = Vector2(1119, 542)
+
+[node name="shield" parent="." unique_id=878861467 instance=ExtResource("13_ac47k")]
+position = Vector2(469, 565)

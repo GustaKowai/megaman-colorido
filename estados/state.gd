@@ -41,5 +41,7 @@ func do_action():
 			Transitioned.emit(self,"heal")
 		"yellow":
 			Transitioned.emit(self,"shield")
+		"blue":
+			Transitioned.emit(self,"dash")
 		_:
 			pass
