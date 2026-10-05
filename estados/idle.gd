@@ -7,6 +7,7 @@ func _ready() -> void:
 	player = target
 
 func Enter():
+	print_debug("idle")
 	if player.sprite:
 		#print_debug(player,player.sprite)
 		player.animation_player.play("idle")

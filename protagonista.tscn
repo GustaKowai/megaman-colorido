@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://dkqd0bo622t6q" path="res://jump2.gd" id="14_g24kp"]
 [ext_resource type="Script" uid="uid://bupk6vwvwqpim" path="res://estados/fall2.gd" id="15_x5f4j"]
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://damage_state.gd" id="16_xeeyi"]
+[ext_resource type="Script" uid="uid://cmml6jpjxfj8w" path="res://dash_state.gd" id="17_08yp7"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://died.gd" id="17_qcjdm"]
 [ext_resource type="Script" uid="uid://ciqayrcwf7p5s" path="res://heal.gd" id="17_vsclo"]
 [ext_resource type="Script" uid="uid://yc265nbm3beb" path="res://shield_state.gd" id="18_xeeyi"]
@@ -451,7 +452,6 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
 [node name="blue" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]
-process_mode = 4
 script = ExtResource("7_w3lgh")
 initial_state = NodePath("fall")
 metadata/_custom_type_script = "uid://1pt326tnyysx"
@@ -485,6 +485,14 @@ metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
+
+[node name="Dash" type="Node" parent="blue" unique_id=497518485 node_paths=PackedStringArray("target")]
+script = ExtResource("17_08yp7")
+dash_speed = 1200.0
+dash_time_max = 0.1
+dash_cooldown_max = 2.0
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
 [node name="green" type="Node" parent="." unique_id=1597604594 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_w3lgh")
