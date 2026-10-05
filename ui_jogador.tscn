@@ -75,10 +75,12 @@ layout_mode = 2
 
 [node name="DashBar" type="ProgressBar" parent="uiContainer/blueContainer/Dash" unique_id=298852268]
 unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_x7ldb")
 theme_override_styles/fill = SubResource("StyleBoxFlat_epppe")
-value = 50.0
+value = 60.0
+show_percentage = false
 
 [node name="Jump" type="MarginContainer" parent="uiContainer/blueContainer" unique_id=391501054]
 layout_mode = 2

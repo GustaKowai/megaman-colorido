@@ -4,7 +4,8 @@ class_name Bullet
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print_debug("fui criada")
+	#print_debug("fui criada")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -13,7 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
-	print_debug("sai")
+	#print_debug("sai")
 	queue_free()
 
 

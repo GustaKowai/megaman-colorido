@@ -29,8 +29,8 @@ func _physics_process(delta: float) -> void:
 func on_child_transition(state:State, new_state_name):
 	if state != current_state:
 		return
-	if get_parent() is Player:
-		print_debug(state," ",new_state_name," ",get_parent())
+	#if get_parent() is Player:
+		#print_debug(state," ",new_state_name," ",get_parent())
 	var new_state = states.get(new_state_name.to_lower())
 	#print_debug(states.get_children)
 	if !new_state:

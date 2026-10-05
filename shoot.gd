@@ -20,7 +20,9 @@ func Update(_delta: float):
 func Physics_update(_delta: float):
 	if !player.is_on_floor():
 		player.velocity += player.get_gravity() * _delta
-	
+	if Input.is_action_just_pressed("ui_up") and player.is_on_floor():
+			player.velocity.y = player.JUMP_VELOCITY
+			end_shoot()
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:
 		player.velocity.x = direction * player.max_speed

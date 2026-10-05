@@ -10,6 +10,7 @@ extends CanvasLayer
 @onready var green_container: MarginContainer = %greenContainer
 @onready var yellow_containar: MarginContainer = %yellowContainar
 @onready var blue_container: VBoxContainer = %blueContainer
+@onready var jump_counter: ProgressBar = %JumpCounter
 
 
 # Called when the node enters the scene tree for the first time.
@@ -19,6 +20,7 @@ func _ready() -> void:
 	PlayerManager.update_maximum.connect(update_max)
 	PlayerManager.heal_update_signal.connect(heal_update)
 	PlayerManager.dash_update_signal.connect(dash_update)
+	PlayerManager.jump_update_signal.connect(jump_update)
 	var target = player
 	var target_childrens = target.get_children()
 	for children in target_childrens:
@@ -46,6 +48,7 @@ func update_max():
 	print_debug("maximo atualizado")
 	heal_bar.max_value = PlayerManager.player_heal_bar
 	dash_bar.max_value = PlayerManager.dash_cooldown
+	jump_counter.max_value = PlayerManager.player_jump_max
 	heal_label.text = str(heal_bar.value)+"/"+str(heal_bar.max_value) 
 	
 func heal_update(value):
@@ -53,7 +56,10 @@ func heal_update(value):
 	heal_label.text = str(heal_bar.value)+"/"+str(heal_bar.max_value) 
 
 func dash_update(value):
-	dash_bar.value = value
+	dash_bar.value = dash_bar.max_value-value
+	
+func jump_update(value):
+	jump_counter.value = jump_counter.max_value-value
 
 func change_ui(color:String):
 	green_container.visible = false

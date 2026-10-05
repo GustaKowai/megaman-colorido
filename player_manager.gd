@@ -2,9 +2,10 @@ extends Node
 var player_dash_cooldown:float
 var player_heal_bar:int
 var dash_cooldown:float
-var player_jump_count: int
+var player_jump_max: int
 signal update_maximum #Usado em ui_jogador, emitido em heal
 signal heal_update_signal #Usado em ui_jogador, emitido em heal
+signal jump_update_signal #Usado em ui_jogador, emitido em jump2
 signal dash_update_signal #Usado em ui_jogador, emitido em dash
 signal change_UI_color #Usando em ui_jogador, emitido em protagonist
 

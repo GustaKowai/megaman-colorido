@@ -22,6 +22,7 @@ const JUMP_VELOCITY = -450.0
 func _ready() -> void:
 	#print_debug(green,red)
 	sprite.texture = sprite_green
+	PlayerManager.change_UI_color.emit("green")
 	green.process_mode = Node.PROCESS_MODE_INHERIT
 	red.process_mode = Node.PROCESS_MODE_DISABLED
 	blue.process_mode = Node.PROCESS_MODE_DISABLED
