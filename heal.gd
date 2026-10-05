@@ -19,6 +19,7 @@ func _ready() -> void:
 	PlayerManager.update_maximum.emit()
 
 func Enter():
+	player.velocity *= 0
 	player.animation_player.play("heal")
 	heal_time = heal_speed
 	
@@ -26,6 +27,8 @@ func Update(delta: float):
 	charge_heal(delta)
 	if Input.is_action_just_released("action"):
 		end_heal()
+	if !player.is_on_floor():
+		player.velocity += player.get_gravity() * delta
 	
 	
 	

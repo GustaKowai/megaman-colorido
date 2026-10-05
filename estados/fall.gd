@@ -17,8 +17,8 @@ func Exit():
 func Update(_delta: float):
 	pass
 	
-func Physics_update(_delta: float):
-	player.velocity += player.get_gravity() * _delta
+func Physics_update(delta: float):
+	player.velocity += player.get_gravity() * delta
 	if player.is_on_floor():
 		Transitioned.emit(self,"idle")
 	var direction := Input.get_axis("ui_left", "ui_right")

@@ -38,7 +38,8 @@ func do_action():
 		"red":
 			Transitioned.emit(self,"shoot")
 		"green":
-			Transitioned.emit(self,"heal")
+			if target.is_on_floor():
+				Transitioned.emit(self,"heal")
 		"yellow":
 			Transitioned.emit(self,"shield")
 		"blue":
