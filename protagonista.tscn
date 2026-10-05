@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://bl6v8q8705nla"]
 
 [ext_resource type="Script" uid="uid://diukgx1kqtphs" path="res://character_body_2d.gd" id="1_lnxje"]
-[ext_resource type="Texture2D" uid="uid://cdn0bv1g88kdw" path="res://Sprites/Protagonista/green-sheet.png" id="2_jf1wn"]
+[ext_resource type="Texture2D" uid="uid://cx8uu8rmwswk6" path="res://Sprites/Protagonista/gray-sheet.png" id="2_jf1wn"]
 [ext_resource type="Texture2D" uid="uid://bad2wp7diet8c" path="res://Sprites/Protagonista/red-sheet.png" id="3_fr6an"]
+[ext_resource type="Texture2D" uid="uid://cdn0bv1g88kdw" path="res://Sprites/Protagonista/green-sheet.png" id="3_yl78u"]
 [ext_resource type="Texture2D" uid="uid://dml22urfalj67" path="res://Sprites/Protagonista/wrun3-sheet.png" id="4_03edm"]
 [ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://shield_player.tscn" id="4_qcjdm"]
 [ext_resource type="Texture2D" uid="uid://bi2h7wb2lho4a" path="res://Sprites/Protagonista/yellow-sheet.png" id="5_yl78u"]
@@ -363,7 +364,8 @@ fill_to = Vector2(0.9450867, 0.5231214)
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
 script = ExtResource("1_lnxje")
-sprite_green = ExtResource("2_jf1wn")
+sprite_gray = ExtResource("2_jf1wn")
+sprite_green = ExtResource("3_yl78u")
 sprite_red = ExtResource("3_fr6an")
 sprite_blue = ExtResource("4_03edm")
 sprite_yellow = ExtResource("5_yl78u")
@@ -410,6 +412,41 @@ frame = 18
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=112012282]
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_wyqjk")
+
+[node name="gray" type="Node" parent="." unique_id=281058363 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("7_w3lgh")
+initial_state = NodePath("fall")
+metadata/_custom_type_script = "uid://1pt326tnyysx"
+
+[node name="walk" type="Node" parent="gray" unique_id=1048866994 node_paths=PackedStringArray("target")]
+script = ExtResource("8_jf1wn")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b08x5anyr8prf"
+
+[node name="jump" type="Node" parent="gray" unique_id=1123605875 node_paths=PackedStringArray("target")]
+script = ExtResource("10_yl78u")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://drxidm0h68s70"
+
+[node name="idle" type="Node" parent="gray" unique_id=1679754130 node_paths=PackedStringArray("target")]
+script = ExtResource("9_fr6an")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://78jsshc00u13"
+
+[node name="fall" type="Node" parent="gray" unique_id=141564150 node_paths=PackedStringArray("target")]
+script = ExtResource("11_wp1p8")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://cpi2mttyl4hp8"
+
+[node name="Damage" type="Node" parent="gray" unique_id=327797808 node_paths=PackedStringArray("target")]
+script = ExtResource("16_xeeyi")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b2s26rpxfiul2"
+
+[node name="Die" type="Node" parent="gray" unique_id=1919277631 node_paths=PackedStringArray("target")]
+script = ExtResource("17_qcjdm")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
 [node name="red" type="Node" parent="." unique_id=1905334472 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("7_w3lgh")

@@ -1,5 +1,6 @@
 extends CharacterBody2D
 class_name Player
+@onready var gray: State_machine = $gray
 @onready var green: State_machine = $green
 @onready var red: State_machine = $red
 @onready var blue: State_machine = $blue
@@ -10,6 +11,7 @@ class_name Player
 @onready var animationeffect: AnimationPlayer = $Animationeffect
 @onready var point_light_2d: PointLight2D = $PointLight2D
 
+@export var sprite_gray:Texture2D
 @export var sprite_green:Texture2D
 @export var sprite_red:Texture2D
 @export var sprite_blue:Texture2D
@@ -17,13 +19,22 @@ class_name Player
 
 @export var max_speed = 300.0
 const JUMP_VELOCITY = -450.0
+var green_power:bool = false
+var red_power:bool = false
+var blue_power:bool = false
+var yellow_power:bool = false
 
 
 func _ready() -> void:
+	green_power = PlayerManager.green_power
+	red_power = PlayerManager.red_power
+	blue_power = PlayerManager.blue_power
+	yellow_power = PlayerManager.yellow_power
 	#print_debug(green,red)
-	sprite.texture = sprite_green
-	PlayerManager.change_UI_color.emit("green")
-	green.process_mode = Node.PROCESS_MODE_INHERIT
+	sprite.texture = sprite_gray
+	PlayerManager.change_UI_color.emit("off")
+	gray.process_mode = Node.PROCESS_MODE_INHERIT
+	green.process_mode = Node.PROCESS_MODE_DISABLED
 	red.process_mode = Node.PROCESS_MODE_DISABLED
 	blue.process_mode = Node.PROCESS_MODE_DISABLED
 	yellow.process_mode = Node.PROCESS_MODE_DISABLED
@@ -37,7 +48,7 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func check_color():
-	if Input.is_action_just_pressed("cor-1") and green.process_mode != Node.PROCESS_MODE_INHERIT:
+	if Input.is_action_just_pressed("cor-1") and green.process_mode != Node.PROCESS_MODE_INHERIT and green_power:
 		animationeffect.play("transform_green")
 		print_debug("verde")
 		point_light_2d.color = Color.GREEN
@@ -46,8 +57,9 @@ func check_color():
 		red.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		yellow.process_mode = Node.PROCESS_MODE_DISABLED
+		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("green")
-	if Input.is_action_just_pressed("cor-2") and red.process_mode != Node.PROCESS_MODE_INHERIT:
+	if Input.is_action_just_pressed("cor-2") and red.process_mode != Node.PROCESS_MODE_INHERIT and red_power:
 		animationeffect.play("transform_red")
 		print_debug("vermelho")
 		point_light_2d.color = Color.PALE_VIOLET_RED
@@ -56,8 +68,9 @@ func check_color():
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		yellow.process_mode = Node.PROCESS_MODE_DISABLED
+		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("red")
-	if Input.is_action_just_pressed("cor-3") and blue.process_mode != Node.PROCESS_MODE_INHERIT:
+	if Input.is_action_just_pressed("cor-3") and blue.process_mode != Node.PROCESS_MODE_INHERIT and blue_power:
 		animationeffect.play("transform_blue")
 		print_debug("azul")
 		point_light_2d.color = Color.POWDER_BLUE
@@ -66,8 +79,9 @@ func check_color():
 		red.process_mode = Node.PROCESS_MODE_DISABLED
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		yellow.process_mode = Node.PROCESS_MODE_DISABLED
+		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("blue")
-	if Input.is_action_just_pressed("cor-4") and yellow.process_mode != Node.PROCESS_MODE_INHERIT:
+	if Input.is_action_just_pressed("cor-4") and yellow.process_mode != Node.PROCESS_MODE_INHERIT and yellow_power:
 		animationeffect.play("transform_yellow")
 		print_debug("amarelo")
 		point_light_2d.color = Color.YELLOW
@@ -76,4 +90,5 @@ func check_color():
 		red.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		green.process_mode = Node.PROCESS_MODE_DISABLED
+		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("yellow")

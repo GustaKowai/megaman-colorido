@@ -74,3 +74,5 @@ func change_ui(color:String):
 			yellow_containar.visible = true
 		"blue":
 			blue_container.visible = true
+		_:
+			pass

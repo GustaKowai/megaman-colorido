@@ -8,6 +8,10 @@ signal heal_update_signal #Usado em ui_jogador, emitido em heal
 signal jump_update_signal #Usado em ui_jogador, emitido em jump2
 signal dash_update_signal #Usado em ui_jogador, emitido em dash
 signal change_UI_color #Usando em ui_jogador, emitido em protagonist
+var green_power:bool = true
+var red_power:bool = true
+var blue_power:bool = true
+var yellow_power:bool = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

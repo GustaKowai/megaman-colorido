@@ -96,6 +96,7 @@ layout_mode = 2
 
 [node name="ShieldBar" type="ProgressBar" parent="uiContainer/yellowContainar" unique_id=371936167]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_isrfi")
 theme_override_styles/fill = SubResource("StyleBoxFlat_jjhmf")
