@@ -4,6 +4,7 @@ extends State
 var shield_time
 
 func Enter():
+	target.velocity *= 0
 	shield_time = shield_time_max
 	if target.is_in_group("Player"):
 		target.animation_player.play("damage")
@@ -17,14 +18,14 @@ func Update(delta: float):
 	if Input.is_action_just_released("action") or shield_time <= 0:
 		end_shield()
 	
-func Physics_update(_delta: float):
-	target.velocity += target.get_gravity() * _delta
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		target.velocity.x = direction * target.max_speed
-		target.sprite.flip_h = target.velocity.x < 0
-	else:
-		target.velocity.x = move_toward(target.velocity.x, 0, target.max_speed)
+#func Physics_update(_delta: float):
+	#target.velocity += target.get_gravity() * _delta
+	#var direction := Input.get_axis("ui_left", "ui_right")
+	#if direction:
+		#target.velocity.x = direction * target.max_speed
+		#target.sprite.flip_h = target.velocity.x < 0
+	#else:
+		#target.velocity.x = move_toward(target.velocity.x, 0, target.max_speed)
 
 func Exit():
 	var childrens = target.get_children()

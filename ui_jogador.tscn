@@ -5,8 +5,29 @@
 [node name="UI_jogador" type="CanvasLayer" unique_id=840519676]
 script = ExtResource("1_3511r")
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=867696797]
-offset_right = 441.0
-offset_bottom = 27.0
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=819550086]
+offset_right = 618.0
+offset_bottom = 58.0
+
+[node name="LifeBar" type="ProgressBar" parent="VBoxContainer" unique_id=867696797]
+unique_name_in_owner = true
+layout_mode = 2
 max_value = 10.0
 metadata/_edit_use_anchors_ = true
+
+[node name="DashBar" type="ProgressBar" parent="VBoxContainer" unique_id=298852268]
+unique_name_in_owner = true
+layout_mode = 2
+value = 50.0
+
+[node name="JumpCounter" type="ProgressBar" parent="VBoxContainer" unique_id=2103004053]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HealBar" type="ProgressBar" parent="VBoxContainer" unique_id=1194707935]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="ShieldBar" type="ProgressBar" parent="VBoxContainer" unique_id=371936167]
+unique_name_in_owner = true
+layout_mode = 2

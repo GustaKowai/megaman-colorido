@@ -14,10 +14,11 @@ var heal_time:float
 func _ready() -> void:
 	super()
 	player = target
+	PlayerManager.player_heal_bar = heal_bar_max
+	PlayerManager.update_maximum.emit()
 
 func Enter():
 	player.animation_player.play("heal")
-	heal_bar = heal_bar_max
 	heal_time = heal_speed
 	
 func Update(delta: float):
@@ -29,9 +30,9 @@ func Update(delta: float):
 	
 func charge_heal(delta):
 	heal_time -= delta
-	if heal_time <= 0 and heal_bar > 0:
+	if heal_time <= 0 and PlayerManager.player_heal_bar > 0:
 		particles.emitting = true
-		heal_bar -= heal_amount
+		PlayerManager.player_heal_bar -= heal_amount
 		hurtbox.give_heal(heal_amount)
 		heal_time = heal_speed
 		

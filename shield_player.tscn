@@ -13,6 +13,7 @@ script = ExtResource("1_vuocu")
 shape = SubResource("CircleShape2D_hgjhj")
 
 [node name="Sol" type="Sprite2D" parent="." unique_id=1668312745]
+modulate = Color(1.5157021, 1.5157021, 0, 0.5803922)
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_ffst0")
 
