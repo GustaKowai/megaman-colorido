@@ -7,12 +7,15 @@ var dash_time:float
 @export var dash_cooldown_max:float
 var dash_cooldown:float
 
+func _ready() -> void:
+	PlayerManager.dash_cooldown = dash_cooldown_max
+
 func Enter():
 	dash_time = dash_time_max
 		
 func Physics_update(delta: float):
 	if dash_cooldown >= 0:
-		print_debug(dash_cooldown)
+		#print_debug(dash_cooldown)
 		Transitioned.emit(self,"idle")
 	else:
 		dash_time -= delta
@@ -29,5 +32,6 @@ func Physics_update(delta: float):
 func _physics_process(delta: float) -> void:
 	if dash_cooldown >= 0:
 		dash_cooldown -= delta
+		PlayerManager.dash_update_signal.emit(dash_cooldown)
 	else:
 		pass

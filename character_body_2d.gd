@@ -45,6 +45,7 @@ func check_color():
 		red.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		yellow.process_mode = Node.PROCESS_MODE_DISABLED
+		PlayerManager.change_UI_color.emit("green")
 	if Input.is_action_just_pressed("cor-2") and red.process_mode != Node.PROCESS_MODE_INHERIT:
 		animationeffect.play("transform_red")
 		print_debug("vermelho")
@@ -54,6 +55,7 @@ func check_color():
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		yellow.process_mode = Node.PROCESS_MODE_DISABLED
+		PlayerManager.change_UI_color.emit("red")
 	if Input.is_action_just_pressed("cor-3") and blue.process_mode != Node.PROCESS_MODE_INHERIT:
 		animationeffect.play("transform_blue")
 		print_debug("azul")
@@ -63,6 +65,7 @@ func check_color():
 		red.process_mode = Node.PROCESS_MODE_DISABLED
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		yellow.process_mode = Node.PROCESS_MODE_DISABLED
+		PlayerManager.change_UI_color.emit("blue")
 	if Input.is_action_just_pressed("cor-4") and yellow.process_mode != Node.PROCESS_MODE_INHERIT:
 		animationeffect.play("transform_yellow")
 		print_debug("amarelo")
@@ -72,3 +75,4 @@ func check_color():
 		red.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		green.process_mode = Node.PROCESS_MODE_DISABLED
+		PlayerManager.change_UI_color.emit("yellow")
