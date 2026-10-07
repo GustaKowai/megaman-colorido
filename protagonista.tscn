@@ -616,7 +616,7 @@ metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 [node name="Shield" type="Node" parent="yellow" unique_id=1714459837 node_paths=PackedStringArray("target")]
 script = ExtResource("18_xeeyi")
 shield_type = ExtResource("4_qcjdm")
-shield_time_max = 2.0
+shield_time_max = 0.1
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
