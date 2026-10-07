@@ -7,10 +7,11 @@ func Enter():
 	#target.velocity *= 0
 	shield_time = shield_time_max
 	if target.is_in_group("Player"):
-		target.animation_player.play("damage")
+		target.animation_player.play("shield")
 	if target.is_in_group("Enemy"):
-		target.sprite.play("damage")
-	var shield = shield_type.instantiate()
+		target.sprite.play("shield")
+	var shield:Shield = shield_type.instantiate()
+	shield.damage_to="Enemy"
 	target.add_child(shield)
 	
 func Update(delta: float):
