@@ -2554,4 +2554,4 @@ position = Vector2(869, 280)
 position = Vector2(1119, 542)
 
 [node name="InimigoPula2" parent="." unique_id=311775319 instance=ExtResource("13_ac47k")]
-position = Vector2(531, 581)
+position = Vector2(2417, 526)

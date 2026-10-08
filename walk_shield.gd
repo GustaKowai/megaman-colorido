@@ -4,8 +4,8 @@ extends WalkEnemy
 
 func Enter(): 
 	print_debug("walk")
+	direction = -direction
 	super()
-	enemy.speed = -enemy.speed
 	timer.start()
 
 func _on_timer_timeout():
