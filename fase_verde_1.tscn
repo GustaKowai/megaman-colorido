@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://inimigo_anda.tscn" id="10_yb8yj"]
 [ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://inimigo_escudo.tscn" id="11_20e1d"]
 [ext_resource type="PackedScene" uid="uid://hsff7xas1s35" path="res://inimigo_pula2.tscn" id="12_js47v"]
+[ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://inimigo_apenas_anda.tscn" id="14_js47v"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -261,12 +262,15 @@ position = Vector2(95, 392)
 position = Vector2(2367, 472)
 
 [node name="InimigoAnda" parent="." unique_id=164572135 instance=ExtResource("10_yb8yj")]
-position = Vector2(821, 348)
+position = Vector2(1559, 494)
 
 [node name="InimigoPula" parent="." unique_id=647925520 instance=ExtResource("12_js47v")]
 position = Vector2(971, 523)
 
 [node name="InimigoEscudo" parent="." unique_id=477805893 instance=ExtResource("11_20e1d")]
 position = Vector2(2017, 495)
+
+[node name="InimigoApenasAnda" parent="." unique_id=858328986 instance=ExtResource("14_js47v")]
+position = Vector2(859, 335)
 
 [connection signal="area_entered" from="branco/HurtBox" to="branco/HurtBox" method="_on_area_entered"]
