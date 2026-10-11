@@ -1,19 +1,19 @@
 [gd_scene format=4 uid="uid://c2tkqivlot6y3"]
 
-[ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://UI/ui_jogador.tscn" id="1_stb3a"]
+[ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="1_lyybd"]
+[ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://ui_jogador.tscn" id="1_stb3a"]
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="2_biof3"]
-[ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://misc/camera_2d.gd" id="2_r1150"]
 [ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="3_m613i"]
 [ext_resource type="Texture2D" uid="uid://cf1h6qoaun33d" path="res://Sprites/dhb1jbx-b8a645c3-7f45-4aef-b43a-7cc4fa6fe703.png" id="4_stb3a"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_etiyd"]
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="6_ac47k"]
-[ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://enemies/inimigo_anda.tscn" id="7_iju0m"]
+[ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://inimigo_anda.tscn" id="7_iju0m"]
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="8_etiyd"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_vtlim"]
-[ext_resource type="PackedScene" uid="uid://hsff7xas1s35" path="res://enemies/inimigo_pula2.tscn" id="9_biof3"]
-[ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="10_m613i"]
-[ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://enemies/inimigo_escudo.tscn" id="13_ac47k"]
-[ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_iju0m"]
+[ext_resource type="PackedScene" uid="uid://hsff7xas1s35" path="res://inimigo_pula2.tscn" id="9_biof3"]
+[ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://exit.tscn" id="10_m613i"]
+[ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://inimigo_escudo.tscn" id="13_ac47k"]
+[ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://inimigo_apenas_anda.tscn" id="14_iju0m"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2485,7 +2485,7 @@ limit_left = 4
 limit_top = -9999347
 limit_right = 10000590
 limit_bottom = 10000653
-script = ExtResource("2_r1150")
+script = ExtResource("1_lyybd")
 player = NodePath("../CharacterBody2D2")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624231814]
@@ -2559,3 +2559,9 @@ position = Vector2(2417, 526)
 
 [node name="InimigoApenasAnda" parent="." unique_id=888062514 instance=ExtResource("14_iju0m")]
 position = Vector2(385, 438)
+
+[node name="InimigoApenasAnda2" parent="." unique_id=1031498132 instance=ExtResource("14_iju0m")]
+position = Vector2(1023, 572)
+
+[node name="InimigoApenasAnda3" parent="." unique_id=492408734 instance=ExtResource("14_iju0m")]
+position = Vector2(1664, 543)
