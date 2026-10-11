@@ -1,19 +1,19 @@
 [gd_scene format=3 uid="uid://bt2o0j8bo45av"]
 
-[ext_resource type="Texture2D" uid="uid://57bpnhlg7tog" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 5/220.png" id="1_t4vbm"]
-[ext_resource type="Script" uid="uid://cobocbprc0trk" path="res://bullet.gd" id="2_t4vbm"]
-[ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://damage_area.gd" id="3_t4vbm"]
+[ext_resource type="Texture2D" uid="uid://57bpnhlg7tog" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 5/220.png" id="1_qhf7j"]
+[ext_resource type="Script" uid="uid://cobocbprc0trk" path="res://misc/bullet.gd" id="2_wa8qf"]
+[ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="3_or4ei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2b2rl"]
-atlas = ExtResource("1_t4vbm")
+atlas = ExtResource("1_qhf7j")
 region = Rect2(0, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b7duk"]
-atlas = ExtResource("1_t4vbm")
+atlas = ExtResource("1_qhf7j")
 region = Rect2(64, 448, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t2bd8"]
-atlas = ExtResource("1_t4vbm")
+atlas = ExtResource("1_qhf7j")
 region = Rect2(128, 448, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4bibm"]
@@ -43,13 +43,13 @@ radius = 25.079872
 sprite_frames = SubResource("SpriteFrames_4bibm")
 autoplay = "default"
 frame_progress = 0.85390204
-script = ExtResource("2_t4vbm")
+script = ExtResource("2_wa8qf")
 speed = 200.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=582098113]
 
 [node name="DamageBox" type="Area2D" parent="." unique_id=787630589]
-script = ExtResource("3_t4vbm")
+script = ExtResource("3_or4ei")
 damage_to = "Enemy"
 damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"

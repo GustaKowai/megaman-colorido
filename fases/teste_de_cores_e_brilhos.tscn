@@ -1,14 +1,14 @@
 [gd_scene format=4 uid="uid://d0twewefuou4c"]
 
-[ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://ui_jogador.tscn" id="1_8v1wn"]
-[ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="3_g6jd5"]
-[ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="3_qp2o8"]
-[ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="4_2lcb2"]
-[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_8u11s"]
-[ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://camera_2d.gd" id="5_a0rq6"]
-[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="5_gl042"]
-[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_gl042"]
-[ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://exit.tscn" id="9_8v1wn"]
+[ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://UI/ui_jogador.tscn" id="1_wenjr"]
+[ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://misc/camera_2d.gd" id="2_ycjh3"]
+[ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="3_mwe1j"]
+[ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="4_frf6h"]
+[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_g4dhi"]
+[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="6_o7mrw"]
+[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="7_p62t8"]
+[ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="8_sa67j"]
+[ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="9_wv6c6"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -24,7 +24,7 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 gradient = SubResource("Gradient_a5kn8")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v1wn"]
-texture = ExtResource("5_8u11s")
+texture = ExtResource("5_g4dhi")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-15.5, -15.5, 15.5, -15.5, 15.5, 15.5, -15.5, 15.5)
@@ -81,7 +81,7 @@ texture_region_size = Vector2i(32, 32)
 6:3/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w3whd"]
-texture = ExtResource("5_gl042")
+texture = ExtResource("6_o7mrw")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
@@ -135,7 +135,7 @@ texture_region_size = Vector2i(32, 32)
 5:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kl8m1"]
-texture = ExtResource("8_gl042")
+texture = ExtResource("7_p62t8")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 1:0/0 = 0
@@ -167,7 +167,7 @@ sources/1 = SubResource("TileSetAtlasSource_w3whd")
 
 [node name="LevelRoot" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
-[node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("1_8v1wn")]
+[node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("1_wenjr")]
 player = NodePath("../CharacterBody2D")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1231470294 node_paths=PackedStringArray("player")]
@@ -178,7 +178,7 @@ limit_left = 4
 limit_top = -9999347
 limit_right = 1148
 limit_bottom = 10000653
-script = ExtResource("5_a0rq6")
+script = ExtResource("2_ycjh3")
 player = NodePath("../CharacterBody2D")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624231814]
@@ -205,7 +205,7 @@ visible = false
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
 position = Vector2(621, 314.00003)
 scale = Vector2(0.9265625, 0.9265625)
-texture = ExtResource("4_2lcb2")
+texture = ExtResource("3_mwe1j")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2141399371]
 scroll_scale = Vector2(0.8, 1)
@@ -217,21 +217,21 @@ repeat_times = 3
 visible = false
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
 position = Vector2(580, 467)
-texture = ExtResource("3_qp2o8")
+texture = ExtResource("4_frf6h")
 
 [node name="branco" type="TileMapLayer" parent="." unique_id=540755105]
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
 tile_map_data = PackedByteArray("AAAqABAAAAABAAEAAAAAABMAAQADAAIAAAAAABIAAQACAAEAAAAAABEAAQACAAEAAAAAABAAAQACAAEAAAAAAA8AAQACAAEAAAAAAA4AAQACAAEAAAAAAA0AAQACAAEAAAAAAAwAAQACAAEAAAAAAAsAAQACAAEAAAAAAAoAAQACAAEAAAAAAAkAAQACAAEAAAAAAAgAAQACAAEAAAAAAAcAAQACAAEAAAABABMAAQABAAAAAAACABMAAQABAAAAAAADABMAAQABAAAAAAAEABMAAQABAAAAAAAFABMAAQABAAAAAAAGABMAAQABAAAAAAAHABMAAQABAAAAAAAIABMAAQABAAAAAAAJABMAAQABAAAAAAAKABMAAQABAAAAAAALABMAAQABAAAAAAAMABMAAQABAAAAAAANABMAAQABAAAAAAAOABMAAQABAAAAAAAPABMAAQABAAAAAAAQABMAAQABAAAAAAARABMAAQABAAAAAAASABMAAQABAAAAAAATABMAAQABAAAAAAAUABMAAAABAAAAAAAVABMAAAABAAAAAAAWABMAAAABAAAAAAAXABMAAAABAAAAAAAYABMAAAABAAAAAAAZABMAAAABAAAAAAAaABMAAAABAAAAAAAbABMAAAABAAAAAAAcABMAAAABAAAAAAAdABMAAAABAAAAAAAeABMAAAABAAAAAAAfABMAAAABAAAAAAAgABMAAAABAAAAAAAhABMAAAABAAAAAAAjABMAAAAFAAIAAAAiABMAAAAEAAIAAAAjABIAAAAFAAEAAAAjABEAAAAFAAEAAAAjABAAAAAFAAEAAAAjAA8AAAAFAAEAAAAjAA4AAAAFAAEAAAAjAA0AAAAFAAEAAAAjAAwAAAAFAAEAAAAjAAsAAAAFAAEAAAAjAAoAAAAFAAEAAAAjAAkAAAAFAAEAAAAjAAgAAAAFAAEAAAAjAAcAAAAFAAEAAAAjAAUAAAAFAAEAAAAjAAQAAAAFAAEAAAAjAAMAAAAFAAEAAAAjAAIAAAAFAAEAAAAjAAEAAAAFAAEAAAAjAAYAAAAFAAEAAAAAAAYAAQACAAEAAAAAAAUAAQACAAEAAAAAAAQAAQACAAEAAAAAAAMAAQACAAEAAAAAAAEAAQACAAEAAAAAAAIAAQACAAEAAAAIABAAAQABAAAAAAAJABAAAQABAAAAAAAKABAAAQABAAAAAAALABAAAQABAAAAAAAMABAAAQABAAAAAAANABAAAQABAAAAAAAWABAAAAABAAAAAAAXABAAAAABAAAAAAAYABAAAAABAAAAAAAZABAAAAABAAAAAAAaABAAAAABAAAAAAAbABAAAAABAAAAAAALAA4AAgAEAAEAAAAZAA4AAgAEAAEAAAA=")
 tile_set = SubResource("TileSet_hgjhj")
 
-[node name="CharacterBody2D" parent="." unique_id=2054658706 instance=ExtResource("3_g6jd5")]
+[node name="CharacterBody2D" parent="." unique_id=2054658706 instance=ExtResource("8_sa67j")]
 position = Vector2(95, 392)
 
 [node name="Exits" type="Node2D" parent="." unique_id=138475286]
 
-[node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("9_8v1wn")]
+[node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("9_wv6c6")]
 position = Vector2(367, 462)
 
-[node name="Exit" parent="Exits" unique_id=1854873059 instance=ExtResource("9_8v1wn")]
+[node name="Exit" parent="Exits" unique_id=1854873059 instance=ExtResource("9_wv6c6")]
 position = Vector2(816, 463)
 level_number = 1

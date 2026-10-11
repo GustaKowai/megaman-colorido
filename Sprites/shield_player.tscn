@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d26qjn4q03bkd"]
 
-[ext_resource type="Script" uid="uid://b1ggqhtuu36ro" path="res://shield.gd" id="1_vuocu"]
+[ext_resource type="Script" uid="uid://b1ggqhtuu36ro" path="res://estados/player/shield.gd" id="1_vuocu"]
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="2_ffst0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hgjhj"]

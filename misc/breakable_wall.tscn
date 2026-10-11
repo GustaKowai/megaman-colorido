@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ddmr0usbcxq4e"]
 
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="1_agvlp"]
-[ext_resource type="Script" uid="uid://crg4kbdd5hfpi" path="res://breakable_wall.gd" id="2_7uxdk"]
+[ext_resource type="Script" uid="uid://crg4kbdd5hfpi" path="res://misc/breakable_wall.gd" id="2_7uxdk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gb7y"]
 texture = ExtResource("1_agvlp")
