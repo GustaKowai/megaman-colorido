@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://estados/damage_state.gd" id="6_ymk6u"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_88we3"]
 [ext_resource type="Script" uid="uid://p4awoyxo75i4" path="res://estados/enemies/shield_enemy.gd" id="7_fhuhk"]
+[ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="7_q5gnj"]
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="8_5bkc2"]
 [ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://Sprites/shield_player.tscn" id="8_j3rh4"]
 [ext_resource type="Script" uid="uid://b0h3p8fpajrad" path="res://estados/enemies/walk_shield.gd" id="9_fhuhk"]
@@ -353,10 +354,16 @@ script = ExtResource("6_ymk6u")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
+[node name="damage_sound" type="AudioStreamPlayer2D" parent="State_machine/Damage" unique_id=1243150352]
+
 [node name="Died" type="Node" parent="State_machine" unique_id=873990796 node_paths=PackedStringArray("target")]
 script = ExtResource("7_88we3")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
+[node name="die_sound" type="AudioStreamPlayer2D" parent="State_machine/Died" unique_id=2123989573]
+scale = Vector2(2, 2)
+stream = ExtResource("7_q5gnj")
 
 [node name="Shield" type="Node" parent="State_machine" unique_id=1746239918 node_paths=PackedStringArray("target")]
 script = ExtResource("7_fhuhk")

@@ -1,8 +1,10 @@
 extends State
 class_name DiedState
 var sprite
+@onready var die_sound: AudioStreamPlayer2D = $die_sound
 
 func Enter():
+	die_sound.play()
 	if target.is_in_group("Player"):
 		target.animation_player.play("die")
 	if target.is_in_group("Enemy"):

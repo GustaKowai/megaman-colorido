@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="7_bj6hh"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_y5n2g"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="8_apcsb"]
+[ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="8_nacn8"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="9_el0tk"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="11_ylrji"]
 
@@ -282,10 +283,16 @@ script = ExtResource("6_b333s")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
+[node name="damage_sound" type="AudioStreamPlayer2D" parent="State_machine/Damage" unique_id=102601458]
+
 [node name="Died" type="Node" parent="State_machine" unique_id=873990796 node_paths=PackedStringArray("target")]
 script = ExtResource("7_y5n2g")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
+
+[node name="die_sound" type="AudioStreamPlayer2D" parent="State_machine/Died" unique_id=14263271]
+scale = Vector2(2, 2)
+stream = ExtResource("8_nacn8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1

@@ -1,8 +1,15 @@
 extends State
 class_name DamageState
 @export var damage_color:Color = Color(1.437, 1.437, 1.437)
+@onready var damage_sound: AudioStreamPlayer2D = $damage_sound
+
+func _ready() -> void:
+	super()
+	print_tree_pretty()
 
 func Enter():
+	if damage_sound.stream:
+		damage_sound.play()
 	target.modulate = damage_color
 	if target.is_in_group("Player"):
 		target.animation_player.play("damage")

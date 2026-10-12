@@ -2,6 +2,7 @@ extends State
 var player:Player
 @export var bullet:PackedScene
 @onready var mira: Marker2D = $"../../Sprite2D/mira"
+@onready var shoot_sound: AudioStreamPlayer2D = $shoot_sound
 
 func _ready() -> void:
 	super()
@@ -39,6 +40,7 @@ func end_shoot():
 		Transitioned.emit(self,"walk")
 
 func shoot():
+	shoot_sound.play()
 	print_debug("atirei!")
 	var b = bullet.instantiate()
 	if player.sprite.flip_h:

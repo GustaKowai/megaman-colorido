@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://488snjkxa2gk"
+path="res://.godot/imported/tiro jogador.wav-cf47b2f9dd65b987f9a09753961aeca7.sample"
+
+[deps]
+
+source_file="res://sfx/tiro jogador.wav"
+dest_files=["res://.godot/imported/tiro jogador.wav-cf47b2f9dd65b987f9a09753961aeca7.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
