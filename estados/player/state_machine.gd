@@ -34,7 +34,7 @@ func on_child_transition(state:State, new_state_name):
 	var new_state = states.get(new_state_name.to_lower())
 	#print_debug(states.get_children)
 	if !new_state:
-		print_debug("não achei o ",new_state)
+		#print_debug("não achei o ",new_state)
 		return
 	
 	if current_state:

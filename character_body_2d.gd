@@ -23,7 +23,7 @@ var green_power:bool = false
 var red_power:bool = false
 var blue_power:bool = false
 var yellow_power:bool = false
-
+var just_damaged:bool = false
 
 func _ready() -> void:
 	green_power = PlayerManager.green_power

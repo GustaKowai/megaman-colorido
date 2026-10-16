@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://misc/camera_2d.gd" id="1_7nvl7"]
 [ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://UI/ui_jogador.tscn" id="2_m7ux3"]
-[ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="3_ihasm"]
-[ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="4_h56hp"]
+[ext_resource type="Texture2D" uid="uid://dy2kinfi1pljv" path="res://Sprites/sybthwave_background_sun.png" id="3_m7ux3"]
+[ext_resource type="Texture2D" uid="uid://dk8bn0cpq60f1" path="res://Sprites/sybthwave_background_cloud.png" id="4_ihasm"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_altfj"]
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="6_31gfu"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="7_0bd2x"]
@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://hsff7xas1s35" path="res://enemies/inimigo_pula2.tscn" id="12_02pa6"]
 [ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://enemies/inimigo_escudo.tscn" id="13_luqc2"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_2d721"]
-[ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="15_m7ux3"]
+[ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://Sprites/enemies/enemy_fly.tscn" id="15_m7ux3"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -222,21 +222,20 @@ scroll_scale = Vector2(0, 1)
 
 [node name="Sol" type="Sprite2D" parent="Parallax2D" unique_id=671824561]
 modulate = Color(0, 2.253, 0, 1)
-position = Vector2(621, 314.00003)
-scale = Vector2(0.9265625, 0.9265625)
-texture = ExtResource("3_ihasm")
+position = Vector2(611, 352)
+texture = ExtResource("3_m7ux3")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2141399371]
 scroll_scale = Vector2(0.8, 1)
 scroll_offset = Vector2(-22, 51)
 repeat_size = Vector2(800, 0)
+autoscroll = Vector2(-50, 0)
 repeat_times = 3
 
-[node name="Montanha" type="Sprite2D" parent="Parallax2D2" unique_id=1993104356]
-visible = false
+[node name="nuvem" type="Sprite2D" parent="Parallax2D2" unique_id=1993104356]
 modulate = Color(2.253293, 2.253293, 2.253293, 1)
-position = Vector2(580, 467)
-texture = ExtResource("4_h56hp")
+position = Vector2(609, 266)
+texture = ExtResource("4_ihasm")
 
 [node name="branco" type="TileMapLayer" parent="." unique_id=540755105]
 modulate = Color(0, 2.253293, 0, 1)
@@ -247,11 +246,11 @@ tile_set = SubResource("TileSet_hgjhj")
 position = Vector2(1366.8536, 600.1136)
 script = ExtResource("8_rmbgm")
 damage_to = "Player"
-damage = 1
+damage = 100
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="branco/DamageBox" unique_id=682905651]
-position = Vector2(57.146362, -15.113586)
+position = Vector2(57.146362, 20.886414)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="CharacterBody2D" parent="." unique_id=2054658706 instance=ExtResource("9_5h3jh")]

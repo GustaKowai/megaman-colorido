@@ -4,6 +4,8 @@ var sprite
 @onready var die_sound: AudioStreamPlayer2D = $die_sound
 
 func Enter():
+	#get_parent().print_tree_pretty()
+	#print_debug("died")
 	die_sound.play()
 	if target.is_in_group("Player"):
 		target.animation_player.play("die")

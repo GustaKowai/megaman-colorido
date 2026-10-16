@@ -16,7 +16,7 @@ func Physics_update(_delta: float):
 		raycast_h.target_position.x *= -1
 		enemy.sprite.flip_h = direction < 0
 	
-	if raycast_h.is_colliding():
-		print_debug("colidindo")
-	if !raycast_v.is_colliding():
-		print_debug("nenhuma colisao")
+	#if raycast_h.is_colliding():
+		#print_debug("colidindo")
+	#if !raycast_v.is_colliding():
+		#print_debug("nenhuma colisao")

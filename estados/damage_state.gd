@@ -5,9 +5,12 @@ class_name DamageState
 
 func _ready() -> void:
 	super()
-	print_tree_pretty()
+	#print_tree_pretty()
 
 func Enter():
+	#print_debug("damaged")
+	#get_parent().print_tree_pretty()
+	#print_debug(can_process())
 	if damage_sound.stream:
 		damage_sound.play()
 	target.modulate = damage_color
@@ -25,5 +28,6 @@ func Physics_update(_delta: float):
 		#print_debug("to no chão")
 		Transitioned.emit(self,"idle")
 func Exit():
+	target.just_damaged = false
 	target.velocity.x = 0
 	target.modulate = Color.WHITE

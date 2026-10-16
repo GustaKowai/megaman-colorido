@@ -10,6 +10,7 @@ func _ready() -> void:
 	for children in target_childrens:
 		if children is HurtBox:
 			#print_debug("achei hurtBox ",name)
+			#get_parent().print_tree_pretty()
 			children.damaged.connect(on_hurt_box_damaged)
 			children.died.connect(on_hurt_box_died)
 
@@ -26,14 +27,18 @@ func Physics_update(_delta: float):
 	pass
 
 func on_hurt_box_damaged(_life) -> void:
-	Transitioned.emit(self,"damage")
+	if get_parent().can_process():
+		Transitioned.emit(self,"damage")
 	
 func on_hurt_box_died() -> void:
-	Transitioned.emit(self,"died")
+	#get_parent().print_tree_pretty()
+	if get_parent().can_process():
+		#print_debug(get_parent())
+		Transitioned.emit(self,"died")
 
 		
 func do_action():
-	print_debug(get_parent())
+	#print_debug(get_parent())
 	match get_parent().name:
 		"red":
 			Transitioned.emit(self,"shoot")

@@ -3,7 +3,7 @@ extends WalkEnemy
 
 
 func Enter(): 
-	print_debug("walk")
+	#print_debug("walk")
 	direction = -direction
 	super()
 	timer.start()

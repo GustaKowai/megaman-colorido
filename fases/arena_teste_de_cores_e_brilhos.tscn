@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="10_m613i"]
 [ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://enemies/inimigo_escudo.tscn" id="13_ac47k"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_iju0m"]
+[ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://Sprites/enemies/enemy_fly.tscn" id="15_niidi"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2565,3 +2566,6 @@ position = Vector2(1023, 572)
 
 [node name="InimigoApenasAnda3" parent="." unique_id=492408734 instance=ExtResource("14_iju0m")]
 position = Vector2(1664, 543)
+
+[node name="Enemy_fly" parent="." unique_id=2041547482 instance=ExtResource("15_niidi")]
+position = Vector2(207, 497)
