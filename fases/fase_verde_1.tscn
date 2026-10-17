@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="11_ya7y5"]
 [ext_resource type="PackedScene" uid="uid://ddmr0usbcxq4e" path="res://misc/breakable_wall.tscn" id="13_s77vc"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_2d721"]
+[ext_resource type="PackedScene" uid="uid://msmtxba6mxv0" path="res://enemies/inimigo_atira_parabola.tscn" id="14_7nvl7"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -292,5 +293,8 @@ metadata/_scene_painted = true
 [node name="breakableWall" parent="." unique_id=1853174996 instance=ExtResource("13_s77vc")]
 modulate = Color(0, 1.8247963, 0, 1)
 position = Vector2(3232, 512)
+
+[node name="InimigoAtiraPar" parent="." unique_id=928712137 instance=ExtResource("14_7nvl7")]
+position = Vector2(2816, 496)
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

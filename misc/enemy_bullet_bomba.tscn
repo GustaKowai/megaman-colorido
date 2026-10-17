@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://hodtubpntw5w"]
+
+[ext_resource type="PackedScene" uid="uid://bt2o0j8bo45av" path="res://misc/bullet.tscn" id="1_0tsrg"]
+[ext_resource type="Script" uid="uid://50akhp1t71gc" path="res://misc/enemy_bullet_bomba.gd" id="2_lma35"]
+
+[node name="Node2D" unique_id=1670673235 instance=ExtResource("1_0tsrg")]
+frame_progress = 0.0
+script = ExtResource("2_lma35")
+speed = 200.0
+
+[node name="DamageBox" parent="." index="1" unique_id=787630589]
+damage_to = "Player"

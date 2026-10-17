@@ -266,7 +266,7 @@ size = Vector2(10, 17.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbmut"]
 size = Vector2(10, 17.5)
 
-[node name="InimigoAnda" type="CharacterBody2D" unique_id=164572135 groups=["Enemy"]]
+[node name="InimigoAtira" type="CharacterBody2D" unique_id=164572135 groups=["Enemy"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_rj0at")
 speed = 200.0
