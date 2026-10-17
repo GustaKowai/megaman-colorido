@@ -295,6 +295,6 @@ modulate = Color(0, 1.8247963, 0, 1)
 position = Vector2(3232, 512)
 
 [node name="InimigoAtiraPar" parent="." unique_id=928712137 instance=ExtResource("14_7nvl7")]
-position = Vector2(2816, 496)
+position = Vector2(445, 398)
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

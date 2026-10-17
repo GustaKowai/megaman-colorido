@@ -333,8 +333,8 @@ animation = &"walk"
 flip_h = true
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
-position = Vector2(-8.999999, -5)
-rotation = 0.92851514
+position = Vector2(-9.000001, -5.0000005)
+rotation = 0.7888888
 scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]

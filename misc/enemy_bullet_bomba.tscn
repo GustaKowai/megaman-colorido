@@ -6,7 +6,7 @@
 [node name="Node2D" unique_id=1670673235 instance=ExtResource("1_0tsrg")]
 frame_progress = 0.0
 script = ExtResource("2_lma35")
-speed = 200.0
+speed = 410.0
 
 [node name="DamageBox" parent="." index="1" unique_id=787630589]
 damage_to = "Player"
