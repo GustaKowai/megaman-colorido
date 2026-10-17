@@ -40,7 +40,7 @@ func on_hurt_box_died() -> void:
 func do_action():
 	#print_debug(get_parent())
 	match get_parent().name:
-		"red":
+		"magent":
 			Transitioned.emit(self,"shoot")
 		"green":
 			if target.is_on_floor():
