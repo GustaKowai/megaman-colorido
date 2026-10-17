@@ -319,6 +319,11 @@ position = Vector2(95, 392)
 [node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("10_mg51k")]
 position = Vector2(4917, 558)
 
+[node name="breakableWall2" parent="." unique_id=1853174996 instance=ExtResource("13_s77vc")]
+modulate = Color(0, 1.825, 0, 1)
+position = Vector2(305, 466)
+dano = 2
+
 [node name="Node2D" type="Node2D" parent="." unique_id=1673940055]
 
 [node name="Enemy_fly3" parent="Node2D" unique_id=2041547482 instance=ExtResource("11_ya7y5")]
@@ -347,7 +352,7 @@ metadata/_scene_painted = true
 position = Vector2(4556, 373)
 metadata/_scene_painted = true
 
-[node name="breakableWall" parent="." unique_id=1853174996 instance=ExtResource("13_s77vc")]
+[node name="breakableWall" parent="." unique_id=630686918 instance=ExtResource("13_s77vc")]
 modulate = Color(0, 1.8247963, 0, 1)
 position = Vector2(3232, 512)
 

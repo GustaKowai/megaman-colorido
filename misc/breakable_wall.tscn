@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="1_agvlp"]
 [ext_resource type="Script" uid="uid://crg4kbdd5hfpi" path="res://misc/breakable_wall.gd" id="2_7uxdk"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="2_beudm"]
+[ext_resource type="Texture2D" uid="uid://dowcb6qert8dy" path="res://Sprites/tileset/brokbloc.png" id="4_4ejqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gb7y"]
 texture = ExtResource("1_agvlp")
@@ -119,10 +120,39 @@ sources/0 = SubResource("TileSetAtlasSource_4gb7y")
 sources/1 = SubResource("TileSetAtlasSource_4ejqs")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(32, 64)
+size = Vector2(32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a1mxj"]
+atlas = ExtResource("4_4ejqs")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qfme"]
+atlas = ExtResource("4_4ejqs")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usoyu"]
+atlas = ExtResource("4_4ejqs")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgjhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a1mxj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qfme")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usoyu")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="breakableWall" type="TileMapLayer" unique_id=1853174996]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 2, 0, 1, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0)
 tile_set = SubResource("TileSet_hgjhj")
 script = ExtResource("2_7uxdk")
 
@@ -130,7 +160,11 @@ script = ExtResource("2_7uxdk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=627726489]
 visible = false
-position = Vector2(16, 32)
+position = Vector2(16, 16)
 shape = SubResource("RectangleShape2D_hgjhj")
+
+[node name="rachadura" type="AnimatedSprite2D" parent="." unique_id=1481562476]
+position = Vector2(16, 16)
+sprite_frames = SubResource("SpriteFrames_hgjhj")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
