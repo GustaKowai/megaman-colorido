@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="1_agvlp"]
 [ext_resource type="Script" uid="uid://crg4kbdd5hfpi" path="res://misc/breakable_wall.gd" id="2_7uxdk"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="2_beudm"]
-[ext_resource type="Texture2D" uid="uid://dowcb6qert8dy" path="res://Sprites/tileset/brokbloc.png" id="4_4ejqs"]
+[ext_resource type="Texture2D" uid="uid://c40epagmjy10o" path="res://Sprites/tileset/brokbloc2.png" id="4_4ejqs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gb7y"]
 texture = ExtResource("1_agvlp")
@@ -152,7 +152,7 @@ animations = [{
 }]
 
 [node name="breakableWall" type="TileMapLayer" unique_id=1853174996]
-tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 6, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 5, 0, 3, 0, 0, 0)
 tile_set = SubResource("TileSet_hgjhj")
 script = ExtResource("2_7uxdk")
 
@@ -166,5 +166,7 @@ shape = SubResource("RectangleShape2D_hgjhj")
 [node name="rachadura" type="AnimatedSprite2D" parent="." unique_id=1481562476]
 position = Vector2(16, 16)
 sprite_frames = SubResource("SpriteFrames_hgjhj")
+frame = 2
+frame_progress = 1.0
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
