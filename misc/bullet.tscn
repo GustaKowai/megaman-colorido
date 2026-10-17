@@ -62,13 +62,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lwusa"]
-size = Vector2(13, 11)
+size = Vector2(13, 15)
 
 [node name="Node2D" type="AnimatedSprite2D" unique_id=1670673235]
 self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 sprite_frames = SubResource("SpriteFrames_4bibm")
 autoplay = "default"
-frame_progress = 0.8186707
+frame_progress = 0.72221273
 script = ExtResource("2_wa8qf")
 speed = 500.0
 

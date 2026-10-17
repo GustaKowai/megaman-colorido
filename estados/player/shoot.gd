@@ -12,6 +12,7 @@ func _ready() -> void:
 func Enter():
 	if player.animation_player:
 		player.animation_player.play("shoot")
+		player.velocity.x = 0
 		
 func Exit():
 	pass
@@ -25,12 +26,12 @@ func Physics_update(_delta: float):
 	if Input.is_action_just_pressed("ui_up") and player.is_on_floor():
 			player.velocity.y = player.JUMP_VELOCITY
 			end_shoot()
-	var direction := Input.get_axis("ui_left", "ui_right")
-	if direction:
-		player.velocity.x = direction * player.max_speed
-		player.sprite.flip_h = player.velocity.x < 0
-	else:
-		player.velocity.x = move_toward(player.velocity.x, 0, player.max_speed)
+	#var direction := Input.get_axis("ui_left", "ui_right")
+	#if direction:
+		#player.velocity.x = direction * player.max_speed
+		#player.sprite.flip_h = player.velocity.x < 0
+	#else:
+		#player.velocity.x = move_toward(player.velocity.x, 0, player.max_speed)
  
 func end_shoot():
 	if !player.is_on_floor():
