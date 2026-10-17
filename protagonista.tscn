@@ -449,7 +449,7 @@ script = ExtResource("16_xeeyi")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="gray/Damage" unique_id=825021314]
+[node name="damage_sound" type="AudioStreamPlayer" parent="gray/Damage" unique_id=1759260589]
 stream = ExtResource("15_gt6pu")
 
 [node name="Died" type="Node" parent="gray" unique_id=1919277631 node_paths=PackedStringArray("target")]
@@ -457,8 +457,7 @@ script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="gray/Died" unique_id=1863697255]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="gray/Died" unique_id=1415692071]
 stream = ExtResource("17_g24kp")
 
 [node name="red" type="Node" parent="." unique_id=1905334472 node_paths=PackedStringArray("initial_state")]
@@ -492,7 +491,7 @@ bullet = ExtResource("13_gt6pu")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
-[node name="shoot_sound" type="AudioStreamPlayer2D" parent="red/shoot" unique_id=251517500]
+[node name="shoot_sound" type="AudioStreamPlayer" parent="red/shoot" unique_id=1093267531]
 stream = ExtResource("20_lwusa")
 
 [node name="damage" type="Node" parent="red" unique_id=861153007 node_paths=PackedStringArray("target")]
@@ -501,7 +500,7 @@ damage_color = Color(1.4758431, 1.4758431, 1.4758431, 1)
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="red/damage" unique_id=2678225]
+[node name="damage_sound" type="AudioStreamPlayer" parent="red/damage" unique_id=773748878]
 stream = ExtResource("15_gt6pu")
 
 [node name="Died" type="Node" parent="red" unique_id=1991280502 node_paths=PackedStringArray("target")]
@@ -509,8 +508,7 @@ script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="red/Died" unique_id=1580082818]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="red/Died" unique_id=965736762]
 stream = ExtResource("17_g24kp")
 
 [node name="blue" type="Node" parent="." unique_id=1797417700 node_paths=PackedStringArray("initial_state")]
@@ -543,7 +541,7 @@ script = ExtResource("16_xeeyi")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="blue/Damage" unique_id=687786014]
+[node name="damage_sound" type="AudioStreamPlayer" parent="blue/Damage" unique_id=758222665]
 stream = ExtResource("15_gt6pu")
 
 [node name="Died" type="Node" parent="blue" unique_id=1434600836 node_paths=PackedStringArray("target")]
@@ -551,8 +549,7 @@ script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="blue/Died" unique_id=387873717]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="blue/Died" unique_id=1633791389]
 stream = ExtResource("17_g24kp")
 
 [node name="Dash" type="Node" parent="blue" unique_id=497518485 node_paths=PackedStringArray("target")]
@@ -593,7 +590,7 @@ script = ExtResource("16_xeeyi")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="green/Damage" unique_id=314503598]
+[node name="damage_sound" type="AudioStreamPlayer" parent="green/Damage" unique_id=57171826]
 stream = ExtResource("15_gt6pu")
 
 [node name="Died" type="Node" parent="green" unique_id=673430237 node_paths=PackedStringArray("target")]
@@ -601,8 +598,7 @@ script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="green/Died" unique_id=701779025]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="green/Died" unique_id=1429597747]
 stream = ExtResource("17_g24kp")
 
 [node name="heal" type="Node" parent="green" unique_id=1191231804 node_paths=PackedStringArray("hurtbox", "particles", "target")]
@@ -645,7 +641,7 @@ script = ExtResource("16_xeeyi")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="yellow/Damage" unique_id=1899855738]
+[node name="damage_sound" type="AudioStreamPlayer" parent="yellow/Damage" unique_id=20536975]
 stream = ExtResource("15_gt6pu")
 
 [node name="Died" type="Node" parent="yellow" unique_id=616122881 node_paths=PackedStringArray("target")]
@@ -653,8 +649,7 @@ script = ExtResource("17_qcjdm")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="yellow/Died" unique_id=1543122879]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="yellow/Died" unique_id=1233597613]
 stream = ExtResource("17_g24kp")
 
 [node name="Shield" type="Node" parent="yellow" unique_id=1714459837 node_paths=PackedStringArray("target")]

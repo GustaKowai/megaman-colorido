@@ -283,15 +283,14 @@ script = ExtResource("6_b333s")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="State_machine/Damage" unique_id=102601458]
+[node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=669296086]
 
 [node name="Died" type="Node" parent="State_machine" unique_id=873990796 node_paths=PackedStringArray("target")]
 script = ExtResource("7_y5n2g")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="State_machine/Died" unique_id=14263271]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="State_machine/Died" unique_id=2066894852]
 stream = ExtResource("8_nacn8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]

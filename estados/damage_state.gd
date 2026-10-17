@@ -1,7 +1,7 @@
 extends State
 class_name DamageState
 @export var damage_color:Color = Color(1.437, 1.437, 1.437)
-@onready var damage_sound: AudioStreamPlayer2D = $damage_sound
+@onready var damage_sound: AudioStreamPlayer = $damage_sound
 
 func _ready() -> void:
 	super()

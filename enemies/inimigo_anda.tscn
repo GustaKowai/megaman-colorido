@@ -371,15 +371,14 @@ damage_color = Color(1.4369954, 1.4369954, 1.4369954, 1)
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="State_machine/Damage" unique_id=1243119733]
+[node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=1906638614]
 
 [node name="Died" type="Node" parent="State_machine" unique_id=1952547689 node_paths=PackedStringArray("target")]
 script = ExtResource("8_ws0ki")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="State_machine/Died" unique_id=1732945629]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="State_machine/Died" unique_id=807393193]
 stream = ExtResource("9_5k812")
 
 [node name="Shoot" type="Node" parent="State_machine" unique_id=292798977 node_paths=PackedStringArray("target")]
@@ -397,6 +396,7 @@ animation = &"fall"
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
 position = Vector2(8.667, 0)
+scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]
 position = Vector2(-0.5, 3.5)

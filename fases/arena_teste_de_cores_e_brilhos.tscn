@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="10_m613i"]
 [ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://enemies/inimigo_escudo.tscn" id="13_ac47k"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_iju0m"]
-[ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://Sprites/enemies/enemy_fly.tscn" id="15_niidi"]
+[ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="15_niidi"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3

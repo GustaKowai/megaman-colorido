@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://b7p4iysdmwxy" path="res://Sprites/enemies/BeetleSpS.png" id="2_1q8uq"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="3_cbdsk"]
 [ext_resource type="Texture2D" uid="uid://cwjqx18bfycut" path="res://Sprites/enemies/idleBeetle.png" id="3_fqh66"]
-[ext_resource type="Script" uid="uid://kr4si5okvxq8" path="res://walk_fly.gd" id="4_0asbm"]
-[ext_resource type="Script" uid="uid://c7wsjo5v2msm5" path="res://idle_fly.gd" id="5_6mpov"]
-[ext_resource type="Script" uid="uid://cq4myp7eo5mts" path="res://enemies/damage_fly.gd" id="6_1q8uq"]
+[ext_resource type="Script" uid="uid://kr4si5okvxq8" path="res://estados/enemies/walk_fly.gd" id="4_0asbm"]
+[ext_resource type="Script" uid="uid://c7wsjo5v2msm5" path="res://estados/enemies/idle_fly.gd" id="5_6mpov"]
+[ext_resource type="Script" uid="uid://cq4myp7eo5mts" path="res://estados/enemies/damage_fly.gd" id="6_1q8uq"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_3sff1"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="8_3115r"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="9_usjxl"]
@@ -115,7 +115,7 @@ script = ExtResource("6_1q8uq")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
-[node name="damage_sound" type="AudioStreamPlayer2D" parent="State_machine/Damage" unique_id=659287965]
+[node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=1464892370]
 
 [node name="Timer" type="Timer" parent="State_machine/Damage" unique_id=401965738]
 wait_time = 0.1
@@ -125,8 +125,7 @@ script = ExtResource("7_3sff1")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 
-[node name="die_sound" type="AudioStreamPlayer2D" parent="State_machine/Died" unique_id=2132733028]
-scale = Vector2(2, 2)
+[node name="die_sound" type="AudioStreamPlayer" parent="State_machine/Died" unique_id=2002799774]
 stream = ExtResource("8_3115r")
 
 [node name="DamageBox" type="Area2D" parent="." unique_id=34838189]

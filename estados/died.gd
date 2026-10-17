@@ -1,7 +1,7 @@
 extends State
 class_name DiedState
 var sprite
-@onready var die_sound: AudioStreamPlayer2D = $die_sound
+@onready var die_sound: AudioStreamPlayer = $die_sound
 
 func Enter():
 	#get_parent().print_tree_pretty()

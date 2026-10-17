@@ -2,7 +2,7 @@ extends State
 var player:Player
 @export var bullet:PackedScene
 @onready var mira: Marker2D = $"../../Sprite2D/mira"
-@onready var shoot_sound: AudioStreamPlayer2D = $shoot_sound
+@onready var shoot_sound: AudioStreamPlayer = $shoot_sound
 
 func _ready() -> void:
 	super()
