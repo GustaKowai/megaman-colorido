@@ -11,11 +11,13 @@ extends CanvasLayer
 @onready var yellow_containar: MarginContainer = %yellowContainar
 @onready var blue_container: VBoxContainer = %blueContainer
 @onready var jump_counter: ProgressBar = %JumpCounter
+@onready var music: AudioStreamPlayer = $"../music"
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Conexões dos sinais do player Manager
+	music.play()
 	PlayerManager.change_UI_color.connect(change_ui)
 	PlayerManager.update_maximum.connect(update_max)
 	PlayerManager.heal_update_signal.connect(heal_update)
