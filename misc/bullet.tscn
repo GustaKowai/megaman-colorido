@@ -1,52 +1,79 @@
 [gd_scene format=3 uid="uid://bt2o0j8bo45av"]
 
-[ext_resource type="Texture2D" uid="uid://57bpnhlg7tog" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 5/220.png" id="1_qhf7j"]
+[ext_resource type="Texture2D" uid="uid://8cc6w1v0i0r4" path="res://Sprites/Protagonista/reais/Laser.png" id="1_qhf7j"]
 [ext_resource type="Script" uid="uid://cobocbprc0trk" path="res://misc/bullet.gd" id="2_wa8qf"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="3_or4ei"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2b2rl"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa8qf"]
 atlas = ExtResource("1_qhf7j")
-region = Rect2(0, 448, 64, 64)
+region = Rect2(160, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b7duk"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_or4ei"]
 atlas = ExtResource("1_qhf7j")
-region = Rect2(64, 448, 64, 64)
+region = Rect2(128, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t2bd8"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjw02"]
 atlas = ExtResource("1_qhf7j")
-region = Rect2(128, 448, 64, 64)
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83aut"]
+atlas = ExtResource("1_qhf7j")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwlqm"]
+atlas = ExtResource("1_qhf7j")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7py6"]
+atlas = ExtResource("1_qhf7j")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tsuo"]
+atlas = ExtResource("1_qhf7j")
+region = Rect2(320, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_4bibm"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2b2rl")
+"texture": SubResource("AtlasTexture_wa8qf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b7duk")
+"texture": SubResource("AtlasTexture_or4ei")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t2bd8")
+"texture": SubResource("AtlasTexture_cjw02")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b7duk")
+"texture": SubResource("AtlasTexture_83aut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwlqm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7py6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tsuo")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 9.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_e2r5q"]
-radius = 25.079872
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwusa"]
+size = Vector2(13, 11)
 
 [node name="Node2D" type="AnimatedSprite2D" unique_id=1670673235]
+self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 sprite_frames = SubResource("SpriteFrames_4bibm")
 autoplay = "default"
-frame_progress = 0.85390204
+frame_progress = 0.8186707
 script = ExtResource("2_wa8qf")
 speed = 500.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=582098113]
+rect = Rect2(-6, -4, 13, 5)
 
 [node name="DamageBox" type="Area2D" parent="." unique_id=787630589]
 script = ExtResource("3_or4ei")
@@ -55,7 +82,8 @@ damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=1583376466]
-shape = SubResource("CircleShape2D_e2r5q")
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_lwusa")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]

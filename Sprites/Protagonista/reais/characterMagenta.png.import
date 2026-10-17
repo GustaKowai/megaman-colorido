@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blvn3g5tjopqp"
-path="res://.godot/imported/tileset_complet_2_-_Copia.png-0ca056a6d00f8a600957e74b5d17581c.ctex"
+uid="uid://dho6geir1uv8o"
+path="res://.godot/imported/characterMagenta.png-7f40bb36eb7c896e89c819ad3493abd1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tileset_complet_2_-_Copia.png"
-dest_files=["res://.godot/imported/tileset_complet_2_-_Copia.png-0ca056a6d00f8a600957e74b5d17581c.ctex"]
+source_file="res://Sprites/Protagonista/reais/characterMagenta.png"
+dest_files=["res://.godot/imported/characterMagenta.png-7f40bb36eb7c896e89c819ad3493abd1.ctex"]
 
 [params]
 

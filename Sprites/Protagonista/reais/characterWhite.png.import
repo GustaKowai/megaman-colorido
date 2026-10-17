@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brlukan5crfad"
-path="res://.godot/imported/tileset_complet_2.png-7cd073cf800d957fda7275383f7be8bf.ctex"
+uid="uid://ccc41hvcymca6"
+path="res://.godot/imported/characterWhite.png-f45746485a4dd1f384fbd9e62c6dec52.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tileset_complet_2.png"
-dest_files=["res://.godot/imported/tileset_complet_2.png-7cd073cf800d957fda7275383f7be8bf.ctex"]
+source_file="res://Sprites/Protagonista/reais/characterWhite.png"
+dest_files=["res://.godot/imported/characterWhite.png-f45746485a4dd1f384fbd9e62c6dec52.ctex"]
 
 [params]
 

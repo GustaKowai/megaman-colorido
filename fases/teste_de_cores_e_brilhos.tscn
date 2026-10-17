@@ -4,9 +4,9 @@
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://misc/camera_2d.gd" id="2_ycjh3"]
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="3_mwe1j"]
 [ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="4_frf6h"]
-[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_g4dhi"]
-[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="6_o7mrw"]
-[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="7_p62t8"]
+[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="5_g4dhi"]
+[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="6_o7mrw"]
+[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset/tileset_luzes.png" id="7_p62t8"]
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="8_sa67j"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="9_wv6c6"]
 

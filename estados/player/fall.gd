@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func Enter():
 	if player.animation_player:
-		player.animation_player.play("jump")
+		player.animation_player.play("fall")
 		
 func Exit():
 	pass

@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://eddrhnv6hwjl"]
 
-[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="1_au0oc"]
-[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="2_fg0ae"]
+[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="1_au0oc"]
+[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset/tileset_luzes.png" id="2_fg0ae"]
 
 [sub_resource type="Environment" id="Environment_rv05k"]
 background_mode = 3

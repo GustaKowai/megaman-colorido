@@ -5,16 +5,17 @@
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="2_biof3"]
 [ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="3_m613i"]
 [ext_resource type="Texture2D" uid="uid://cf1h6qoaun33d" path="res://Sprites/dhb1jbx-b8a645c3-7f45-4aef-b43a-7cc4fa6fe703.png" id="4_stb3a"]
-[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="5_etiyd"]
+[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="5_etiyd"]
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="6_ac47k"]
 [ext_resource type="PackedScene" uid="uid://8p083cff6pwd" path="res://enemies/inimigo_anda.tscn" id="7_iju0m"]
-[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="8_etiyd"]
-[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset_luzes.png" id="8_vtlim"]
+[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="8_etiyd"]
+[ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset/tileset_luzes.png" id="8_vtlim"]
 [ext_resource type="PackedScene" uid="uid://hsff7xas1s35" path="res://enemies/inimigo_pula2.tscn" id="9_biof3"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="10_m613i"]
 [ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://enemies/inimigo_escudo.tscn" id="13_ac47k"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_iju0m"]
 [ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="15_niidi"]
+[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="16_63hu3"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2569,3 +2570,6 @@ position = Vector2(1664, 543)
 
 [node name="Enemy_fly" parent="." unique_id=2041547482 instance=ExtResource("15_niidi")]
 position = Vector2(207, 497)
+
+[node name="movingPlatform" parent="." unique_id=79308580 instance=ExtResource("16_63hu3")]
+position = Vector2(40, 400)

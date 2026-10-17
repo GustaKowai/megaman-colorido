@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://ddmr0usbcxq4e"]
 
-[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset_complet_2_-_Copia.png" id="1_agvlp"]
+[ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="1_agvlp"]
 [ext_resource type="Script" uid="uid://crg4kbdd5hfpi" path="res://misc/breakable_wall.gd" id="2_7uxdk"]
-[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset_complet_2.png" id="2_beudm"]
+[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="2_beudm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4gb7y"]
 texture = ExtResource("1_agvlp")
@@ -129,6 +129,7 @@ script = ExtResource("2_7uxdk")
 [node name="Area2D" type="Area2D" parent="." unique_id=253524301]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=627726489]
+visible = false
 position = Vector2(16, 32)
 shape = SubResource("RectangleShape2D_hgjhj")
 

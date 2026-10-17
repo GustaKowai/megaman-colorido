@@ -1,6 +1,7 @@
 extends State
 var player:Player
 @export var bullet:PackedScene
+@export var bullet_explosion:PackedScene
 @onready var mira: Marker2D = $"../../Sprite2D/mira"
 @onready var shoot_sound: AudioStreamPlayer = $shoot_sound
 
@@ -44,6 +45,12 @@ func shoot():
 	print_debug("atirei!")
 	var b = bullet.instantiate()
 	if player.sprite.flip_h:
+		mira.position.x = -30
 		b.speed *= -1
+	if bullet_explosion:
+		var be = bullet_explosion.instantiate()
+		get_tree().get_first_node_in_group("Fase").add_child(be)
+		be.transform = mira.global_transform
 	get_tree().get_first_node_in_group("Fase").add_child(b)
 	b.transform = mira.global_transform
+	mira.position.x = 30
