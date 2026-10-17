@@ -3,10 +3,11 @@ extends Camera2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	print_debug("camera")
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	if player:
-		position.x = player.position.x
+		position.x = player.global_position.x
