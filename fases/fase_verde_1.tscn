@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="11_ya7y5"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_2d721"]
 [ext_resource type="AudioStream" uid="uid://7bvl5vi72agb" path="res://musics/fase verde.wav" id="14_7nvl7"]
-[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="15_m7ux3"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -319,7 +318,7 @@ position = Vector2(3322, 545)
 position = Vector2(3113, 381)
 
 [node name="InimigoApenasAnda3" parent="Node2D" unique_id=1946707477 instance=ExtResource("14_2d721")]
-position = Vector2(401, 319)
+position = Vector2(270, 387)
 
 [node name="Enemy_fly" parent="Node2D" unique_id=1394261273 instance=ExtResource("11_ya7y5")]
 position = Vector2(1541, 530)
@@ -338,8 +337,5 @@ metadata/_scene_painted = true
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=2055807638]
 stream = ExtResource("14_7nvl7")
 bus = &"Music"
-
-[node name="movingPlatform" parent="." unique_id=2066398385 instance=ExtResource("15_m7ux3")]
-position = Vector2(345, 361)
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

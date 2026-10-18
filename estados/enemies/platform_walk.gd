@@ -8,7 +8,8 @@ func Enter():
 	super()
 
 func Physics_update(_delta: float):
-	enemy.velocity.x = direction * enemy.speed
+	super(_delta)
+	#enemy.velocity.x = direction * enemy.speed
 	if not raycast_v.is_colliding() || raycast_h.is_colliding():
 		direction = -direction
 		raycast_v.position.x = -raycast_v.position.x
