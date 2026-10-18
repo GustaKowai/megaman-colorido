@@ -403,6 +403,7 @@ fill_to = Vector2(0.9450867, 0.5231214)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
+slide_on_ceiling = false
 script = ExtResource("1_lnxje")
 sprite_gray = ExtResource("2_lwusa")
 sprite_green = ExtResource("3_gt6pu")

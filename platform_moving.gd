@@ -1,18 +1,17 @@
-extends AnimatableBody2D
-@export var time_moving:float
-@onready var timer: Timer = $Timer
+extends Path2D
 
+@export var loop:bool = true
+@export var speed:float = 2.0
+@export var speed_scale:float = 1.0
 
-# Called when the node enters the scene tree for the first time.
+@onready var path: PathFollow2D = $PathFollow2D
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+
 func _ready() -> void:
-	timer.wait_time = time_moving
+	if not loop:
+		animation_player.play("move")
+		animation_player.speed_scale = speed_scale
+		set_process(false)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#move_and_collide(Vector2(0,110))
-	pass
-
-
-func _on_timer_timeout() -> void:
-	constant_linear_velocity.x *= -1
+	path.progress += speed

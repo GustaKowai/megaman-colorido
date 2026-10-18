@@ -227,17 +227,6 @@ size = Vector2(5430, 39)
 
 [node name="LevelRoot" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
-[node name="Camera2D2" type="Camera2D" parent="." unique_id=217144945 node_paths=PackedStringArray("player")]
-position = Vector2(88, 847)
-scale = Vector2(3, 3)
-offset = Vector2(0, -540)
-limit_left = 4
-limit_top = -9999347
-limit_right = 10000590
-limit_bottom = 10000653
-script = ExtResource("1_a01mf")
-player = NodePath("../CharacterBody2D")
-
 [node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("2_43eq1")]
 player = NodePath("../CharacterBody2D")
 
@@ -247,7 +236,6 @@ scale = Vector2(3, 3)
 offset = Vector2(0, -540)
 limit_left = 4
 limit_top = -9999347
-limit_right = 1148
 limit_bottom = 10000653
 script = ExtResource("1_a01mf")
 player = NodePath("../CharacterBody2D")
