@@ -17,7 +17,8 @@ extends CanvasLayer
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Conexões dos sinais do player Manager
-	music.play()
+	if music:
+		music.play()
 	PlayerManager.change_UI_color.connect(change_ui)
 	PlayerManager.update_maximum.connect(update_max)
 	PlayerManager.heal_update_signal.connect(heal_update)
