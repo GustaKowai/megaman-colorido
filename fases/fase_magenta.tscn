@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://unvhyjtqpd54" path="res://enemies/inimigo_atira.tscn" id="12_5a0ur"]
 [ext_resource type="PackedScene" uid="uid://msmtxba6mxv0" path="res://enemies/inimigo_atira_parabola.tscn" id="13_vlqwk"]
 [ext_resource type="PackedScene" uid="uid://ddmr0usbcxq4e" path="res://misc/breakable_wall.tscn" id="14_eaqgv"]
+[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="15_eaqgv"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -228,6 +229,12 @@ sources/3 = SubResource("TileSetAtlasSource_rvkmb")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(6879, 39)
 
+[sub_resource type="Curve2D" id="Curve2D_xvfpr"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4.97435, -234.14287, 0, 0, 0, 0, 14.923065, 4.7301636)
+}
+point_count = 3
+
 [node name="LevelRoot" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
 [node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("2_v81vb")]
@@ -331,5 +338,11 @@ metadata/_scene_painted = true
 [node name="breakableWall4" parent="wall" unique_id=1595975273 instance=ExtResource("14_eaqgv")]
 position = Vector2(160, 576)
 metadata/_scene_painted = true
+
+[node name="movingPlatform" parent="." unique_id=2066398385 instance=ExtResource("15_eaqgv")]
+modulate = Color(1.825, 0, 1.231, 1)
+position = Vector2(1003, 586)
+scale = Vector2(1.0051546, 1.2684563)
+curve = SubResource("Curve2D_xvfpr")
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]
