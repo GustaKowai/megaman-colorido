@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_iju0m"]
 [ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="15_niidi"]
 [ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="16_63hu3"]
+[ext_resource type="PackedScene" uid="uid://c7rsjsls8vfaj" path="res://enemies/inimigo_pedra.tscn" id="17_olwow"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2573,3 +2574,6 @@ position = Vector2(207, 497)
 
 [node name="movingPlatform" parent="." unique_id=79308580 instance=ExtResource("16_63hu3")]
 position = Vector2(40, 400)
+
+[node name="InimigoPedra" parent="." unique_id=898605493 instance=ExtResource("17_olwow")]
+position = Vector2(545, 146)
