@@ -76,6 +76,7 @@ speed = 500.0
 rect = Rect2(-6, -4, 13, 5)
 
 [node name="DamageBox" type="Area2D" parent="." unique_id=787630589]
+collision_mask = 3
 script = ExtResource("3_or4ei")
 damage_to = "Enemy"
 damage = 1

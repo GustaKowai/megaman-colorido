@@ -90,6 +90,11 @@ cor-4={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Protagonista e cenário"
+2d_physics/layer_2="Inimigos"
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
