@@ -48,7 +48,7 @@ func on_hurt_box_died():
 	life_bar.value = 0
 
 func update_max():
-	print_debug("maximo atualizado")
+	#print_debug("maximo atualizado")
 	heal_bar.max_value = PlayerManager.player_heal_bar
 	dash_bar.max_value = PlayerManager.dash_cooldown
 	jump_counter.max_value = PlayerManager.player_jump_max

@@ -268,6 +268,8 @@ size = Vector2(10, 17.5)
 
 [node name="InimigoAtira" type="CharacterBody2D" unique_id=164572135 groups=["Enemy"]]
 scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_rj0at")
 speed = 200.0
 

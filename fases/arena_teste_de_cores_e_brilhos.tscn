@@ -2552,10 +2552,10 @@ tile_set = SubResource("TileSet_hgjhj")
 position = Vector2(2884, 509)
 
 [node name="InimigoAnda" parent="." unique_id=164572135 instance=ExtResource("7_iju0m")]
-position = Vector2(869, 280)
+position = Vector2(1625, 389)
 
 [node name="InimigoPula" parent="." unique_id=866933769 instance=ExtResource("9_biof3")]
-position = Vector2(1119, 542)
+position = Vector2(1456, 541)
 
 [node name="InimigoPula2" parent="." unique_id=311775319 instance=ExtResource("13_ac47k")]
 position = Vector2(2417, 526)
@@ -2564,16 +2564,16 @@ position = Vector2(2417, 526)
 position = Vector2(385, 438)
 
 [node name="InimigoApenasAnda2" parent="." unique_id=1031498132 instance=ExtResource("14_iju0m")]
-position = Vector2(1023, 572)
+position = Vector2(857, 569)
 
 [node name="InimigoApenasAnda3" parent="." unique_id=492408734 instance=ExtResource("14_iju0m")]
 position = Vector2(1664, 543)
 
 [node name="Enemy_fly" parent="." unique_id=2041547482 instance=ExtResource("15_niidi")]
-position = Vector2(207, 497)
+position = Vector2(570, 394)
 
 [node name="movingPlatform" parent="." unique_id=79308580 instance=ExtResource("16_63hu3")]
-position = Vector2(40, 400)
+position = Vector2(763, 194)
 
 [node name="InimigoPedra" parent="." unique_id=898605493 instance=ExtResource("17_olwow")]
-position = Vector2(545, 146)
+position = Vector2(481, 41)

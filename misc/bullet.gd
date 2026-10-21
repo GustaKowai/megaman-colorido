@@ -23,5 +23,5 @@ func _on_damage_box_dealed_damage() -> void:
 
 func _on_damage_box_body_entered(body: Node2D) -> void:
 	if body is TileMapLayer:
-		print_debug("bati no tilemap")
+		#print_debug("bati no tilemap")
 		queue_free()

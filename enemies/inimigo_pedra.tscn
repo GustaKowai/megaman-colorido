@@ -29,8 +29,13 @@ size = Vector2(32.5, 75)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2r5q"]
 size = Vector2(30, 4)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mbmut"]
+size = Vector2(31.5, 3.25)
+
 [node name="InimigoPedra" type="CharacterBody2D" unique_id=164572135 groups=["Enemy"]]
 scale = Vector2(2, 2)
+collision_layer = 2
+collision_mask = 3
 script = ExtResource("1_o5664")
 
 [node name="State_machine" type="Node" parent="." unique_id=1093209048 node_paths=PackedStringArray("initial_state")]
@@ -102,7 +107,16 @@ damage = 1
 position = Vector2(-0.5, 38)
 shape = SubResource("RectangleShape2D_e2r5q")
 
+[node name="detect_enemy" type="Area2D" parent="." unique_id=162213578]
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detect_enemy" unique_id=358708028]
+position = Vector2(-0.5, 40.375)
+shape = SubResource("RectangleShape2D_mbmut")
+
 [connection signal="timeout" from="State_machine/Idletorise/Timer" to="State_machine/Idletorise" method="_on_timer_timeout"]
 [connection signal="timeout" from="State_machine/Idletofall/Timer" to="State_machine/Idletofall" method="_on_timer_timeout"]
 [connection signal="area_entered" from="DamageArea" to="DamageArea" method="_on_area_entered"]
-[connection signal="body_entered" from="DamageArea" to="State_machine/Fall" method="_on_body_entered"]
+[connection signal="dealed_damage" from="DamageArea" to="State_machine/Idletorise" method="_on_damage_area_dealed_damage"]
+[connection signal="dealed_damage" from="DamageArea" to="State_machine/Fall" method="_on_damage_area_dealed_damage"]
+[connection signal="body_entered" from="detect_enemy" to="State_machine/Fall" method="_on_detect_enemy_body_entered"]

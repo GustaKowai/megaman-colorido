@@ -403,6 +403,7 @@ fill_to = Vector2(0.9450867, 0.5231214)
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
+collision_mask = 3
 slide_on_ceiling = false
 script = ExtResource("1_lnxje")
 sprite_gray = ExtResource("2_lwusa")
@@ -431,7 +432,7 @@ color_ramp = SubResource("Gradient_hgjhj")
 [node name="Hurt_box" type="Area2D" parent="." unique_id=1430758203 node_paths=PackedStringArray("target") groups=["Player"]]
 script = ExtResource("6_vsclo")
 target = NodePath("..")
-max_life = 3
+max_life = 10
 knockback = 300
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_box" unique_id=445343094]

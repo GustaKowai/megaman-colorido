@@ -8,6 +8,7 @@ func _ready() -> void:
 	#print_tree_pretty()
 
 func Enter():
+	target.set_collision_mask_value(2,false)
 	#print_debug("damaged")
 	#get_parent().print_tree_pretty()
 	#print_debug(can_process())
@@ -28,6 +29,7 @@ func Physics_update(_delta: float):
 		#print_debug("to no chão")
 		Transitioned.emit(self,"idle")
 func Exit():
+	target.set_collision_mask_value(2,true)
 	target.just_damaged = false
 	target.velocity.x = 0
 	target.modulate = Color.WHITE
