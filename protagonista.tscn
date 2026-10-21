@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ccc41hvcymca6" path="res://Sprites/Protagonista/reais/characterWhite.png" id="2_lwusa"]
 [ext_resource type="Texture2D" uid="uid://cw2xnv5t3vlam" path="res://Sprites/Protagonista/reais/characterGreen.png" id="3_gt6pu"]
 [ext_resource type="Texture2D" uid="uid://dho6geir1uv8o" path="res://Sprites/Protagonista/reais/characterMagenta.png" id="4_g24kp"]
-[ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://Sprites/shield_player.tscn" id="4_qcjdm"]
+[ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://misc/shield_player.tscn" id="4_qcjdm"]
 [ext_resource type="Texture2D" uid="uid://6tuiqhvct3ee" path="res://Sprites/Protagonista/reais/characterBlue.png" id="5_x5f4j"]
 [ext_resource type="Texture2D" uid="uid://crnqfbgt4ary2" path="res://Sprites/Protagonista/reais/characterYellow.png" id="6_6i4w8"]
 [ext_resource type="Texture2D" uid="uid://u54nw6o0tj1h" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 9/449.png" id="6_08yp7"]

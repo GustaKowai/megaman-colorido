@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://p4awoyxo75i4" path="res://estados/enemies/shield_enemy.gd" id="7_fhuhk"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="7_q5gnj"]
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="8_5bkc2"]
-[ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://Sprites/shield_player.tscn" id="8_j3rh4"]
+[ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://misc/shield_player.tscn" id="8_j3rh4"]
 [ext_resource type="Script" uid="uid://b0h3p8fpajrad" path="res://estados/enemies/walk_shield.gd" id="9_fhuhk"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="9_nnj7o"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="10_6ud8v"]
