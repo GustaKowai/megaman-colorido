@@ -64,6 +64,22 @@ tracks/1/keys = {
 "values": [Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_g24kp"]
+resource_name = "air shoot"
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [29, 31]
+}
+
 [sub_resource type="Animation" id="Animation_xeeyi"]
 resource_name = "die"
 length = 2.0
@@ -108,7 +124,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [27, 28]
+"values": [32, 33]
 }
 
 [sub_resource type="Animation" id="Animation_qcjdm"]
@@ -233,6 +249,7 @@ tracks/0/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k85er"]
 _data = {
 &"RESET": SubResource("Animation_qnedo"),
+&"air shoot": SubResource("Animation_g24kp"),
 &"die": SubResource("Animation_xeeyi"),
 &"fall": SubResource("Animation_lwusa"),
 &"heal": SubResource("Animation_qcjdm"),
@@ -444,7 +461,7 @@ shape = SubResource("RectangleShape2D_hgjhj")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=701491346]
 modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
 texture = ExtResource("5_x5f4j")
-hframes = 29
+hframes = 34
 
 [node name="mira" type="Marker2D" parent="Sprite2D" unique_id=1948623122]
 position = Vector2(30, -8)

@@ -11,7 +11,10 @@ func _ready() -> void:
 
 func Enter():
 	if player.animation_player:
-		player.animation_player.play("shoot")
+		if not player.is_on_floor():
+			player.animation_player.play("air shoot")
+		else:
+			player.animation_player.play("shoot")
 		player.velocity.x = 0
 		
 func Exit():

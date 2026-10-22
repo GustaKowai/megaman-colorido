@@ -21,6 +21,8 @@ func Update(_delta: float):
 func Physics_update(_delta: float):
 	#print_debug("Bluuuuuue")
 	player.velocity += player.get_gravity() * _delta
+	if player.velocity.y > 0:
+		Transitioned.emit(self,"fall")
 	if player.is_on_floor():
 		Transitioned.emit(self,"idle")
 	var direction := Input.get_axis("ui_left", "ui_right")
