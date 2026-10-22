@@ -304,4 +304,7 @@ position = Vector2(4917, 558)
 
 [node name="Inimigos" type="Node2D" parent="." unique_id=1673940055]
 
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=1521612627]
+bus = &"Music"
+
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

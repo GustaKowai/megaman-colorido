@@ -17,6 +17,7 @@
 [ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="15_eaqgv"]
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="16_h3bdf"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="17_vnjwu"]
+[ext_resource type="AudioStream" uid="uid://7bvl5vi72agb" path="res://musics/fase verde.wav" id="18_vnjwu"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -376,5 +377,9 @@ enemy_scene = ExtResource("17_vnjwu")
 min_spawn_time = 3.0
 max_spawn_time = 3.0
 metadata/_scene_painted = true
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=296106273]
+stream = ExtResource("18_vnjwu")
+bus = &"Music"
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

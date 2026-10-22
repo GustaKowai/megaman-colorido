@@ -3,9 +3,12 @@
 [ext_resource type="Script" uid="uid://csf7oqetonj75" path="res://fases/main_scene.gd" id="1_h5lnh"]
 [ext_resource type="PackedScene" uid="uid://d0twewefuou4c" path="res://fases/teste_de_cores_e_brilhos.tscn" id="2_i4cvm"]
 [ext_resource type="PackedScene" uid="uid://c2tkqivlot6y3" path="res://fases/arena_teste_de_cores_e_brilhos.tscn" id="3_mx8uv"]
+[ext_resource type="PackedScene" uid="uid://co4akhonr77vc" path="res://fases/fase_verde_1.tscn" id="4_mx8uv"]
+[ext_resource type="PackedScene" uid="uid://c05dlhgdo78yp" path="res://fases/fase_magenta.tscn" id="5_c4i2l"]
+[ext_resource type="PackedScene" uid="uid://eddrhnv6hwjl" path="res://fases/level_selection.tscn" id="6_c4i2l"]
 
 [node name="MainScene" type="Node2D" unique_id=740554838]
 script = ExtResource("1_h5lnh")
-level_list = Array[PackedScene]([ExtResource("2_i4cvm"), ExtResource("3_mx8uv")])
+level_list = Array[PackedScene]([ExtResource("6_c4i2l"), ExtResource("2_i4cvm"), ExtResource("3_mx8uv"), ExtResource("4_mx8uv"), ExtResource("5_c4i2l")])
 
-[node name="LevelRoot" parent="." unique_id=628030147 instance=ExtResource("2_i4cvm")]
+[node name="LevelRoot" parent="." unique_id=723980373 instance=ExtResource("6_c4i2l")]
