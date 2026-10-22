@@ -94,6 +94,7 @@ cor-4={
 
 2d_physics/layer_1="Protagonista e cenário"
 2d_physics/layer_2="Inimigos"
+2d_physics/layer_3="protagonista"
 
 [physics]
 

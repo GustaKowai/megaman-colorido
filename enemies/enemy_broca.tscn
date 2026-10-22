@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://c7jjd16y7khes"]
+
+[ext_resource type="Script" uid="uid://2ruw35nio27u" path="res://enemies/enemy_broca.gd" id="1_ju1yr"]
+[ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="2_8fgxy"]
+[ext_resource type="Script" uid="uid://dnbvadpbcp3we" path="res://fly.gd" id="3_eewyy"]
+[ext_resource type="Script" uid="uid://cfgjh58rydnef" path="res://enemies/damage_broca.gd" id="4_8vpqu"]
+[ext_resource type="Texture2D" uid="uid://clqs33t7br3n0" path="res://Sprites/dzvzvqi452q01.png" id="4_f2ff6"]
+[ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="5_ju1yr"]
+[ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="6_crc7b"]
+[ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="8_ju1yr"]
+[ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="9_crc7b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
+size = Vector2(153, 174)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vpqu"]
+atlas = ExtResource("4_f2ff6")
+region = Rect2(0, 0, 384, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgjhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vpqu")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vpqu")
+}],
+"loop": 1,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ill15"]
+size = Vector2(380, 170)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_58esp"]
+size = Vector2(380, 172.33333)
+
+[node name="Enemy_broca" type="CharacterBody2D" unique_id=162401205 groups=["Enemy"]]
+scale = Vector2(0.3, 0.3)
+collision_layer = 2
+collision_mask = 4
+motion_mode = 1
+script = ExtResource("1_ju1yr")
+metadata/_custom_type_script = "uid://cckunixtvck0o"
+
+[node name="State_machine" type="Node" parent="." unique_id=551557595 node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_8fgxy")
+initial_state = NodePath("Fly")
+metadata/_custom_type_script = "uid://1pt326tnyysx"
+
+[node name="Fly" type="Node" parent="State_machine" unique_id=1638115262 node_paths=PackedStringArray("target")]
+script = ExtResource("3_eewyy")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://rex2amr3hsmf"
+
+[node name="Damage" type="Node" parent="State_machine" unique_id=1832925044 node_paths=PackedStringArray("target")]
+script = ExtResource("4_8vpqu")
+damage_color = Color(1.4369954, 1.4369954, 1.4369954, 1)
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://b2s26rpxfiul2"
+
+[node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=748496339]
+
+[node name="Timer" type="Timer" parent="State_machine/Damage" unique_id=1266126838]
+wait_time = 0.1
+
+[node name="Died" type="Node" parent="State_machine" unique_id=1178867594 node_paths=PackedStringArray("target")]
+script = ExtResource("5_ju1yr")
+target = NodePath("../..")
+metadata/_custom_type_script = "uid://8jxdtwajk3d6"
+
+[node name="die_sound" type="AudioStreamPlayer" parent="State_machine/Died" unique_id=2134742649]
+stream = ExtResource("6_crc7b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=851423386]
+position = Vector2(-113.5, -7)
+shape = SubResource("RectangleShape2D_hgjhj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713863441]
+sprite_frames = SubResource("SpriteFrames_hgjhj")
+animation = &"die"
+
+[node name="DamageBox" type="Area2D" parent="." unique_id=1630529426]
+script = ExtResource("8_ju1yr")
+damage_to = "Player"
+damage = 1
+metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=544219750]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_ill15")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1105894256 node_paths=PackedStringArray("target") groups=["Enemy"]]
+script = ExtResource("9_crc7b")
+target = NodePath("..")
+max_life = 2
+metadata/_custom_type_script = "uid://b4ks34rhdjoli"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=16023993]
+position = Vector2(0, -7.1666646)
+shape = SubResource("RectangleShape2D_58esp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=76941522]
+position = Vector2(-180, 70)
+rect = Rect2(-10, -163.33333, 380, 173.33333)
+
+[connection signal="timeout" from="State_machine/Damage/Timer" to="State_machine/Damage" method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

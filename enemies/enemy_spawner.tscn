@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c8mmy5stagu6n"]
+
+[ext_resource type="Script" uid="uid://bv1qisb408b88" path="res://spawn_de_broca.gd" id="1_mjbfh"]
+
+[node name="EnemySpawner" type="Node2D" unique_id=1806263094]
+scale = Vector2(0.3, 0.3)
+script = ExtResource("1_mjbfh")
+
+[node name="Timer" type="Timer" parent="." unique_id=2099739375]
+wait_time = 3.0
+autostart = true
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1243787384]
+position = Vector2(50, 0)
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1076909914]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

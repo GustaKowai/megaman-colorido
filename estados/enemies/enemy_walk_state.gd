@@ -3,7 +3,7 @@ class_name WalkEnemy
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../../AnimatedSprite2D"
 var enemy:Enemy
-var direction = 1
+var direction:int = 1
 
 func _ready() -> void:
 	super()

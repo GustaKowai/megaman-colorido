@@ -114,6 +114,10 @@ collision_mask = 3
 position = Vector2(-0.5, 40.375)
 shape = SubResource("RectangleShape2D_mbmut")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1110353967]
+position = Vector2(-6.5, 28.5)
+rect = Rect2(-10, -65.5, 32.5, 75.5)
+
 [connection signal="timeout" from="State_machine/Idletorise/Timer" to="State_machine/Idletorise" method="_on_timer_timeout"]
 [connection signal="timeout" from="State_machine/Idletofall/Timer" to="State_machine/Idletofall" method="_on_timer_timeout"]
 [connection signal="area_entered" from="DamageArea" to="DamageArea" method="_on_area_entered"]

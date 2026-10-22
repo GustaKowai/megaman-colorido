@@ -269,6 +269,10 @@ target_position = Vector2(0, 11)
 position = Vector2(-0.5, 4.5)
 target_position = Vector2(15, 0)
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=2009732686]
+position = Vector2(-3, 1.5)
+rect = Rect2(-10, -4.5, 26, 14.5)
+
 [connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageArea" to="DamageArea" method="_on_area_entered"]

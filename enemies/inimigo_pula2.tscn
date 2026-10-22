@@ -323,6 +323,10 @@ metadata/_custom_type_script = "uid://b4ks34rhdjoli"
 position = Vector2(-0.5, 3.5)
 shape = SubResource("RectangleShape2D_mbmut")
 
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=553341939]
+position = Vector2(4, 2.5)
+rect = Rect2(-10, -8, 10.5, 18)
+
 [connection signal="timeout" from="State_machine/Idle/Timer" to="State_machine/Idle" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]

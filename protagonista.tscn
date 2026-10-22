@@ -430,6 +430,8 @@ color = Color(0, 3.3372512, 0, 1)
 color_ramp = SubResource("Gradient_hgjhj")
 
 [node name="Hurt_box" type="Area2D" parent="." unique_id=1430758203 node_paths=PackedStringArray("target") groups=["Player"]]
+collision_layer = 5
+collision_mask = 3
 script = ExtResource("6_vsclo")
 target = NodePath("..")
 max_life = 10
