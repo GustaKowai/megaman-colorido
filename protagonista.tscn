@@ -123,7 +123,7 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "values": [{
 "args": [],
-"method": &"queue_free"
+"method": &"call_game_over"
 }]
 }
 
@@ -435,7 +435,7 @@ fill = 1
 fill_from = Vector2(0.48554912, 0.5953757)
 fill_to = Vector2(0.9450867, 0.5231214)
 
-[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
+[node name="Protagonista" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
 collision_mask = 3
 slide_on_ceiling = false

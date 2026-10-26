@@ -3,7 +3,7 @@ extends IdleEnemy
 
 
 func Enter():
-	print_debug("Thwomp Idle to rise")
+	#print_debug("Thwomp Idle to rise")
 	super()
 	if timer:
 		timer.start()

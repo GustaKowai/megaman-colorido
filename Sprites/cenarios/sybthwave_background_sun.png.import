@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk8bn0cpq60f1"
-path="res://.godot/imported/sybthwave_background_cloud.png-509ffdde2153836157468a0cb24e785e.ctex"
+uid="uid://dy2kinfi1pljv"
+path="res://.godot/imported/sybthwave_background_sun.png-67e41ae28cdfb8e698bfbf23828a5fc8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/sybthwave_background_cloud.png"
-dest_files=["res://.godot/imported/sybthwave_background_cloud.png-509ffdde2153836157468a0cb24e785e.ctex"]
+source_file="res://Sprites/cenarios/sybthwave_background_sun.png"
+dest_files=["res://.godot/imported/sybthwave_background_sun.png-67e41ae28cdfb8e698bfbf23828a5fc8.ctex"]
 
 [params]
 

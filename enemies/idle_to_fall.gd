@@ -3,7 +3,7 @@ extends IdleEnemy
 @onready var timer: Timer = $Timer
 
 func Enter():
-	print_debug("Thwomp Idle to fall")
+	#print_debug("Thwomp Idle to fall")
 	super()
 	enemy.add_collision_exception_with(player_col)
 	if timer:

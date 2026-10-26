@@ -1,5 +1,8 @@
 extends CharacterBody2D
 class_name Player
+
+signal game_over
+
 @onready var gray: State_machine = $gray
 @onready var green: State_machine = $green
 @onready var magent: State_machine = $magent
@@ -92,3 +95,6 @@ func check_color():
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("yellow")
+
+func call_game_over():
+	game_over.emit()

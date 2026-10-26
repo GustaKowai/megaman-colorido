@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://misc/camera_2d.gd" id="1_ckww7"]
 [ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://UI/ui_jogador.tscn" id="2_v81vb"]
-[ext_resource type="Texture2D" uid="uid://dy2kinfi1pljv" path="res://Sprites/sybthwave_background_sun.png" id="3_5a0ur"]
-[ext_resource type="Texture2D" uid="uid://dk8bn0cpq60f1" path="res://Sprites/sybthwave_background_cloud.png" id="4_rvkmb"]
+[ext_resource type="Texture2D" uid="uid://dy2kinfi1pljv" path="res://Sprites/cenarios/sybthwave_background_sun.png" id="3_5a0ur"]
+[ext_resource type="Texture2D" uid="uid://dk8bn0cpq60f1" path="res://Sprites/cenarios/sybthwave_background_cloud.png" id="4_rvkmb"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="5_vlqwk"]
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="6_eaqgv"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset/tileset_luzes.png" id="7_xvfpr"]
@@ -241,7 +241,7 @@ point_count = 3
 [node name="LevelRoot" type="Node2D" unique_id=628030147 groups=["Fase"]]
 
 [node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("2_v81vb")]
-player = NodePath("../CharacterBody2D")
+player = NodePath("../Protagonista")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1231470294 node_paths=PackedStringArray("player")]
 position = Vector2(88, 847)
@@ -251,7 +251,7 @@ limit_left = 4
 limit_top = -9999347
 limit_bottom = 10000653
 script = ExtResource("1_ckww7")
-player = NodePath("../CharacterBody2D")
+player = NodePath("../Protagonista")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=624231814]
 environment = SubResource("Environment_2lcb2")
@@ -309,7 +309,7 @@ metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 position = Vector2(2069.6465, 57.386414)
 shape = SubResource("RectangleShape2D_hgjhj")
 
-[node name="CharacterBody2D" parent="." unique_id=2054658706 instance=ExtResource("9_vnjwu")]
+[node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("9_vnjwu")]
 position = Vector2(102, 531)
 
 [node name="Exits" type="Node2D" parent="." unique_id=138475286]

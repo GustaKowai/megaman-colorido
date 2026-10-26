@@ -8,6 +8,7 @@ func Enter():
 	#print_debug("died")
 	die_sound.play()
 	if target.is_in_group("Player"):
+		target.set_collision_mask_value(2,false)
 		target.animation_player.play("die")
 	if target.is_in_group("Enemy"):
 		sprite = target.sprite

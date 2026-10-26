@@ -216,7 +216,7 @@ sources/3 = SubResource("TileSetAtlasSource_4cbj7")
 [node name="LevelRoot" type="Node2D" unique_id=723980373 groups=["Fase"]]
 
 [node name="UI_jogador" parent="." unique_id=840519676 node_paths=PackedStringArray("player") instance=ExtResource("1_mqws8")]
-player = NodePath("../CharacterBody2D")
+player = NodePath("../Protagonista")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=116970725]
 environment = SubResource("Environment_rv05k")
@@ -252,7 +252,7 @@ level_number = 3
 position = Vector2(881, 528)
 level_number = 4
 
-[node name="CharacterBody2D" parent="." unique_id=2054658706 instance=ExtResource("7_85421")]
+[node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("7_85421")]
 position = Vector2(100, 530)
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1688347986]

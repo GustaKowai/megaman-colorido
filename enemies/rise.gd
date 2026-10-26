@@ -9,7 +9,7 @@ func _ready() -> void:
 	enemy = target
 
 func Enter():
-	print_debug("Thwomp Rise")
+	#print_debug("Thwomp Rise")
 	if enemy.sprite:
 		enemy.sprite.play("rise")
 	enemy.velocity.y = -200

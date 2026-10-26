@@ -17,6 +17,7 @@ func take_damage(damage:int,push_direction):
 	if life <= 0:
 		damaged.emit(0)
 		die()
+		queue_free()
 		return
 	#target.animation_player.play("damage")
 	target.just_damaged = true
