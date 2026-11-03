@@ -14,7 +14,7 @@ atlas = ExtResource("2_f8lbu")
 region = Rect2(0, 93.737686, 97.61037, 34.262314)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(96, 32)
+size = Vector2(96, 30.190216)
 
 [sub_resource type="Animation" id="Animation_hrpga"]
 length = 0.001
@@ -76,6 +76,7 @@ scale = Vector2(0.99332756, 0.90854573)
 texture = SubResource("AtlasTexture_m7ux3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1151706035]
+position = Vector2(-4.656613e-10, 0.90489244)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1669901835]

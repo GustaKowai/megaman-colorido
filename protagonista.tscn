@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bl6v8q8705nla"]
 
 [ext_resource type="Script" uid="uid://diukgx1kqtphs" path="res://character_body_2d.gd" id="1_lnxje"]
-[ext_resource type="Texture2D" uid="uid://ccc41hvcymca6" path="res://Sprites/Protagonista/reais/characterWhite.png" id="2_lwusa"]
-[ext_resource type="Texture2D" uid="uid://cw2xnv5t3vlam" path="res://Sprites/Protagonista/reais/characterGreen.png" id="3_gt6pu"]
-[ext_resource type="Texture2D" uid="uid://dho6geir1uv8o" path="res://Sprites/Protagonista/reais/characterMagenta.png" id="4_g24kp"]
+[ext_resource type="Texture2D" uid="uid://bebnv613y1s74" path="res://Sprites/Protagonista/WHITE.png" id="2_gt6pu"]
+[ext_resource type="Texture2D" uid="uid://d1lyegionbqec" path="res://Sprites/Protagonista/GREEN.png" id="3_g24kp"]
 [ext_resource type="PackedScene" uid="uid://d26qjn4q03bkd" path="res://misc/shield_player.tscn" id="4_qcjdm"]
-[ext_resource type="Texture2D" uid="uid://6tuiqhvct3ee" path="res://Sprites/Protagonista/reais/characterBlue.png" id="5_x5f4j"]
-[ext_resource type="Texture2D" uid="uid://crnqfbgt4ary2" path="res://Sprites/Protagonista/reais/characterYellow.png" id="6_6i4w8"]
+[ext_resource type="Texture2D" uid="uid://dxfu07e3hc4sm" path="res://Sprites/Protagonista/MAGENTA_.png" id="4_x5f4j"]
+[ext_resource type="Texture2D" uid="uid://cutiictehh0vl" path="res://Sprites/Protagonista/BLUE.png" id="5_6i4w8"]
+[ext_resource type="Texture2D" uid="uid://ch3crmnnmvger" path="res://Sprites/Protagonista/YELLOW.png" id="6_6l04p"]
 [ext_resource type="Texture2D" uid="uid://u54nw6o0tj1h" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 9/449.png" id="6_08yp7"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="6_vsclo"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="7_w3lgh"]
@@ -95,6 +95,22 @@ tracks/1/keys = {
 "args": [],
 "method": &"end_shoot"
 }]
+}
+
+[sub_resource type="Animation" id="Animation_vi54r"]
+resource_name = "damage"
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [9]
 }
 
 [sub_resource type="Animation" id="Animation_xeeyi"]
@@ -267,6 +283,7 @@ tracks/0/keys = {
 _data = {
 &"RESET": SubResource("Animation_qnedo"),
 &"air shoot": SubResource("Animation_g24kp"),
+&"damage": SubResource("Animation_vi54r"),
 &"die": SubResource("Animation_xeeyi"),
 &"fall": SubResource("Animation_lwusa"),
 &"heal": SubResource("Animation_qcjdm"),
@@ -440,11 +457,11 @@ texture_filter = 3
 collision_mask = 3
 slide_on_ceiling = false
 script = ExtResource("1_lnxje")
-sprite_gray = ExtResource("2_lwusa")
-sprite_green = ExtResource("3_gt6pu")
-sprite_magent = ExtResource("4_g24kp")
-sprite_blue = ExtResource("5_x5f4j")
-sprite_yellow = ExtResource("6_6i4w8")
+sprite_gray = ExtResource("2_gt6pu")
+sprite_green = ExtResource("3_g24kp")
+sprite_magent = ExtResource("4_x5f4j")
+sprite_blue = ExtResource("5_6i4w8")
+sprite_yellow = ExtResource("6_6l04p")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=525152556]
 current = true
@@ -477,8 +494,8 @@ shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=701491346]
 modulate = Color(1.4369954, 1.4369954, 1.4369954, 1)
-texture = ExtResource("5_x5f4j")
-hframes = 34
+texture = ExtResource("5_6i4w8")
+hframes = 40
 
 [node name="mira" type="Marker2D" parent="Sprite2D" unique_id=1948623122]
 position = Vector2(30, -8)

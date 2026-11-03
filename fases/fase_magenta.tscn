@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://UI/ui_jogador.tscn" id="2_v81vb"]
 [ext_resource type="Texture2D" uid="uid://dy2kinfi1pljv" path="res://Sprites/cenarios/sybthwave_background_sun.png" id="3_5a0ur"]
 [ext_resource type="Texture2D" uid="uid://dk8bn0cpq60f1" path="res://Sprites/cenarios/sybthwave_background_cloud.png" id="4_rvkmb"]
+[ext_resource type="Texture2D" uid="uid://ce3jitk4opjxw" path="res://Sprites/cenarios/sybthwave_background_brick.png" id="5_m53wf"]
 [ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="5_vlqwk"]
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="6_eaqgv"]
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset/tileset_luzes.png" id="7_xvfpr"]
@@ -266,6 +267,7 @@ repeat_times = 2
 
 [node name="Cor de fundo" type="Sprite2D" parent="Parallax2D3" unique_id=336340635]
 visible = false
+z_index = -2
 position = Vector2(1668, 162)
 scale = Vector2(4.568359, 638.99994)
 texture = SubResource("GradientTexture1D_g6jd5")
@@ -274,8 +276,8 @@ texture = SubResource("GradientTexture1D_g6jd5")
 scroll_scale = Vector2(0, 1)
 
 [node name="Cenário fundo" type="Sprite2D" parent="Parallax2D" unique_id=671824561]
-visible = false
-modulate = Color(0, 2.253, 0, 1)
+modulate = Color(1.825, 0, 1.231, 1)
+z_index = -2
 position = Vector2(611, 352)
 texture = ExtResource("3_5a0ur")
 
@@ -287,9 +289,21 @@ autoscroll = Vector2(-50, 0)
 repeat_times = 3
 
 [node name="nuvem" type="Sprite2D" parent="Parallax2D2" unique_id=1993104356]
-modulate = Color(2.253293, 2.253293, 2.253293, 1)
+modulate = Color(1.825, 0, 1.231, 1)
+z_index = -2
 position = Vector2(609, 266)
 texture = ExtResource("4_rvkmb")
+
+[node name="Parallax2D4" type="Parallax2D" parent="." unique_id=1574862021]
+scroll_scale = Vector2(0.8, 1)
+repeat_size = Vector2(1200, 0)
+repeat_times = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4" unique_id=1276805267]
+modulate = Color(1.825, 0, 1.231, 1)
+z_index = -2
+position = Vector2(607, 277)
+texture = ExtResource("5_m53wf")
 
 [node name="branco" type="TileMapLayer" parent="." unique_id=540755105]
 modulate = Color(1.825, 0, 1.231, 1)
