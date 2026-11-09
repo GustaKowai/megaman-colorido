@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cx7nj1i2ukmuo"]
+
+[ext_resource type="Script" uid="uid://dh7et235hpeum" path="res://UI/Menu/orchestrator.gd" id="1_v5tbv"]
+[ext_resource type="PackedScene" uid="uid://bj74olm7oably" path="res://UI/Menu/main_menu.tscn" id="1_v0182"]
+[ext_resource type="PackedScene" uid="uid://cwlf4vwjc7xtf" path="res://UI/Menu/main_menu_options.tscn" id="2_v5tbv"]
+
+[node name="Orchestrator" type="Node" unique_id=286638297]
+script = ExtResource("1_v5tbv")
+
+[node name="Options_menu" parent="." unique_id=359546675 instance=ExtResource("2_v5tbv")]
+visible = false
+
+[node name="Main_menu" parent="." unique_id=644176744 instance=ExtResource("1_v0182")]
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 27.0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[connection signal="pressed" from="Options_menu/VBoxContainer/back_button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Main_menu/VBoxContainer/start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Main_menu/VBoxContainer/options_button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Main_menu/VBoxContainer/exit_button" to="." method="_on_exit_button_pressed"]
+
+[editable path="Options_menu"]
+[editable path="Main_menu"]

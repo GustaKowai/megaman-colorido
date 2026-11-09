@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cwlf4vwjc7xtf"]
+
+[ext_resource type="FontFile" uid="uid://duxnvkfd43jky" path="res://UI/Fonts/upheavtt.ttf" id="1_bqwea"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o0pvp"]
+font = ExtResource("1_bqwea")
+font_size = 80
+
+[node name="Options_menu" type="MarginContainer" unique_id=359546675]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 27
+
+[node name="Label" type="Label" parent="." unique_id=2069276515]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+accessibility_name = "Waves of Vapor"
+accessibility_description = "Título do Jogo"
+text = "Configurações"
+label_settings = SubResource("LabelSettings_o0pvp")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=119832546]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 39
+
+[node name="back_button" type="Button" parent="VBoxContainer" unique_id=10112583]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_bqwea")
+theme_override_font_sizes/font_size = 64
+text = "Voltar"

@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bj74olm7oably"]
+
+[ext_resource type="FontFile" uid="uid://duxnvkfd43jky" path="res://UI/Fonts/upheavtt.ttf" id="1_ws2sk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ahknw"]
+font = ExtResource("1_ws2sk")
+font_size = 80
+
+[node name="Main_menu" type="MarginContainer" unique_id=644176744]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 27
+
+[node name="Label" type="Label" parent="." unique_id=505713195]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+accessibility_name = "Waves of Vapor"
+accessibility_description = "Título do Jogo"
+text = "Waves of Vapor"
+label_settings = SubResource("LabelSettings_ahknw")
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1455635306]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 39
+
+[node name="start_button" type="Button" parent="VBoxContainer" unique_id=740623059]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ws2sk")
+theme_override_font_sizes/font_size = 64
+text = "Jogar"
+
+[node name="options_button" type="Button" parent="VBoxContainer" unique_id=282305627]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ws2sk")
+theme_override_font_sizes/font_size = 64
+text = "Opções"
+
+[node name="exit_button" type="Button" parent="VBoxContainer" unique_id=85360533]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_ws2sk")
+theme_override_font_sizes/font_size = 64
+text = "Sair"
