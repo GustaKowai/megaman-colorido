@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://c7rsjsls8vfaj" path="res://enemies/inimigo_pedra.tscn" id="17_olwow"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="18_2w0qk"]
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="18_weddg"]
+[ext_resource type="PackedScene" uid="uid://dux3i3pi70unw" path="res://enemies/fly_blue.tscn" id="20_c0vlw"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2593,3 +2594,6 @@ rotation = 1.579523
 enemy_scene = ExtResource("18_2w0qk")
 min_spawn_time = 3.0
 max_spawn_time = 3.0
+
+[node name="Fly_blue" parent="." unique_id=483940872 instance=ExtResource("20_c0vlw")]
+position = Vector2(262, 446)

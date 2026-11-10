@@ -331,6 +331,11 @@ shape = SubResource("RectangleShape2D_hgjhj")
 [node name="Decorações" type="Node2D" parent="branco" unique_id=1713452901]
 z_index = -1
 
+[node name="Tree6" type="Sprite2D" parent="branco/Decorações" unique_id=1518671155]
+position = Vector2(5858, -566)
+scale = Vector2(4.159997, 3.791666)
+texture = ExtResource("11_altfj")
+
 [node name="Tree" type="Sprite2D" parent="branco/Decorações" unique_id=1394443451]
 position = Vector2(2490, 91)
 texture = ExtResource("11_altfj")
@@ -412,16 +417,16 @@ metadata/_scene_painted = true
 position = Vector2(5324.7056, 216.93622)
 metadata/_scene_painted = true
 
-[node name="Enemy_fly4" parent="Inimigos" unique_id=697565350 instance=ExtResource("11_ya7y5")]
-position = Vector2(5959.414, 152.11884)
-metadata/_scene_painted = true
-
 [node name="InimigoApenasAnda5" parent="Inimigos" unique_id=2140255711 instance=ExtResource("14_2d721")]
 position = Vector2(6033.8267, 541.5234)
 metadata/_scene_painted = true
 
 [node name="InimigoApenasAnda6" parent="Inimigos" unique_id=957886520 instance=ExtResource("14_2d721")]
 position = Vector2(5555.323, 512.2816)
+metadata/_scene_painted = true
+
+[node name="Enemy_fly4" parent="Inimigos" unique_id=737204400 instance=ExtResource("11_ya7y5")]
+position = Vector2(5944.558, 157.08452)
 metadata/_scene_painted = true
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=2055807638]
