@@ -3,10 +3,14 @@ var player_dash_cooldown:float
 var player_heal_bar:int
 var dash_cooldown:float
 var player_jump_max: int
+@warning_ignore("unused_signal")
 signal update_maximum #Usado em ui_jogador, emitido em heal
 signal heal_update_signal #Usado em ui_jogador, emitido em heal
+@warning_ignore("unused_signal")
 signal jump_update_signal #Usado em ui_jogador, emitido em jump2
+@warning_ignore("unused_signal")
 signal dash_update_signal #Usado em ui_jogador, emitido em dash
+@warning_ignore("unused_signal")
 signal change_UI_color #Usando em ui_jogador, emitido em protagonist
 var green_power:bool = true
 var magent_power:bool = true
@@ -19,7 +23,7 @@ func _ready() -> void:
 	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func heal_change(value):

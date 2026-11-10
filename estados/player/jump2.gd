@@ -1,5 +1,5 @@
 extends jump
-var jump_max:int = 3
+var jump_max:int = 2
 var jump_atual:int = 1
 
 func _ready() -> void:

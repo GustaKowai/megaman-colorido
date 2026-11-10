@@ -1,103 +1,163 @@
 [gd_scene format=3 uid="uid://ygtxmot352ec"]
 
 [ext_resource type="Script" uid="uid://dh714s7hvg8ix" path="res://UI/ui_jogador.gd" id="1_3511r"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t2pfa"]
-bg_color = Color(0.55038106, 0.62397355, 0.55456334, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6c72l"]
-bg_color = Color(0.6, 1, 0.6, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x7ldb"]
-bg_color = Color(0.50278646, 0.6152028, 0.7165212, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_epppe"]
-bg_color = Color(0, 0.6398051, 0.9386532, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isrfi"]
-bg_color = Color(0.60533786, 0.61527735, 0.4550928, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jjhmf"]
-bg_color = Color(0.5845814, 0.6427908, 5.7756904e-07, 1)
+[ext_resource type="Texture2D" uid="uid://b1726cdxc4xk2" path="res://Sprites/UI/UI/hp_bar.png" id="2_30vv4"]
+[ext_resource type="Texture2D" uid="uid://c1w7mueph6d7c" path="res://Sprites/UI/UI/green_gems.png" id="2_ak3a2"]
+[ext_resource type="Texture2D" uid="uid://gnf7a5exmrq7" path="res://Sprites/UI/UI/magenta_gems.png" id="3_45ehc"]
+[ext_resource type="Texture2D" uid="uid://e5sf6da5qifi" path="res://Sprites/UI/UI/5hp.png" id="3_wraog"]
+[ext_resource type="Texture2D" uid="uid://c3h2r2k1h1j2m" path="res://Sprites/UI/UI/blue_gems.png" id="4_6tqcp"]
+[ext_resource type="Texture2D" uid="uid://boct61uiwddfn" path="res://Sprites/UI/UI/gear.png" id="4_yej6o"]
+[ext_resource type="Texture2D" uid="uid://c5m7mt5cqrt3f" path="res://Sprites/UI/UI/blue_orb.png" id="5_1sc8p"]
+[ext_resource type="Texture2D" uid="uid://bb64mf5jugoy6" path="res://Sprites/UI/UI/yellow_gems.png" id="5_ak3a2"]
+[ext_resource type="Texture2D" uid="uid://da65t1mfir55e" path="res://Sprites/UI/UI/blue_on.png" id="6_indb6"]
+[ext_resource type="Texture2D" uid="uid://cjnkmftondnme" path="res://Sprites/UI/UI/blue_off.png" id="7_b330q"]
+[ext_resource type="Texture2D" uid="uid://dxkinrdeh61n0" path="res://Sprites/UI/UI/bar_outline.png" id="8_6tqcp"]
+[ext_resource type="Texture2D" uid="uid://d4f6p2ynf3ogh" path="res://Sprites/UI/UI/green_orb.png" id="8_xb862"]
+[ext_resource type="Texture2D" uid="uid://bpohkr8t3mv8o" path="res://Sprites/UI/UI/green_bar.png" id="9_5lyqp"]
+[ext_resource type="Texture2D" uid="uid://craecdoyduh06" path="res://Sprites/UI/UI/magenta_orb.png" id="9_vtld1"]
+[ext_resource type="Texture2D" uid="uid://3kdgnkhrymtx" path="res://Sprites/UI/UI/green_off.png" id="9_xb862"]
+[ext_resource type="Texture2D" uid="uid://cempjjlt04sqa" path="res://Sprites/UI/UI/blue_bar.png" id="10_ggyof"]
+[ext_resource type="Texture2D" uid="uid://cugqe6de5or8h" path="res://Sprites/UI/UI/magenta_off.png" id="10_indb6"]
+[ext_resource type="Texture2D" uid="uid://dxnjh5ad8e7ol" path="res://Sprites/UI/UI/yellow_orb.png" id="10_oyk5v"]
+[ext_resource type="Texture2D" uid="uid://d11g7o1y4iv51" path="res://Sprites/UI/UI/green_on.png" id="10_vtld1"]
+[ext_resource type="Texture2D" uid="uid://blw06mjerw11u" path="res://Sprites/UI/UI/blue_orb_slot.png" id="11_5xjgd"]
+[ext_resource type="Texture2D" uid="uid://bfqrqi230h0hm" path="res://Sprites/UI/UI/magenta_on.png" id="11_b330q"]
+[ext_resource type="Texture2D" uid="uid://borv0r0pwj45" path="res://Sprites/UI/UI/yellow_off.png" id="11_yej6o"]
+[ext_resource type="Texture2D" uid="uid://dslyp2tfgrh6l" path="res://Sprites/UI/UI/yellow_on.png" id="12_1sc8p"]
+[ext_resource type="Texture2D" uid="uid://3pgtltvxjlhr" path="res://Sprites/UI/UI/yellow_bar.png" id="12_5xjgd"]
+[ext_resource type="Texture2D" uid="uid://cgf4euidgo66m" path="res://Sprites/UI/UI/2orbs.png" id="12_bhoh4"]
 
 [node name="UI_jogador" type="CanvasLayer" unique_id=840519676]
 script = ExtResource("1_3511r")
+outlines = Array[Texture2D]([ExtResource("2_ak3a2"), ExtResource("3_45ehc"), ExtResource("4_6tqcp"), ExtResource("5_ak3a2")])
 
-[node name="uiContainer" type="VBoxContainer" parent="." unique_id=819550086]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=450974388]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="uiContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=819550086]
 unique_name_in_owner = true
-offset_right = 618.0
-offset_bottom = 58.0
-
-[node name="lifeContainer" type="MarginContainer" parent="uiContainer" unique_id=1560430906]
 layout_mode = 2
 
-[node name="LifeBar" type="ProgressBar" parent="uiContainer/lifeContainer" unique_id=867696797]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 25)
+[node name="lifeContainer" type="MarginContainer" parent="HBoxContainer/uiContainer" unique_id=1560430906]
 layout_mode = 2
-max_value = 10.0
+
+[node name="LifeBar" type="TextureProgressBar" parent="HBoxContainer/uiContainer/lifeContainer" unique_id=1104466378]
+unique_name_in_owner = true
+texture_filter = 3
+layout_mode = 2
+max_value = 5.0
 value = 3.0
-show_percentage = false
+texture_under = ExtResource("2_30vv4")
+texture_progress = ExtResource("3_wraog")
+texture_progress_offset = Vector2(101, 74)
 metadata/_edit_use_anchors_ = true
 
-[node name="LifeLabel" type="Label" parent="uiContainer/lifeContainer" unique_id=1124481284]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 4
-text = "5/10"
-
-[node name="greenContainer" type="MarginContainer" parent="uiContainer" unique_id=1786838675]
+[node name="greenContainer" type="MarginContainer" parent="HBoxContainer/uiContainer" unique_id=1786838675]
 unique_name_in_owner = true
 visible = false
 layout_mode = 2
 
-[node name="HealBar" type="ProgressBar" parent="uiContainer/greenContainer" unique_id=1194707935]
+[node name="HealBar" type="TextureProgressBar" parent="HBoxContainer/uiContainer/greenContainer" unique_id=1094662883]
 unique_name_in_owner = true
+texture_filter = 3
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, -95)
+value = 10.0
+texture_under = ExtResource("8_6tqcp")
+texture_progress = ExtResource("9_5lyqp")
+texture_progress_offset = Vector2(1, 11)
+
+[node name="blueContainer" type="VBoxContainer" parent="HBoxContainer/uiContainer" unique_id=1877423136]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Dash" type="MarginContainer" parent="HBoxContainer/uiContainer/blueContainer" unique_id=175526897]
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, -95)
+
+[node name="DashBar" type="TextureProgressBar" parent="HBoxContainer/uiContainer/blueContainer/Dash" unique_id=1302938900]
+unique_name_in_owner = true
+texture_filter = 3
 custom_minimum_size = Vector2(0, 25)
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_t2pfa")
-theme_override_styles/fill = SubResource("StyleBoxFlat_6c72l")
-show_percentage = false
+step = 0.1
+value = 100.0
+texture_under = ExtResource("8_6tqcp")
+texture_progress = ExtResource("10_ggyof")
+texture_progress_offset = Vector2(1, 6)
 
-[node name="HealLabel" type="Label" parent="uiContainer/greenContainer" unique_id=1380864774]
+[node name="Jump" type="MarginContainer" parent="HBoxContainer/uiContainer/blueContainer" unique_id=391501054]
+layout_mode = 2
+
+[node name="JumpCounter" type="TextureProgressBar" parent="HBoxContainer/uiContainer/blueContainer/Jump" unique_id=1677844142]
 unique_name_in_owner = true
+texture_filter = 3
 layout_mode = 2
-size_flags_horizontal = 4
-text = "5/10"
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, -105)
+value = 100.0
+texture_under = ExtResource("11_5xjgd")
+texture_progress = ExtResource("12_bhoh4")
 
-[node name="blueContainer" type="VBoxContainer" parent="uiContainer" unique_id=1877423136]
-unique_name_in_owner = true
-visible = false
-layout_mode = 2
-
-[node name="Dash" type="MarginContainer" parent="uiContainer/blueContainer" unique_id=175526897]
-layout_mode = 2
-
-[node name="DashBar" type="ProgressBar" parent="uiContainer/blueContainer/Dash" unique_id=298852268]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 25)
-layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_x7ldb")
-theme_override_styles/fill = SubResource("StyleBoxFlat_epppe")
-value = 60.0
-show_percentage = false
-
-[node name="Jump" type="MarginContainer" parent="uiContainer/blueContainer" unique_id=391501054]
-layout_mode = 2
-
-[node name="JumpCounter" type="ProgressBar" parent="uiContainer/blueContainer/Jump" unique_id=2103004053]
-unique_name_in_owner = true
-layout_mode = 2
-
-[node name="yellowContainar" type="MarginContainer" parent="uiContainer" unique_id=1140482267]
+[node name="yellowContainar" type="MarginContainer" parent="HBoxContainer/uiContainer" unique_id=1140482267]
 unique_name_in_owner = true
 visible = false
+texture_filter = 3
 layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(100, -95)
 
-[node name="ShieldBar" type="ProgressBar" parent="uiContainer/yellowContainar" unique_id=371936167]
+[node name="ShieldBar" type="TextureProgressBar" parent="HBoxContainer/uiContainer/yellowContainar" unique_id=1611324440]
 unique_name_in_owner = true
-visible = false
 layout_mode = 2
-theme_override_styles/background = SubResource("StyleBoxFlat_isrfi")
-theme_override_styles/fill = SubResource("StyleBoxFlat_jjhmf")
-value = 5.0
+value = 100.0
+texture_under = ExtResource("8_6tqcp")
+texture_progress = ExtResource("12_5xjgd")
+texture_progress_offset = Vector2(1, 5)
+
+[node name="Gear" type="Sprite2D" parent="." unique_id=694998607]
+texture_filter = 3
+position = Vector2(187, 86)
+texture = ExtResource("4_yej6o")
+
+[node name="BlueOrb" type="Sprite2D" parent="Gear" unique_id=1304946808]
+texture = ExtResource("5_1sc8p")
+
+[node name="BlueOn" type="Sprite2D" parent="Gear/BlueOrb" unique_id=958402964]
+texture = ExtResource("6_indb6")
+
+[node name="BlueOff" type="Sprite2D" parent="Gear/BlueOrb" unique_id=698495681]
+texture = ExtResource("7_b330q")
+
+[node name="GreenOrb" type="Sprite2D" parent="Gear" unique_id=338115090]
+texture = ExtResource("8_xb862")
+
+[node name="GreenOff" type="Sprite2D" parent="Gear/GreenOrb" unique_id=932370805]
+texture = ExtResource("9_xb862")
+
+[node name="GreenOn" type="Sprite2D" parent="Gear/GreenOrb" unique_id=1535176007]
+texture = ExtResource("10_vtld1")
+
+[node name="MagentOrb" type="Sprite2D" parent="Gear" unique_id=1822387214]
+texture = ExtResource("9_vtld1")
+
+[node name="MagentaOff" type="Sprite2D" parent="Gear/MagentOrb" unique_id=26005044]
+texture = ExtResource("10_indb6")
+
+[node name="MagentaOn" type="Sprite2D" parent="Gear/MagentOrb" unique_id=1250441265]
+texture = ExtResource("11_b330q")
+
+[node name="YellowOrb" type="Sprite2D" parent="Gear" unique_id=732884790]
+texture = ExtResource("10_oyk5v")
+
+[node name="YellowOff" type="Sprite2D" parent="Gear/YellowOrb" unique_id=700647759]
+texture = ExtResource("11_yej6o")
+
+[node name="YellowOn" type="Sprite2D" parent="Gear/YellowOrb" unique_id=1401126956]
+texture = ExtResource("12_1sc8p")
+
+[node name="Outline" type="Sprite2D" parent="Gear" unique_id=1980795733]
+position = Vector2(15, 5)
