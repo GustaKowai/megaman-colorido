@@ -12,6 +12,8 @@ func _ready() -> void:
 
 func Enter():
 	dash_time = dash_time_max
+	if dash_cooldown < 0:
+		target.animation_player.play("dash")
 		
 func Physics_update(delta: float):
 	if dash_cooldown >= 0:
