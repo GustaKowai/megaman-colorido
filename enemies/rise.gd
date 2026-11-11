@@ -9,6 +9,7 @@ func _ready() -> void:
 	enemy = target
 
 func Enter():
+	target.global_position.x = target.posicao_inicial_x
 	#print_debug("Thwomp Rise")
 	if enemy.sprite:
 		enemy.sprite.play("rise")

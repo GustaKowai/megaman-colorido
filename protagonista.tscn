@@ -503,6 +503,7 @@ script = ExtResource("6_vsclo")
 target = NodePath("..")
 max_life = 5
 knockback = 300
+invulnerability_time = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_box" unique_id=445343094]
 position = Vector2(0, -2.5)

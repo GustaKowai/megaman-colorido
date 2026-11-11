@@ -8,6 +8,9 @@ func _ready() -> void:
 	#print_tree_pretty()
 
 func Enter():
+	#if target.is_in_group("Player"):
+		#var hurtbox = target.get_node("Hurt_box")
+		#hurtbox.process_mode = Node.PROCESS_MODE_DISABLED
 	target.set_collision_mask_value(2,false)
 	#print_debug("damaged")
 	#get_parent().print_tree_pretty()
@@ -30,6 +33,9 @@ func Physics_update(_delta: float):
 		Transitioned.emit(self,"idle")
 func Exit():
 	target.set_collision_mask_value(2,true)
-	target.just_damaged = false
+	#if target.is_in_group("Player"):
+		#var hurtbox = target.get_node("Hurt_box")
+		#hurtbox.process_mode = Node.PROCESS_MODE_INHERIT
+	#target.just_damaged = false
 	target.velocity.x = 0
 	target.modulate = Color.WHITE
