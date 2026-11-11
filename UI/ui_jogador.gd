@@ -11,7 +11,7 @@ extends CanvasLayer
 @onready var yellow_containar: MarginContainer = %yellowContainar
 @onready var blue_container: VBoxContainer = %blueContainer
 @onready var jump_counter: TextureProgressBar = %JumpCounter
-#@onready var music: AudioStreamPlayer = $"../music"
+@onready var music: AudioStreamPlayer = $"../music"
 @onready var outline: Sprite2D = $Gear/Outline
 
 # Sprites das esferas de cores

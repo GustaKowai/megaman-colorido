@@ -102,6 +102,7 @@ cor-4={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=3
 rendering_device/driver.windows="d3d12"
 viewport/hdr_2d=true
 textures/decals/filter=0

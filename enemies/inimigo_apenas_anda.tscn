@@ -230,7 +230,7 @@ metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 stream = ExtResource("8_h111i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
-texture_filter = 1
+texture_filter = 3
 sprite_frames = SubResource("SpriteFrames_e2r5q")
 animation = &"walk"
 
