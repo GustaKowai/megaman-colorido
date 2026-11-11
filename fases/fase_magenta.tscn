@@ -25,7 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="15_eaqgv"]
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="16_h3bdf"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="17_vnjwu"]
-[ext_resource type="AudioStream" uid="uid://cgt5kjps17c8a" path="res://musics/fase roxa.wav" id="19_m53wf"]
+[ext_resource type="AudioStream" uid="uid://d4m7y7y2fgo" path="res://musics/fase magenta new.wav" id="26_dt6v0"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -40,136 +40,136 @@ colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_g6jd5"]
 gradient = SubResource("Gradient_a5kn8")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bt0fn"]
-atlas = ExtResource("6_7nuoy")
-region = Rect2(0, 0, 1198, 323)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_y4af3"]
 atlas = ExtResource("7_gxico")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bt0fn"]
+atlas = ExtResource("6_7nuoy")
 region = Rect2(0, 0, 1198, 323)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_e2r5q"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bt0fn")
+"texture": SubResource("AtlasTexture_y4af3")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_y4af3")
+"texture": SubResource("AtlasTexture_bt0fn")
 }],
 "loop": 1,
 "name": &"new_animation",
-"speed": 0.3
+"speed": 0.01
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2g727"]
-atlas = ExtResource("8_dt6v0")
-region = Rect2(0, 0, 1198, 323)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ffcsb"]
 atlas = ExtResource("7_gxico")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g727"]
+atlas = ExtResource("8_dt6v0")
 region = Rect2(0, 0, 1198, 323)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mbmut"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2g727")
+"texture": SubResource("AtlasTexture_ffcsb")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ffcsb")
+"texture": SubResource("AtlasTexture_2g727")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 0.2
+"speed": 0.86
 }]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_d8oaf"]
-atlas = ExtResource("9_1wr6d")
-region = Rect2(0, 0, 1198, 323)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ys6uj"]
 atlas = ExtResource("7_gxico")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d8oaf"]
+atlas = ExtResource("9_1wr6d")
 region = Rect2(0, 0, 1198, 323)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_gpdgb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_d8oaf")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_ys6uj")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 0.15
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vp3dx"]
-atlas = ExtResource("10_j4ljj")
-region = Rect2(0, 0, 1198, 323)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ielxq"]
-atlas = ExtResource("7_gxico")
-region = Rect2(0, 0, 1198, 323)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_4kprp"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vp3dx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ielxq")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 0.1
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j4ljj"]
-atlas = ExtResource("11_dt6v0")
-region = Rect2(0, 0, 1198, 323)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gq8sl"]
-atlas = ExtResource("7_gxico")
-region = Rect2(0, 0, 1198, 323)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_6oc7h"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j4ljj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_gq8sl")
+"texture": SubResource("AtlasTexture_d8oaf")
 }],
 "loop": 1,
 "name": &"default",
 "speed": 0.05
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_14l48"]
-atlas = ExtResource("12_1wr6d")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ielxq"]
+atlas = ExtResource("7_gxico")
 region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vp3dx"]
+atlas = ExtResource("10_j4ljj")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4kprp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ielxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vp3dx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.1
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gq8sl"]
+atlas = ExtResource("7_gxico")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4ljj"]
+atlas = ExtResource("11_dt6v0")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6oc7h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gq8sl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4ljj")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 0.21
+}]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qtyul"]
 atlas = ExtResource("7_gxico")
+region = Rect2(0, 0, 1198, 323)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14l48"]
+atlas = ExtResource("12_1wr6d")
 region = Rect2(0, 0, 1198, 323)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nlamf"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_14l48")
+"texture": SubResource("AtlasTexture_qtyul")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qtyul")
+"texture": SubResource("AtlasTexture_14l48")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 0.11
+"speed": 0.43
 }]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8v1wn"]
@@ -562,8 +562,8 @@ max_spawn_time = 3.0
 metadata/_scene_painted = true
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=296106273]
-stream = ExtResource("19_m53wf")
-volume_db = 8.764
+stream = ExtResource("26_dt6v0")
+volume_db = 7.596
 bus = &"Music"
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]
