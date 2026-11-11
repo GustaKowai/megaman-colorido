@@ -11,10 +11,10 @@ point_count = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m7ux3"]
 atlas = ExtResource("2_f8lbu")
-region = Rect2(0, 93.737686, 97.61037, 34.262314)
+region = Rect2(0, 96.1779, 97.61037, 31.822098)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(96, 30.190216)
+size = Vector2(96, 32)
 
 [sub_resource type="Animation" id="Animation_hrpga"]
 length = 0.001
@@ -55,28 +55,23 @@ _data = {
 }
 
 [node name="movingPlatform" type="Path2D" unique_id=2066398385]
-scale = Vector2(1, 1.2684563)
 curve = SubResource("Curve2D_f8lbu")
 script = ExtResource("1_hrpga")
 loop = false
 
 [node name="PathFollow2D" type="PathFollow2D" parent="." unique_id=1056215369]
-rotation = -0.006069605
 rotates = false
 
 [node name="RemoteTransform2D" type="RemoteTransform2D" parent="PathFollow2D" unique_id=2108982562]
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1051280030]
-rotation = -0.006069605
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=681419844]
-position = Vector2(7.6293945e-06, 9.536743e-07)
-scale = Vector2(0.99332756, 0.90854573)
 texture = SubResource("AtlasTexture_m7ux3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1151706035]
-position = Vector2(-4.656613e-10, 0.90489244)
+position = Vector2(-4.656613e-10, 0.5000005)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1669901835]

@@ -249,7 +249,7 @@ point_count = 2
 
 [sub_resource type="Curve2D" id="Curve2D_rmbgm"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -122.19577)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -9.775665, 0, 0, 0, 0, 0, -200)
 }
 point_count = 2
 
@@ -468,7 +468,7 @@ curve = SubResource("Curve2D_7nvl7")
 speed_scale = 0.8
 
 [node name="movingPlatform3" parent="Plataformas" unique_id=957534423 instance=ExtResource("14_m7ux3")]
-position = Vector2(6882, 491)
+position = Vector2(6880, 536)
 curve = SubResource("Curve2D_rmbgm")
 
 [node name="BreakableWall" type="Node2D" parent="." unique_id=1000374014]

@@ -155,7 +155,7 @@ shape = SubResource("RectangleShape2D_mbmut")
 [node name="HurtBox" type="Area2D" parent="." unique_id=1132308069 node_paths=PackedStringArray("target") groups=["Enemy"]]
 script = ExtResource("10_cnti5")
 target = NodePath("..")
-max_life = 5
+max_life = 1
 metadata/_custom_type_script = "uid://b4ks34rhdjoli"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1837838231]
