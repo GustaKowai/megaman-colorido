@@ -5,7 +5,7 @@ var sprite
 
 func Enter():
 	#get_parent().print_tree_pretty()
-	#print_debug("died")
+	print_debug("died")
 	die_sound.play()
 	if target.is_in_group("Player"):
 		target.set_collision_mask_value(2,false)

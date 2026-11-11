@@ -1,6 +1,6 @@
 extends State
 class_name ThumperEnemy
-@onready var timer: Timer = $Timer
+#@onready var timer: Timer = $Timer
 
 var enemy:Enemy
 
@@ -14,8 +14,8 @@ func Enter():
 	if enemy.sprite:
 		enemy.sprite.play("rise")
 	enemy.velocity.y = -200
-	if timer:
-		timer.start()
+	#if timer:
+		#timer.start()
 
 func Physics_update(_delta: float):
 	if enemy.position.y <= enemy.limite_subida:

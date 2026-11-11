@@ -16,13 +16,13 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if target.just_damaged:
-		print_debug(timer_for_invulnerability)
+		#print_debug(timer_for_invulnerability)
 		timer_for_invulnerability -= delta
 		if timer_for_invulnerability <= 0:
 			target.just_damaged = false
 
 func take_damage(damage:int,push_direction):
-	print_debug(target.just_damaged)
+	#print_debug(target.just_damaged)
 	if target.just_damaged:
 		return
 	life -= damage
@@ -35,7 +35,7 @@ func take_damage(damage:int,push_direction):
 	target.just_damaged = true
 	timer_for_invulnerability = invulnerability_time
 	damaged.emit(life)
-	print_debug(life)
+	#print_debug(life)
 	target.velocity.x = push_direction*knockback/2
 	target.velocity.y = -knockback
 

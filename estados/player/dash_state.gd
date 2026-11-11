@@ -8,6 +8,7 @@ var dash_time:float
 var dash_cooldown:float
 
 func _ready() -> void:
+	super()
 	PlayerManager.dash_cooldown = dash_cooldown_max
 
 func Enter():
