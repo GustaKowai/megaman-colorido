@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://c2272i2utbpeo"]
+
+[ext_resource type="Script" uid="uid://kukxp2v0i8hq" path="res://laser.gd" id="1_uyd7t"]
+[ext_resource type="Texture2D" uid="uid://tgsrgxenr5pl" path="res://Sprites/laser_shooter_placeholder.png" id="2_64tj7"]
+[ext_resource type="Texture2D" uid="uid://b2ecripqh4f7f" path="res://Sprites/laser_placeholder.png" id="3_2d05f"]
+[ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="4_50flt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
+size = Vector2(4, 96)
+
+[node name="Laser" type="Node2D" unique_id=140452037]
+script = ExtResource("1_uyd7t")
+
+[node name="Shooter" type="Sprite2D" parent="." unique_id=1466912812]
+texture = ExtResource("2_64tj7")
+
+[node name="Laser" type="Sprite2D" parent="." unique_id=1069154391]
+position = Vector2(0, 64)
+texture = ExtResource("3_2d05f")
+
+[node name="DamageBox" type="Area2D" parent="Laser" unique_id=11254491]
+script = ExtResource("4_50flt")
+damage_to = "Player"
+damage = 1
+metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser/DamageBox" unique_id=1132023383]
+shape = SubResource("RectangleShape2D_hgjhj")
+
+[connection signal="area_entered" from="Laser/DamageBox" to="Laser/DamageBox" method="_on_area_entered"]

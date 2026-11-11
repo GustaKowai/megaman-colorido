@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bykr5d5eflhrp"]
+
+[ext_resource type="Script" uid="uid://iv0uk4cv3m2n" path="res://button.gd" id="1_lra4t"]
+[ext_resource type="Texture2D" uid="uid://dpj26yseqk4p1" path="res://Sprites/botao_fase.png" id="2_tpn6a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6gcg"]
+atlas = ExtResource("2_tpn6a")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dyahk"]
+atlas = ExtResource("2_tpn6a")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hgjhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s6gcg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dyahk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
+size = Vector2(32, 5)
+
+[node name="Button" type="Area2D" unique_id=713022281]
+script = ExtResource("1_lra4t")
+
+[node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1297373007]
+sprite_frames = SubResource("SpriteFrames_hgjhj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1760748543]
+position = Vector2(0, 13.5)
+shape = SubResource("RectangleShape2D_hgjhj")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
