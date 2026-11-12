@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://unvhyjtqpd54"]
 
-[ext_resource type="Script" uid="uid://cckunixtvck0o" path="res://enemies/inimigo.gd" id="1_rj0at"]
+[ext_resource type="Script" uid="uid://bleo0iomi2b5t" path="res://enemies/inimigo_atira.gd" id="1_rj0at"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="2_w26wo"]
 [ext_resource type="Script" uid="uid://cwrarlpxhkrks" path="res://enemies/idle_shoot_timer.gd" id="3_rj0at"]
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://estados/enemies/enemy_fall_state.gd" id="4_wkbvr"]
@@ -135,6 +135,10 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("15_02lmp")
 region = Rect2(96, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rj0at"]
+atlas = ExtResource("16_rj0at")
+region = Rect2(0, 0, 34, 59)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_w26wo"]
 atlas = ExtResource("16_rj0at")
 region = Rect2(0, 0, 30, 60)
@@ -250,6 +254,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_rj0at")
+}],
+"loop": 1,
+"name": &"shoot",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_w26wo")
 }],
 "loop": 1,
@@ -271,7 +283,9 @@ scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_rj0at")
-speed = 200.0
+inclinacao_tiro = 30.0
+tempo_tiro = 0.5
+delay_primeiro_tiro = 3.0
 
 [node name="State_machine" type="Node" parent="." unique_id=1093209048 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_w26wo")
@@ -331,10 +345,11 @@ one_shot = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e2r5q")
-animation = &"walk"
+animation = &"shoot"
 flip_h = true
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
+unique_name_in_owner = true
 position = Vector2(9.5, 0)
 scale = Vector2(0.3, 0.3)
 

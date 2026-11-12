@@ -26,6 +26,7 @@
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="16_h3bdf"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="17_vnjwu"]
 [ext_resource type="AudioStream" uid="uid://d4m7y7y2fgo" path="res://musics/fase magenta new.wav" id="26_dt6v0"]
+[ext_resource type="PackedScene" uid="uid://dtrg2tbom02p3" path="res://enemies/inimigo_atira_diagonal.tscn" id="27_1wr6d"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -565,5 +566,8 @@ metadata/_scene_painted = true
 stream = ExtResource("26_dt6v0")
 volume_db = 7.596
 bus = &"Music"
+
+[node name="InimigoAtiraDi" parent="." unique_id=1242393736 instance=ExtResource("27_1wr6d")]
+position = Vector2(571, 569)
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

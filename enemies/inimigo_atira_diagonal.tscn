@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dtrg2tbom02p3"]
 
-[ext_resource type="Script" uid="uid://cckunixtvck0o" path="res://enemies/inimigo.gd" id="1_dyp3k"]
+[ext_resource type="Script" uid="uid://bleo0iomi2b5t" path="res://enemies/inimigo_atira.gd" id="1_dyp3k"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="2_pi7qm"]
 [ext_resource type="Script" uid="uid://cwrarlpxhkrks" path="res://enemies/idle_shoot_timer.gd" id="3_a1awe"]
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://estados/enemies/enemy_fall_state.gd" id="4_508cv"]
@@ -271,7 +271,6 @@ scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_dyp3k")
-speed = 200.0
 
 [node name="State_machine" type="Node" parent="." unique_id=1093209048 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_pi7qm")
@@ -335,8 +334,9 @@ animation = &"walk"
 flip_h = true
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
+unique_name_in_owner = true
 position = Vector2(-9.5, -3.5000002)
-rotation = 0.7749262
+rotation = 0.7853982
 scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]

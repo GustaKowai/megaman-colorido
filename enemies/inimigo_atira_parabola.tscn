@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://msmtxba6mxv0"]
 
-[ext_resource type="Script" uid="uid://denio1s2iiind" path="res://enemies/inimigo_atira_parabola.gd" id="1_2ub0n"]
+[ext_resource type="Script" uid="uid://bleo0iomi2b5t" path="res://enemies/inimigo_atira.gd" id="1_2ub0n"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="2_4hf6a"]
 [ext_resource type="Script" uid="uid://cwrarlpxhkrks" path="res://enemies/idle_shoot_timer.gd" id="3_xwuy6"]
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://estados/enemies/enemy_fall_state.gd" id="4_t4w18"]
@@ -334,6 +334,7 @@ animation = &"walk"
 flip_h = true
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
+unique_name_in_owner = true
 position = Vector2(-9.000001, -5.0000005)
 rotation = 0.7888888
 scale = Vector2(0.3, 0.3)
