@@ -35,10 +35,10 @@ func Update(delta: float):
 func charge_heal(delta):
 	heal_time -= delta
 	if heal_time <= 0 and heal_bar > 0:
-		particles.emitting = true
 		if hurtbox.life == hurtbox.max_life:
 			return
 		heal_bar -= heal_amount
+		particles.emitting = true
 		PlayerManager.heal_update_signal.emit(heal_bar)
 		hurtbox.give_heal(heal_amount)
 		heal_time = heal_speed

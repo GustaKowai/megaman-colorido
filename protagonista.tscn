@@ -27,9 +27,7 @@
 [ext_resource type="Script" uid="uid://yc265nbm3beb" path="res://estados/player/shield_state.gd" id="18_xeeyi"]
 [ext_resource type="PackedScene" uid="uid://i88evwuqjsn" path="res://shoot_explosion.tscn" id="20_gt6pu"]
 [ext_resource type="AudioStream" uid="uid://488snjkxa2gk" path="res://sfx/tiro jogador.wav" id="20_lwusa"]
-
-[sub_resource type="Gradient" id="Gradient_hgjhj"]
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+[ext_resource type="Texture2D" uid="uid://dkj68g56il2d2" path="res://Sprites/heal-effect.png" id="28_g24kp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(20, 57)
@@ -468,6 +466,9 @@ fill = 1
 fill_from = Vector2(0.48554912, 0.5953757)
 fill_to = Vector2(0.9450867, 0.5231214)
 
+[sub_resource type="Gradient" id="Gradient_hgjhj"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
 [node name="Protagonista" type="CharacterBody2D" unique_id=2054658706 groups=["Player"]]
 texture_filter = 3
 collision_mask = 3
@@ -481,20 +482,6 @@ sprite_yellow = ExtResource("6_6l04p")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=525152556]
 current = true
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1381449939]
-position = Vector2(3, -5)
-emitting = false
-amount = 15
-one_shot = true
-emission_shape = 1
-emission_sphere_radius = 3.23
-direction = Vector2(0, -1)
-gravity = Vector2(0, 50)
-initial_velocity_min = 50.0
-initial_velocity_max = 50.0
-color = Color(0, 3.3372512, 0, 1)
-color_ramp = SubResource("Gradient_hgjhj")
 
 [node name="Hurt_box" type="Area2D" parent="." unique_id=1430758203 node_paths=PackedStringArray("target") groups=["Player"]]
 collision_layer = 5
@@ -783,3 +770,18 @@ scale = Vector2(0.83593756, 0.90625)
 color = Color(0, 1, 1, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_03edm")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=1381449939]
+position = Vector2(3, -5)
+emitting = false
+amount = 15
+texture = ExtResource("28_g24kp")
+one_shot = true
+emission_shape = 1
+emission_sphere_radius = 3.23
+direction = Vector2(0, -1)
+gravity = Vector2(0, 50)
+initial_velocity_min = 50.0
+initial_velocity_max = 50.0
+color = Color(0, 3.3372512, 0, 1)
+color_ramp = SubResource("Gradient_hgjhj")

@@ -23,13 +23,9 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("2_1q8uq")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eg13m"]
-atlas = ExtResource("2_1q8uq")
+[sub_resource type="AtlasTexture" id="AtlasTexture_usjxl"]
+atlas = ExtResource("3_fqh66")
 region = Rect2(0, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fqh66"]
-atlas = ExtResource("2_1q8uq")
-region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hb3m"]
 atlas = ExtResource("3_fqh66")
@@ -50,10 +46,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eg13m")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fqh66")
+"texture": SubResource("AtlasTexture_usjxl")
 }],
 "loop": 0,
 "name": &"die",
@@ -101,7 +94,7 @@ shape = SubResource("RectangleShape2D_hgjhj")
 texture_filter = 3
 position = Vector2(-1, -12)
 sprite_frames = SubResource("SpriteFrames_hgjhj")
-animation = &"idle"
+animation = &"die"
 autoplay = "idle"
 
 [node name="State_machine" type="Node" parent="." unique_id=301085884 node_paths=PackedStringArray("initial_state")]
