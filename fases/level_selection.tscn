@@ -231,26 +231,26 @@ tile_set = SubResource("TileSet_txqpt")
 
 [node name="Exits" type="Node2D" parent="." unique_id=874726240]
 
+[node name="Exit2" parent="Exits" unique_id=1854873059 instance=ExtResource("4_whp7c")]
+position = Vector2(239, 525)
+level_number = 1
+
 [node name="Exit3" parent="Exits" unique_id=1120618793 instance=ExtResource("4_whp7c")]
 position = Vector2(399.69464, 525.82117)
-level_number = 1
+level_number = 2
 metadata/_scene_painted = true
 
 [node name="Exit4" parent="Exits" unique_id=117924691 instance=ExtResource("4_whp7c")]
 position = Vector2(560.3613, 524.4878)
-level_number = 2
+level_number = 3
 metadata/_scene_painted = true
-
-[node name="Exit2" parent="Exits" unique_id=1854873059 instance=ExtResource("4_whp7c")]
-position = Vector2(239, 525)
 
 [node name="Exit" parent="Exits" unique_id=708091265 instance=ExtResource("4_whp7c")]
 position = Vector2(719, 530)
-level_number = 3
+level_number = 4
 
 [node name="Exit5" parent="Exits" unique_id=312917500 instance=ExtResource("4_whp7c")]
 position = Vector2(881, 528)
-level_number = 4
 
 [node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("7_85421")]
 position = Vector2(100, 530)
