@@ -4,24 +4,59 @@
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="2_8fgxy"]
 [ext_resource type="Script" uid="uid://dnbvadpbcp3we" path="res://fly.gd" id="3_eewyy"]
 [ext_resource type="Script" uid="uid://cfgjh58rydnef" path="res://enemies/damage_broca.gd" id="4_8vpqu"]
-[ext_resource type="Texture2D" uid="uid://clqs33t7br3n0" path="res://Sprites/dzvzvqi452q01.png" id="4_f2ff6"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="5_ju1yr"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="6_crc7b"]
+[ext_resource type="Texture2D" uid="uid://8nwjllb7erq4" path="res://Sprites/enemies/drill.png" id="7_ju1yr"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="8_ju1yr"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="9_crc7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(153, 174)
+size = Vector2(30.75, 36)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8vpqu"]
-atlas = ExtResource("4_f2ff6")
-region = Rect2(0, 0, 384, 256)
+[sub_resource type="AtlasTexture" id="AtlasTexture_crc7b"]
+atlas = ExtResource("7_ju1yr")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ill15"]
+atlas = ExtResource("7_ju1yr")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_58esp"]
+atlas = ExtResource("7_ju1yr")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kauo0"]
+atlas = ExtResource("7_ju1yr")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4b5qa"]
+atlas = ExtResource("7_ju1yr")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jer02"]
+atlas = ExtResource("7_ju1yr")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hgjhj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8vpqu")
+"texture": SubResource("AtlasTexture_crc7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ill15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58esp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kauo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b5qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jer02")
 }],
 "loop": 0,
 "name": &"die",
@@ -29,7 +64,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8vpqu")
+"texture": SubResource("AtlasTexture_crc7b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ill15")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_58esp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kauo0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4b5qa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jer02")
 }],
 "loop": 1,
 "name": &"walk",
@@ -37,13 +87,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ill15"]
-size = Vector2(380, 170)
+size = Vector2(65, 36)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58esp"]
-size = Vector2(380, 172.33333)
+size = Vector2(65, 36)
 
 [node name="Enemy_broca" type="CharacterBody2D" unique_id=162401205 groups=["Enemy"]]
-scale = Vector2(0.3, 0.3)
 collision_layer = 2
 collision_mask = 4
 motion_mode = 1
@@ -80,12 +129,13 @@ metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 stream = ExtResource("6_crc7b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=851423386]
-position = Vector2(-113.5, -7)
+position = Vector2(-17.375, -3)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713863441]
 sprite_frames = SubResource("SpriteFrames_hgjhj")
 animation = &"die"
+autoplay = "walk"
 
 [node name="DamageBox" type="Area2D" parent="." unique_id=1630529426]
 script = ExtResource("8_ju1yr")
@@ -94,22 +144,22 @@ damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=544219750]
-position = Vector2(0, -6)
+position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_ill15")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1105894256 node_paths=PackedStringArray("target") groups=["Enemy"]]
 script = ExtResource("9_crc7b")
 target = NodePath("..")
-max_life = 2
+max_life = 1
 metadata/_custom_type_script = "uid://b4ks34rhdjoli"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=16023993]
-position = Vector2(0, -7.1666646)
+position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_58esp")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=76941522]
-position = Vector2(-180, 70)
-rect = Rect2(-10, -163.33333, 380, 173.33333)
+position = Vector2(-165, 54)
+rect = Rect2(132, -74, 66, 36)
 
 [connection signal="timeout" from="State_machine/Damage/Timer" to="State_machine/Damage" method="_on_timer_timeout"]
 [connection signal="animation_finished" from="AnimatedSprite2D" to="State_machine/Died" method="_on_animated_sprite_2d_animation_finished"]

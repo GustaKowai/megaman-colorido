@@ -5,26 +5,47 @@
 [ext_resource type="Script" uid="uid://cwq2ma53h7aal" path="res://enemies/idletorise.gd" id="3_gsefr"]
 [ext_resource type="Script" uid="uid://dapitt74sbu3b" path="res://enemies/enemy_tree_fall.gd" id="4_j1p6w"]
 [ext_resource type="Script" uid="uid://bc5ed42so4cxs" path="res://enemies/rise.gd" id="5_gsefr"]
-[ext_resource type="Texture2D" uid="uid://dr2u3eqvsg81j" path="res://Sprites/enemies/tronco.png" id="6_gsefr"]
 [ext_resource type="Script" uid="uid://d2885leodn475" path="res://enemies/idle_to_fall.gd" id="6_o5664"]
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://estados/damage_state.gd" id="6_sitw6"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_hmdcd"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="8_1gxjp"]
+[ext_resource type="Texture2D" uid="uid://cvmpdsp2mry16" path="res://Sprites/enemies/trunk_in_game.png" id="10_o5664"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="11_5bgjp"]
+[ext_resource type="Script" uid="uid://be78ta5modet2" path="res://enemies/animatable_body_2d.gd" id="12_7mxqq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mxqq"]
+atlas = ExtResource("10_o5664")
+region = Rect2(0, 0, 32, 75)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_tjamb"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_gsefr")
+"texture": SubResource("AtlasTexture_7mxqq")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mxqq")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mxqq")
+}],
+"loop": 1,
+"name": &"rise",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(32.5, 75)
+size = Vector2(32.5, 58.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2r5q"]
 size = Vector2(30, 4)
@@ -32,7 +53,11 @@ size = Vector2(30, 4)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mbmut"]
 size = Vector2(31.5, 3.25)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpdgb"]
+size = Vector2(32.625, 4.75)
+
 [node name="InimigoPedra" type="CharacterBody2D" unique_id=164572135 groups=["Enemy"]]
+z_index = -1
 scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 3
@@ -90,12 +115,13 @@ stream = ExtResource("8_1gxjp")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tjamb")
+animation = &"rise"
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
 position = Vector2(8.667, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]
-position = Vector2(-0.25, 0.5)
+position = Vector2(-0.25, 8.75)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="DamageArea" type="Area2D" parent="." unique_id=2082898256]
@@ -117,6 +143,13 @@ shape = SubResource("RectangleShape2D_mbmut")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=1110353967]
 position = Vector2(-6.5, 28.5)
 rect = Rect2(-10, -65.5, 32.5, 75.5)
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=836983612]
+script = ExtResource("12_7mxqq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1932799580]
+position = Vector2(-0.3125, -30)
+shape = SubResource("RectangleShape2D_gpdgb")
 
 [connection signal="timeout" from="State_machine/Idletorise/Timer" to="State_machine/Idletorise" method="_on_timer_timeout"]
 [connection signal="timeout" from="State_machine/Idletofall/Timer" to="State_machine/Idletofall" method="_on_timer_timeout"]
