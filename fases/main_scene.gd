@@ -1,5 +1,6 @@
 extends Node2D
 var current_level:Node2D
+@onready var game_over_window = $Game_over_window
 @export var level_list:Array[PackedScene]
 var current_level_number:int = 0
 
@@ -43,4 +44,15 @@ func _on_exit_exit_level(body,level_number):
 		call_deferred("_load_level",level_number)
 
 func restart_game_over():
+	game_over_window.visible = true
+	#_load_level(current_level_number)
+
+
+func _on_restart_level_pressed() -> void:
+	game_over_window.visible = false
 	_load_level(current_level_number)
+
+
+func _on_level_selection_pressed() -> void:
+	game_over_window.visible = false
+	_load_level(0)

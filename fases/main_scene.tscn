@@ -4,11 +4,67 @@
 [ext_resource type="PackedScene" uid="uid://c2tkqivlot6y3" path="res://fases/arena_teste_de_cores_e_brilhos.tscn" id="3_mx8uv"]
 [ext_resource type="PackedScene" uid="uid://co4akhonr77vc" path="res://fases/fase_verde_1.tscn" id="4_mx8uv"]
 [ext_resource type="PackedScene" uid="uid://c05dlhgdo78yp" path="res://fases/fase_magenta.tscn" id="5_c4i2l"]
-[ext_resource type="PackedScene" uid="uid://bb0hbxmjlch2m" path="res://fases/fase_silencio.tscn" id="6_b2e3t"]
+[ext_resource type="PackedScene" uid="uid://bb0hbxmjlch2m" path="res://fase_silencio.tscn" id="6_b2e3t"]
 [ext_resource type="PackedScene" uid="uid://eddrhnv6hwjl" path="res://fases/level_selection.tscn" id="6_c4i2l"]
+[ext_resource type="Texture2D" uid="uid://ccnh67jc6yhdv" path="res://Sprites/janela_placeholder.png" id="7_b2e3t"]
 
 [node name="MainScene" type="Node2D" unique_id=740554838]
 script = ExtResource("1_h5lnh")
 level_list = Array[PackedScene]([ExtResource("6_c4i2l"), ExtResource("4_mx8uv"), ExtResource("5_c4i2l"), ExtResource("3_mx8uv"), ExtResource("6_b2e3t")])
 
 [node name="LevelRoot" parent="." unique_id=723980373 instance=ExtResource("6_c4i2l")]
+
+[node name="Game_over_window" type="Window" parent="." unique_id=131440313]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(300, 200)
+visible = false
+unresizable = true
+borderless = true
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Game_over_window" unique_id=494445930]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_b2e3t")
+region_rect = Rect2(1.0278547, 0.8661227, 94.48075, 93.48202)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 18
+patch_margin_bottom = 18
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game_over_window" unique_id=1975065818]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -118.5
+offset_top = -57.5
+offset_right = 118.5
+offset_bottom = 57.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="Game_over_window/VBoxContainer" unique_id=1859626041]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Você morreu"
+horizontal_alignment = 1
+
+[node name="restart_level" type="Button" parent="Game_over_window/VBoxContainer" unique_id=57666271]
+layout_mode = 2
+text = "Tentar de novo"
+
+[node name="level_selection" type="Button" parent="Game_over_window/VBoxContainer" unique_id=827994266]
+layout_mode = 2
+text = "Voltar para a seleção de fases"
+
+[connection signal="pressed" from="Game_over_window/VBoxContainer/restart_level" to="." method="_on_restart_level_pressed"]
+[connection signal="pressed" from="Game_over_window/VBoxContainer/level_selection" to="." method="_on_level_selection_pressed"]

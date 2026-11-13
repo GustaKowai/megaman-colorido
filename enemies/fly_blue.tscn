@@ -61,6 +61,7 @@ scale = Vector2(2, 2)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("1_yium3")
+speed = 700.0
 metadata/_custom_type_script = "uid://cckunixtvck0o"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1572445547]

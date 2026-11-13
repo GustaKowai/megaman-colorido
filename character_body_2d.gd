@@ -27,6 +27,8 @@ var magent_power:bool = false
 var blue_power:bool = false
 var yellow_power:bool = false
 var just_damaged:bool = false
+var is_game_over:bool = false
+
 
 func _ready() -> void:
 	green_power = PlayerManager.green_power
@@ -44,11 +46,13 @@ func _ready() -> void:
 	
 
 func _process(_delta: float) -> void:
-	check_color()
+	if !is_game_over:
+		check_color()
 	
 
 func _physics_process(_delta: float) -> void:
-	move_and_slide()
+	if !is_game_over:
+		move_and_slide()
 
 func check_color():
 	if Input.is_action_just_pressed("cor-1") and green.process_mode != Node.PROCESS_MODE_INHERIT and green_power:
@@ -97,4 +101,5 @@ func check_color():
 		PlayerManager.change_UI_color.emit("yellow")
 
 func call_game_over():
+	is_game_over = true
 	game_over.emit()
