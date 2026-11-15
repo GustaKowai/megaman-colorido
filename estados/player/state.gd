@@ -29,7 +29,8 @@ func Physics_update(_delta: float):
 func on_hurt_box_damaged(_life) -> void:
 	if get_parent().can_process():
 		print_debug("tomou dano")
-		Transitioned.emit(self,"damage")
+		if _life >0:
+			Transitioned.emit(self,"damage")
 	
 func on_hurt_box_died() -> void:
 	#get_parent().print_tree_pretty()

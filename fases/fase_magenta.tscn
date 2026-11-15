@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="15_eaqgv"]
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="16_h3bdf"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="17_vnjwu"]
+[ext_resource type="Texture2D" uid="uid://leji55a4wawg" path="res://Sprites/cenarios/hidrante.png" id="18_bt0fn"]
+[ext_resource type="Texture2D" uid="uid://0t766v0wrxa6" path="res://Sprites/cenarios/poste.png" id="19_y4af3"]
 [ext_resource type="AudioStream" uid="uid://d4m7y7y2fgo" path="res://musics/fase magenta new.wav" id="26_dt6v0"]
 [ext_resource type="PackedScene" uid="uid://dtrg2tbom02p3" path="res://enemies/inimigo_atira_diagonal.tscn" id="27_1wr6d"]
 
@@ -493,6 +495,29 @@ metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 position = Vector2(2069.6465, 57.386414)
 shape = SubResource("RectangleShape2D_hgjhj")
 
+[node name="decorações" type="Node2D" parent="branco" unique_id=1543463170]
+z_index = -1
+
+[node name="Hidrante" type="Sprite2D" parent="branco/decorações" unique_id=903914470]
+position = Vector2(284, 593)
+texture = ExtResource("18_bt0fn")
+
+[node name="Poste" type="Sprite2D" parent="branco/decorações" unique_id=1975446219]
+position = Vector2(448, 552)
+texture = ExtResource("19_y4af3")
+
+[node name="Poste2" type="Sprite2D" parent="branco/decorações" unique_id=726808101]
+position = Vector2(704, 560)
+texture = ExtResource("19_y4af3")
+
+[node name="Poste3" type="Sprite2D" parent="branco/decorações" unique_id=1678292327]
+position = Vector2(960, 560)
+texture = ExtResource("19_y4af3")
+
+[node name="Hidrante2" type="Sprite2D" parent="branco/decorações" unique_id=951500044]
+position = Vector2(1272, 592)
+texture = ExtResource("18_bt0fn")
+
 [node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("9_vnjwu")]
 position = Vector2(102, 531)
 
@@ -512,20 +537,9 @@ position = Vector2(367, 567)
 [node name="wall" type="Node2D" parent="." unique_id=1489406286]
 modulate = Color(1.825, 0, 1.231, 1)
 
-[node name="breakableWall" parent="wall" unique_id=1853174996 instance=ExtResource("14_eaqgv")]
-position = Vector2(160, 480)
-metadata/_scene_painted = true
-
-[node name="breakableWall2" parent="wall" unique_id=1584607657 instance=ExtResource("14_eaqgv")]
-position = Vector2(160, 512)
-metadata/_scene_painted = true
-
 [node name="breakableWall3" parent="wall" unique_id=143048415 instance=ExtResource("14_eaqgv")]
 position = Vector2(160, 544)
-metadata/_scene_painted = true
-
-[node name="breakableWall4" parent="wall" unique_id=1595975273 instance=ExtResource("14_eaqgv")]
-position = Vector2(160, 576)
+tile_map_data = PackedByteArray("AAAAAAAAAAAFAAMAAAAAAP//AAAFAAMAAAAAAP7/AAAFAAMAAAAAAAEAAAAFAAMAAAA=")
 metadata/_scene_painted = true
 
 [node name="movingPlatform" parent="." unique_id=2066398385 instance=ExtResource("15_eaqgv")]

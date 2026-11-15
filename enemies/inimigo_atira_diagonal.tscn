@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b2ed2oeiyaq1w" path="res://estados/enemies/jump_enemy.gd" id="6_8v8gj"]
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://estados/damage_state.gd" id="7_8pq6v"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="8_o3hr8"]
+[ext_resource type="AudioStream" uid="uid://bk56wxpogdai1" path="res://sfx/enemy hit.wav" id="8_pi7qm"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="9_ty7ea"]
 [ext_resource type="Script" uid="uid://cp4gbasyd3ja1" path="res://estados/enemies/enemy_shoot.gd" id="10_wf33q"]
 [ext_resource type="PackedScene" uid="uid://bfu800jtnysoh" path="res://misc/enemy_bullet.tscn" id="11_ai6ou"]
@@ -310,6 +311,7 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
 [node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=1906638614]
+stream = ExtResource("8_pi7qm")
 
 [node name="Died" type="Node" parent="State_machine" unique_id=1952547689 node_paths=PackedStringArray("target")]
 script = ExtResource("8_o3hr8")

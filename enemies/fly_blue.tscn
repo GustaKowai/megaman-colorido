@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b3iwrrs57f37e" path="res://enemies/idle_fly_blue.gd" id="6_qd614"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_ld60a"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="8_6ay24"]
+[ext_resource type="AudioStream" uid="uid://bk56wxpogdai1" path="res://sfx/enemy hit.wav" id="8_i2k8n"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="8_rf1d1"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="9_maxpg"]
 
@@ -98,6 +99,7 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
 [node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=1277558761]
+stream = ExtResource("8_i2k8n")
 
 [node name="Timer" type="Timer" parent="State_machine/Damage" unique_id=1359271458]
 wait_time = 0.1

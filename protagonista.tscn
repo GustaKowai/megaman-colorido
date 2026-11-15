@@ -28,6 +28,8 @@
 [ext_resource type="PackedScene" uid="uid://i88evwuqjsn" path="res://shoot_explosion.tscn" id="20_gt6pu"]
 [ext_resource type="AudioStream" uid="uid://488snjkxa2gk" path="res://sfx/tiro jogador.wav" id="20_lwusa"]
 [ext_resource type="Texture2D" uid="uid://dkj68g56il2d2" path="res://Sprites/heal-effect.png" id="28_g24kp"]
+[ext_resource type="AudioStream" uid="uid://mpr01jru8vq1" path="res://sfx/shield.wav" id="28_x5f4j"]
+[ext_resource type="AudioStream" uid="uid://f5kfuidt1fd4" path="res://sfx/colour change.wav" id="30_6i4w8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(20, 57)
@@ -756,6 +758,9 @@ shield_time_max = 0.5
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://bx7p1fsyqgs3w"
 
+[node name="Shield_sound" type="AudioStreamPlayer" parent="yellow/Shield" unique_id=630268404]
+stream = ExtResource("28_x5f4j")
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=26329952]
 libraries/ = SubResource("AnimationLibrary_k85er")
 
@@ -785,3 +790,6 @@ initial_velocity_min = 50.0
 initial_velocity_max = 50.0
 color = Color(0, 3.3372512, 0, 1)
 color_ramp = SubResource("Gradient_hgjhj")
+
+[node name="color_change" type="AudioStreamPlayer" parent="." unique_id=1830515613]
+stream = ExtResource("30_6i4w8")

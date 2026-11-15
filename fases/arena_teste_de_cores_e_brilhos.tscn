@@ -2503,6 +2503,7 @@ environment = SubResource("Environment_2lcb2")
 color = Color(0.6775668, 0.6775668, 0.6775668, 1)
 
 [node name="Parallax2D3" type="Parallax2D" parent="." unique_id=413834504]
+z_index = -3
 scroll_offset = Vector2(-1090, 155)
 repeat_size = Vector2(1152, 0)
 repeat_times = 2
@@ -2513,6 +2514,7 @@ scale = Vector2(4.568359, 638.99994)
 texture = SubResource("GradientTexture1D_g6jd5")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1423745219]
+z_index = -3
 scroll_scale = Vector2(0, 1)
 
 [node name="Sol" type="Sprite2D" parent="Parallax2D" unique_id=671824561]
@@ -2522,6 +2524,7 @@ scale = Vector2(0.9265625, 0.9265625)
 texture = ExtResource("2_biof3")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2141399371]
+z_index = -3
 scroll_scale = Vector2(0.8, 1)
 scroll_offset = Vector2(-22, 51)
 repeat_size = Vector2(800, 0)

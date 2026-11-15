@@ -13,6 +13,7 @@ signal game_over
 @onready var efeitos: Sprite2D = $efeitos
 @onready var animationeffect: AnimationPlayer = $Animationeffect
 @onready var point_light_2d: PointLight2D = $PointLight2D
+@onready var color_change: AudioStreamPlayer = $color_change
 
 @export var sprite_gray:Texture2D
 @export var sprite_green:Texture2D
@@ -56,6 +57,7 @@ func _physics_process(_delta: float) -> void:
 
 func check_color():
 	if Input.is_action_just_pressed("cor-1") and green.process_mode != Node.PROCESS_MODE_INHERIT and green_power:
+		color_change.play()
 		animationeffect.play("transform_green")
 		print_debug("verde")
 		point_light_2d.color = Color.GREEN
@@ -67,6 +69,7 @@ func check_color():
 		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("green")
 	if Input.is_action_just_pressed("cor-2") and magent.process_mode != Node.PROCESS_MODE_INHERIT and magent_power:
+		color_change.play()
 		animationeffect.play("transform_magent")
 		print_debug("magenta")
 		point_light_2d.color = Color.MAGENTA
@@ -78,6 +81,7 @@ func check_color():
 		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("magent")
 	if Input.is_action_just_pressed("cor-3") and blue.process_mode != Node.PROCESS_MODE_INHERIT and blue_power:
+		color_change.play()
 		animationeffect.play("transform_blue")
 		print_debug("azul")
 		point_light_2d.color = Color.POWDER_BLUE
@@ -89,6 +93,7 @@ func check_color():
 		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("blue")
 	if Input.is_action_just_pressed("cor-4") and yellow.process_mode != Node.PROCESS_MODE_INHERIT and yellow_power:
+		color_change.play()
 		animationeffect.play("transform_yellow")
 		print_debug("amarelo")
 		point_light_2d.color = Color.YELLOW

@@ -2,6 +2,7 @@ extends State
 @export var shield_type:PackedScene
 @export var shield_time_max:float
 var shield_time
+@onready var shield_sound: AudioStreamPlayer = $Shield_sound
 
 func Enter():
 	#target.velocity *= 0
@@ -13,6 +14,7 @@ func Enter():
 	var shield:Shield = shield_type.instantiate()
 	shield.damage_to="Enemy"
 	target.add_child(shield)
+	shield_sound.play()
 	
 func Update(delta: float):
 	shield_time -= delta

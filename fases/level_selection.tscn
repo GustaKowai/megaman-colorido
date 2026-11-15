@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="4_fqxop"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="4_whp7c"]
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="7_85421"]
-[ext_resource type="AudioStream" uid="uid://k78gk7b8pwh2" path="res://musics/envio-menu1.mp3" id="8_85421"]
+[ext_resource type="AudioStream" uid="uid://k78gk7b8pwh2" path="res://musics/selecao_de_fase.mp3" id="8_85421"]
 
 [sub_resource type="Environment" id="Environment_rv05k"]
 background_mode = 3

@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://estados/damage_state.gd" id="6_b333s"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="6_ylrji"]
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="7_bj6hh"]
+[ext_resource type="AudioStream" uid="uid://bk56wxpogdai1" path="res://sfx/enemy hit.wav" id="7_hut50"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_y5n2g"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="8_apcsb"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="8_nacn8"]
@@ -284,6 +285,7 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
 [node name="damage_sound" type="AudioStreamPlayer" parent="State_machine/Damage" unique_id=669296086]
+stream = ExtResource("7_hut50")
 
 [node name="Died" type="Node" parent="State_machine" unique_id=873990796 node_paths=PackedStringArray("target")]
 script = ExtResource("7_y5n2g")
