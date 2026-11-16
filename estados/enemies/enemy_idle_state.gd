@@ -8,7 +8,7 @@ func _ready() -> void:
 	enemy = target
 
 func Enter():
-	#print_debug("Idle geral")
+	target.velocity.x = 0
 	if enemy.sprite:
 		enemy.sprite.play("idle")
 	

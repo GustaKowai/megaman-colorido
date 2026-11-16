@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://dux3i3pi70unw" path="res://enemies/fly_blue.tscn" id="20_c0vlw"]
 [ext_resource type="PackedScene" uid="uid://c2272i2utbpeo" path="res://misc/laser.tscn" id="21_v84fa"]
 [ext_resource type="PackedScene" uid="uid://bykr5d5eflhrp" path="res://misc/button_fase.tscn" id="22_a67l4"]
+[ext_resource type="PackedScene" uid="uid://ukws5fq4c27f" path="res://enemies/enemy_dash_blue.tscn" id="23_a67l4"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2601,12 +2602,16 @@ min_spawn_time = 3.0
 max_spawn_time = 3.0
 
 [node name="Fly_blue" parent="." unique_id=483940872 instance=ExtResource("20_c0vlw")]
-position = Vector2(262, 446)
+position = Vector2(1352, 354)
 
 [node name="Laser" parent="." unique_id=140452037 instance=ExtResource("21_v84fa")]
 position = Vector2(2686, 481)
 
 [node name="Button" parent="." unique_id=713022281 instance=ExtResource("22_a67l4")]
 position = Vector2(2575, 560)
+
+[node name="Enemy" parent="." unique_id=2126496526 instance=ExtResource("23_a67l4")]
+position = Vector2(675, 206)
+collision_mask = 1
 
 [connection signal="pressed" from="Button" to="Laser" method="_on_button_pressed"]

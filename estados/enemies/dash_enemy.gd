@@ -1,4 +1,5 @@
 extends WalkEnemy
+class_name DashEnemy
 @onready var timer = $Timer
 
 func Enter():

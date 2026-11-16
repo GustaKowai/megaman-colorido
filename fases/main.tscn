@@ -2186,12 +2186,11 @@ tile_set = SubResource("TileSet_h2yge")
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=673610313]
 environment = SubResource("Environment_0xm2m")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1556897873 node_paths=PackedStringArray("player")]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1556897873]
 position = Vector2(36, 310)
 scale = Vector2(3, 3)
 limit_left = -20
 script = ExtResource("6_7mycd")
-player = NodePath("")
 
 [node name="sol" type="DirectionalLight2D" parent="." unique_id=1320158872]
 visible = false
