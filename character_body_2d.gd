@@ -44,7 +44,7 @@ func _ready() -> void:
 	magent.process_mode = Node.PROCESS_MODE_DISABLED
 	blue.process_mode = Node.PROCESS_MODE_DISABLED
 	yellow.process_mode = Node.PROCESS_MODE_DISABLED
-	
+	PlayerManager.update_avaiable_color.connect(update_powers)
 
 func _process(_delta: float) -> void:
 	if !is_game_over:
@@ -108,3 +108,9 @@ func check_color():
 func call_game_over():
 	is_game_over = true
 	game_over.emit()
+
+func update_powers(_color:String):
+	green_power = PlayerManager.green_power
+	magent_power = PlayerManager.magent_power
+	blue_power = PlayerManager.blue_power
+	yellow_power = PlayerManager.yellow_power

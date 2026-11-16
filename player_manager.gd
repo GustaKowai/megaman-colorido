@@ -12,15 +12,16 @@ signal jump_update_signal #Usado em ui_jogador, emitido em jump2
 signal dash_update_signal #Usado em ui_jogador, emitido em dash
 @warning_ignore("unused_signal")
 signal change_UI_color #Usando em ui_jogador, emitido em protagonist
-var green_power:bool = true
-var magent_power:bool = true
-var blue_power:bool = true
-var yellow_power:bool = true
+signal update_avaiable_color(color:String)
+var green_power:bool = false
+var magent_power:bool = false
+var blue_power:bool = false
+var yellow_power:bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	heal_update_signal.connect(heal_change)
-	
+	update_avaiable_color.connect(change_player_avaiable_colors)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -28,3 +29,14 @@ func _process(_delta: float) -> void:
 
 func heal_change(value):
 	player_heal_bar = value
+
+func change_player_avaiable_colors(color:String):
+	match color:
+		"green":
+			green_power = true
+		"magent":
+			magent_power = true
+		"blue":
+			blue_power = true
+		"yellow":
+			yellow_power = true

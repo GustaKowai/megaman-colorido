@@ -44,6 +44,7 @@ func _ready() -> void:
 	PlayerManager.heal_update_signal.connect(heal_update)
 	PlayerManager.dash_update_signal.connect(dash_update)
 	PlayerManager.jump_update_signal.connect(jump_update)
+	PlayerManager.update_avaiable_color.connect(update_orbs)
 	var target = player
 	var target_childrens = target.get_children()
 	for children in target_childrens:
@@ -119,3 +120,9 @@ func change_ui(color:String):
 			blue_container.visible = true
 		_:
 			pass
+
+func update_orbs(_color:String):
+	blue_orb.visible = PlayerManager.blue_power
+	magent_orb.visible = PlayerManager.magent_power
+	green_orb.visible = PlayerManager.green_power
+	yellow_orb.visible = PlayerManager.yellow_power
