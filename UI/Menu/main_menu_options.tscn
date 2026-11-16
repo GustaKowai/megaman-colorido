@@ -1,20 +1,33 @@
 [gd_scene format=3 uid="uid://cwlf4vwjc7xtf"]
 
 [ext_resource type="FontFile" uid="uid://duxnvkfd43jky" path="res://UI/Fonts/upheavtt.ttf" id="1_bqwea"]
+[ext_resource type="Script" uid="uid://diejcfpguvnop" path="res://UI/Menu/master_slider.gd" id="2_xet65"]
+[ext_resource type="Texture2D" uid="uid://bdr76h1k5v38e" path="res://Sprites/UI/Menu/checkbox_checked.png" id="3_j2jce"]
+[ext_resource type="Texture2D" uid="uid://dadm4qndae5p5" path="res://Sprites/UI/Menu/checkbox_unchecked.png" id="3_xquk8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_o0pvp"]
 font = ExtResource("1_bqwea")
 font_size = 80
 
-[node name="Options_menu" type="MarginContainer" unique_id=359546675]
+[node name="Options_menu" type="Control" unique_id=941874461]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=680127589]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_top = 27
+theme_override_constants/margin_bottom = 53
 
-[node name="Label" type="Label" parent="." unique_id=2069276515]
+[node name="config_section" type="Label" parent="MarginContainer" unique_id=2069276515]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
@@ -24,14 +37,60 @@ text = "Configurações"
 label_settings = SubResource("LabelSettings_o0pvp")
 horizontal_alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=119832546]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=119832546]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_constants/separation = 39
+size_flags_vertical = 12
 
-[node name="back_button" type="Button" parent="VBoxContainer" unique_id=10112583]
+[node name="back_button" type="Button" parent="MarginContainer/VBoxContainer" unique_id=10112583]
 layout_mode = 2
+offset_transform_enabled = true
 theme_override_fonts/font = ExtResource("1_bqwea")
 theme_override_font_sizes/font_size = 64
 text = "Voltar"
+
+[node name="master volume" type="VBoxContainer" parent="." unique_id=129211927]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 8.0
+offset_right = 828.0
+offset_bottom = 536.0
+pivot_offset = Vector2(574.393, 264)
+alignment = 1
+
+[node name="label_volume" type="Label" parent="master volume" unique_id=2078110101]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_bqwea")
+theme_override_font_sizes/font_size = 38
+text = "Master Volume"
+
+[node name="master_slider" type="HSlider" parent="master volume" unique_id=995798436]
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+script = ExtResource("2_xet65")
+bus_name = "Master"
+
+[node name="CheckBox" type="CheckBox" parent="." unique_id=912795425]
+layout_mode = 0
+offset_left = 571.0
+offset_top = 325.0
+offset_right = 624.0
+offset_bottom = 378.0
+theme_override_icons/checked = ExtResource("3_j2jce")
+theme_override_icons/unchecked = ExtResource("3_xquk8")
+
+[node name="label_fullscreen" type="Label" parent="." unique_id=1111356327]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 335.0
+offset_right = 556.0
+offset_bottom = 370.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_bqwea")
+theme_override_font_sizes/font_size = 38
+text = "fullscreen"
+
+[connection signal="value_changed" from="master volume/master_slider" to="master volume/master_slider" method="_on_value_changed"]
