@@ -5,10 +5,11 @@
 [ext_resource type="PackedScene" uid="uid://7612017rs6aq" path="res://misc/explosion.tscn" id="3_d56pf"]
 
 [node name="Node2D" unique_id=1670673235 instance=ExtResource("1_0tsrg")]
-frame_progress = 0.0
+frame = 3
+frame_progress = 0.8698819
 script = ExtResource("2_lma35")
 explosion = ExtResource("3_d56pf")
-speed = 410.0
+speed = 200.0
 
 [node name="DamageBox" parent="." index="1" unique_id=787630589]
 damage_to = "Player"

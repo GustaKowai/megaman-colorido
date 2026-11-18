@@ -92,6 +92,7 @@ position = Vector2(-1, -10.5)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1391130542]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 texture_filter = 3
 position = Vector2(-1, -12)
 sprite_frames = SubResource("SpriteFrames_hgjhj")

@@ -1,17 +1,13 @@
 [gd_scene format=3 uid="uid://db3s85havr48h"]
 
 [ext_resource type="Script" uid="uid://k0jlli8s73ig" path="res://platform_moving.gd" id="1_hrpga"]
-[ext_resource type="Texture2D" uid="uid://brlukan5crfad" path="res://Sprites/tileset/tileset_complet_2.png" id="2_f8lbu"]
+[ext_resource type="Texture2D" uid="uid://b8dsiipsj7dyq" path="res://Sprites/platform.png" id="2_hrpga"]
 
 [sub_resource type="Curve2D" id="Curve2D_f8lbu"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 194, 0)
 }
 point_count = 2
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m7ux3"]
-atlas = ExtResource("2_f8lbu")
-region = Rect2(0, 96.1779, 97.61037, 31.822098)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(96, 32)
@@ -68,10 +64,11 @@ remote_path = NodePath("../../AnimatableBody2D")
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="." unique_id=1051280030]
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D" unique_id=681419844]
-texture = SubResource("AtlasTexture_m7ux3")
+z_index = -1
+position = Vector2(0, -16)
+texture = ExtResource("2_hrpga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D" unique_id=1151706035]
-position = Vector2(-4.656613e-10, 0.5000005)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1669901835]

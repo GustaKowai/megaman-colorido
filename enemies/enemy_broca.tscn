@@ -12,7 +12,7 @@
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="9_crc7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(30.75, 36)
+size = Vector2(28, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_crc7b"]
 atlas = ExtResource("7_ju1yr")
@@ -87,11 +87,11 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ill15"]
-size = Vector2(65, 36)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kauo0"]
+size = Vector2(36, 22)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_58esp"]
-size = Vector2(65, 36)
+size = Vector2(65, 32)
 
 [node name="Enemy_broca" type="CharacterBody2D" unique_id=162401205 groups=["Enemy"]]
 collision_layer = 2
@@ -131,7 +131,7 @@ metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 stream = ExtResource("6_crc7b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=851423386]
-position = Vector2(-17.375, -3)
+position = Vector2(-18, -1)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=713863441]
@@ -148,8 +148,8 @@ damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=544219750]
-position = Vector2(0.5, -2.5)
-shape = SubResource("RectangleShape2D_ill15")
+position = Vector2(14, -3)
+shape = SubResource("RectangleShape2D_kauo0")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1105894256 node_paths=PackedStringArray("target") groups=["Enemy"]]
 script = ExtResource("9_crc7b")
@@ -158,7 +158,6 @@ max_life = 1
 metadata/_custom_type_script = "uid://b4ks34rhdjoli"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=16023993]
-position = Vector2(0.5, -2.5)
 shape = SubResource("RectangleShape2D_58esp")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=76941522]

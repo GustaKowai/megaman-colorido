@@ -7,5 +7,7 @@ extends Enemy
 
 func _ready() -> void:
 	super()
-	if inclinacao_tiro != mira.rotation_degrees and inclinacao_tiro >0:
-		mira.rotation_degrees = inclinacao_tiro
+	if inclinacao_tiro != mira.rotation_degrees and inclinacao_tiro != 0:
+		sprite.rotation_degrees = inclinacao_tiro
+	if sprite.flip_h:
+		mira.position.x *= -1

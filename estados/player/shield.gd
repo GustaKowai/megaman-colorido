@@ -8,7 +8,7 @@ func _on_area_entered(area: Area2D) -> void:
 	if area.get_parent() is Bullet:
 		shield_hit.play()
 		var bullet:Bullet = area.get_parent()
-		bullet.speed *= -1
+		bullet.direction *= -1
 		var children = bullet.get_children()
 		for child in children:
 			if child is DamageBox:

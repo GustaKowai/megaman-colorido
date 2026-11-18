@@ -6,14 +6,26 @@ class_name BulletBomba
 
 var speedy:float = 0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity_vector")
-
+var velocity:Vector2
 # Called when the node enters the scene tree for the first time.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	position += transform.x * speed * delta + transform.y * speedy
-	speedy += gravity.y * delta * 10
+func _ready():
+	velocity.x = speed*cos(global_rotation)
+	velocity.y = speed*sin(global_rotation)
 
+
+func _process(delta: float) -> void:
+	#global_position.x += speed * delta
+	#global_position.y += speedy * delta
+	#speedy += gravity.y
+	#print_debug(speedy,speed)
+	velocity.y += gravity.y*200 * delta
+	
+	position.x += velocity.x * delta * direction
+	position.y += velocity.y * delta
+	
+	
 func _on_damage_box_dealed_damage() -> void:
 	explode()
 	queue_free()

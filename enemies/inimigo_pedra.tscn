@@ -113,6 +113,7 @@ metadata/_custom_type_script = "uid://8jxdtwajk3d6"
 stream = ExtResource("8_1gxjp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_tjamb")
 animation = &"rise"

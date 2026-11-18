@@ -333,12 +333,11 @@ one_shot = true
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_e2r5q")
 animation = &"walk"
-flip_h = true
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
 unique_name_in_owner = true
-position = Vector2(-9.5, -3.5000002)
-rotation = 0.7853982
+position = Vector2(4.5, -3.0000005)
+rotation = -0.7853982
 scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]

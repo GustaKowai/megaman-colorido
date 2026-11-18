@@ -2,8 +2,10 @@ extends State
 class_name DiedState
 var sprite
 @onready var die_sound: AudioStreamPlayer = $die_sound
+var morreu:bool = false
 
 func Enter():
+	morreu = true
 	#get_parent().print_tree_pretty()
 	print_debug("died")
 	die_sound.play()
@@ -16,5 +18,7 @@ func Enter():
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
+	if not morreu:
+		return
 	if sprite.animation == "die":
 		target.queue_free()

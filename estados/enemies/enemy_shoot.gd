@@ -2,7 +2,7 @@ extends State
 class_name ShootEnemy
 @onready var timer: Timer = $Timer
 @export var bullet:PackedScene
-@onready var mira: Marker2D = $"../../AnimatedSprite2D/mira"
+@onready var mira: Marker2D = %mira
 
 var enemy:Enemy
 
@@ -18,9 +18,10 @@ func Enter():
 	var b = bullet.instantiate()
 	if enemy.sprite.flip_h:
 		b.speed *= -1
-	get_tree().get_first_node_in_group("Fase").add_child(b)
 	b.transform = mira.global_transform
+	get_tree().get_first_node_in_group("Fase").add_child(b)
 	timer.start()
+	#print_debug(b.rotation)
 
 func _on_timer_timeout() -> void:
 	#print_debug("timeout pro idle")
