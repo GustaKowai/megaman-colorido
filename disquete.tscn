@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c8tfoclidipp3"]
 
 [ext_resource type="Texture2D" uid="uid://dv3fhxmrvasnb" path="res://Sprites/disquete.png" id="1_jvt6q"]
+[ext_resource type="Script" uid="uid://cpk6ftnpvlqci" path="res://disquete.gd" id="2_l20fm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l20fm"]
 atlas = ExtResource("1_jvt6q")
@@ -129,6 +130,18 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
+size = Vector2(32, 32)
+
 [node name="Disquete" type="AnimatedSprite2D" unique_id=1660121172]
 sprite_frames = SubResource("SpriteFrames_hgjhj")
+autoplay = "default"
 frame_progress = 0.010994326
+script = ExtResource("2_l20fm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=2113028788]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=390933696]
+shape = SubResource("RectangleShape2D_hgjhj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

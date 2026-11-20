@@ -323,7 +323,7 @@ position = Vector2(4917, 558)
 position = Vector2(774, 569)
 
 [node name="Enemy2" parent="Inimigos" unique_id=1366888483 instance=ExtResource("4_ahmj5")]
-position = Vector2(1047, 565)
+position = Vector2(1045, 576)
 
 [node name="Fly_blue" parent="Inimigos" unique_id=483940872 instance=ExtResource("13_jgxo4")]
 position = Vector2(1458, 433)
@@ -333,6 +333,15 @@ position = Vector2(772, 327)
 
 [node name="Enemy3" parent="Inimigos" unique_id=1584452874 instance=ExtResource("14_3trhg")]
 position = Vector2(1638, 588)
+
+[node name="Enemy4" parent="Inimigos" unique_id=1299511581 instance=ExtResource("4_ahmj5")]
+position = Vector2(1424, 542)
+
+[node name="Enemy5" parent="Inimigos" unique_id=1142700235 instance=ExtResource("14_3trhg")]
+position = Vector2(1828, 589)
+
+[node name="Enemy6" parent="Inimigos" unique_id=901860050 instance=ExtResource("14_3trhg")]
+position = Vector2(2043, 589)
 
 [node name="walls" type="Node2D" parent="." unique_id=1097032233]
 modulate = Color(0, 1.643, 1.825, 1)
@@ -347,8 +356,5 @@ tile_map_data = PackedByteArray("AAAAAAAAAAAFAAMAAAAAAP7/AAAGAAAAAAAAAP//AAAFAAM
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1521612627]
 bus = &"Music"
-
-[node name="Enemy" parent="." unique_id=1299511581 instance=ExtResource("4_ahmj5")]
-position = Vector2(1191, 548)
 
 [connection signal="area_entered" from="branco/Node2D/DamageBox" to="branco/Node2D/DamageBox" method="_on_area_entered"]

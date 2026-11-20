@@ -5,8 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://cwjqx18bfycut" path="res://Sprites/enemies/idleBeetle.png" id="3_i2k8n"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="3_qd614"]
 [ext_resource type="Script" uid="uid://i8cjqyl0i0fd" path="res://fly_chase.gd" id="4_i2k8n"]
-[ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://estados/damage_state.gd" id="6_kgoq4"]
 [ext_resource type="Script" uid="uid://b3iwrrs57f37e" path="res://enemies/idle_fly_blue.gd" id="6_qd614"]
+[ext_resource type="Script" uid="uid://drdmuq1xt0vb7" path="res://enemies/damage_blue.gd" id="7_i2k8n"]
 [ext_resource type="Script" uid="uid://8jxdtwajk3d6" path="res://estados/died.gd" id="7_ld60a"]
 [ext_resource type="AudioStream" uid="uid://sdkmoj7c4vn6" path="res://sfx/enemy death.wav" id="8_6ay24"]
 [ext_resource type="AudioStream" uid="uid://bk56wxpogdai1" path="res://sfx/enemy hit.wav" id="8_i2k8n"]
@@ -93,7 +93,7 @@ metadata/_custom_type_script = "uid://cuate20qfi753"
 one_shot = true
 
 [node name="Damage" type="Node" parent="State_machine" unique_id=1142256592 node_paths=PackedStringArray("target")]
-script = ExtResource("6_kgoq4")
+script = ExtResource("7_i2k8n")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 

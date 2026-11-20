@@ -651,6 +651,10 @@ position = Vector2(3943, 194)
 autoplay = "default"
 frame_progress = 0.984164
 
+[node name="Disquete2" parent="." unique_id=1770035695 instance=ExtResource("26_luqc2")]
+modulate = Color(0, 1.825, 0, 1)
+position = Vector2(416, 573)
+
 [connection signal="area_entered" from="branco/DamageBox" to="branco/DamageBox" method="_on_area_entered"]
 [connection signal="area_entered" from="branco/Fall damage/DamageBox" to="branco/Fall damage/DamageBox" method="_on_area_entered"]
 [connection signal="pressed" from="Button" to="Laser" method="_on_button_pressed"]

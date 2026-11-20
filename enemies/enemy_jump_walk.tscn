@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cwgiurkue14bf" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - doux2.png" id="5_0ols2"]
 [ext_resource type="Script" uid="uid://bhwur3so3cruw" path="res://enemies/idle_enemy_jump.gd" id="5_2ngan"]
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://estados/enemies/enemy_fall_state.gd" id="6_ck18w"]
-[ext_resource type="Script" uid="uid://b2s26rpxfiul2" path="res://estados/damage_state.gd" id="7_1noni"]
+[ext_resource type="Script" uid="uid://drdmuq1xt0vb7" path="res://enemies/damage_blue.gd" id="7_3aucx"]
 [ext_resource type="Texture2D" uid="uid://m1oyscn03tys" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - doux3.png" id="8_537kg"]
 [ext_resource type="Texture2D" uid="uid://cgsdxwr620ond" path="res://Sprites/dinoCharactersVersion1.1/sheets/DinoSprites - mort2.png" id="8_f1fs5"]
 [ext_resource type="AudioStream" uid="uid://bk56wxpogdai1" path="res://sfx/enemy hit.wav" id="8_jvg7k"]
@@ -187,7 +187,7 @@ animations = [{
 size = Vector2(10.5, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(16, 17)
+size = Vector2(16, 19)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2r5q"]
 size = Vector2(14, 16.5)
@@ -229,7 +229,7 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://d3bikxrs38522"
 
 [node name="Damage" type="Node" parent="State_machine" unique_id=617254152 node_paths=PackedStringArray("target")]
-script = ExtResource("7_1noni")
+script = ExtResource("7_3aucx")
 target = NodePath("../..")
 metadata/_custom_type_script = "uid://b2s26rpxfiul2"
 
@@ -264,7 +264,7 @@ damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=251938231]
-position = Vector2(1, -0.5)
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1986257276 node_paths=PackedStringArray("target") groups=["Enemy"]]
