@@ -39,7 +39,7 @@ func _on_damage_box_body_entered(body: Node2D) -> void:
 
 func explode():
 	var e = explosion.instantiate()
-	get_tree().get_first_node_in_group("Fase").add_child(e)
+	get_tree().get_first_node_in_group("Fase").add_child.call_deferred(e)
 	e.position = global_position
 	var children = e.get_children()
 	for child in children:

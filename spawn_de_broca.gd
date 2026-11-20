@@ -14,11 +14,11 @@ func _process(_delta: float) -> void:
 
 
 func _on_timer_timeout() -> void:
-	#print_debug("invoquei")
+	print_debug("invoquei")
 	timer.wait_time = randf_range(min_spawn_time,max_spawn_time)
 	_spawn()
 
 func _spawn():
 	var enemy:Enemy = enemy_scene.instantiate()
 	enemy.transform = global_transform
-	get_tree().get_first_node_in_group("Fase").add_child(enemy)
+	get_tree().get_first_node_in_group("Fase").add_child.call_deferred(enemy)

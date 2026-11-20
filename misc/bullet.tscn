@@ -1,8 +1,25 @@
 [gd_scene format=3 uid="uid://bt2o0j8bo45av"]
 
 [ext_resource type="Texture2D" uid="uid://8cc6w1v0i0r4" path="res://Sprites/Protagonista/reais/Laser.png" id="1_qhf7j"]
+[ext_resource type="Texture2D" uid="uid://vrwhv6orlq60" path="res://Sprites/bomb-placeholder.png" id="1_wa8qf"]
 [ext_resource type="Script" uid="uid://cobocbprc0trk" path="res://misc/bullet.gd" id="2_wa8qf"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="3_or4ei"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_px4nh"]
+atlas = ExtResource("1_wa8qf")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ysdtc"]
+atlas = ExtResource("1_wa8qf")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo8ii"]
+atlas = ExtResource("1_wa8qf")
+region = Rect2(30, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_deeqq"]
+atlas = ExtResource("1_wa8qf")
+region = Rect2(45, 0, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa8qf"]
 atlas = ExtResource("1_qhf7j")
@@ -36,6 +53,23 @@ region = Rect2(320, 0, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_px4nh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ysdtc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jo8ii")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_deeqq")
+}],
+"loop": 1,
+"name": &"bomb",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wa8qf")
 }, {
 "duration": 1.0,
@@ -67,8 +101,9 @@ size = Vector2(13, 15)
 [node name="Node2D" type="AnimatedSprite2D" unique_id=1670673235]
 self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 sprite_frames = SubResource("SpriteFrames_4bibm")
+animation = &"bomb"
 autoplay = "default"
-frame_progress = 0.72221273
+frame_progress = 0.59598887
 script = ExtResource("2_wa8qf")
 speed = 500.0
 

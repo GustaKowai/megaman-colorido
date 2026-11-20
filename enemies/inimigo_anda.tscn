@@ -399,6 +399,7 @@ sprite_frames = SubResource("SpriteFrames_e2r5q")
 animation = &"fall"
 
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
+unique_name_in_owner = true
 position = Vector2(8.667, 0)
 scale = Vector2(0.3, 0.3)
 

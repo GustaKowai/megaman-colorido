@@ -5,11 +5,17 @@
 [ext_resource type="PackedScene" uid="uid://7612017rs6aq" path="res://misc/explosion.tscn" id="3_d56pf"]
 
 [node name="Node2D" unique_id=1670673235 instance=ExtResource("1_0tsrg")]
-frame = 3
-frame_progress = 0.8698819
+autoplay = "bomb"
+frame_progress = 0.110477
 script = ExtResource("2_lma35")
 explosion = ExtResource("3_d56pf")
 speed = 200.0
 
+[node name="VisibleOnScreenNotifier2D" parent="." index="0" unique_id=582098113]
+position = Vector2(0, 2)
+
 [node name="DamageBox" parent="." index="1" unique_id=787630589]
 damage_to = "Player"
+
+[node name="CollisionShape2D" parent="DamageBox" index="0" unique_id=1583376466]
+position = Vector2(0, 0)
