@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://c2272i2utbpeo" path="res://misc/laser.tscn" id="21_v84fa"]
 [ext_resource type="PackedScene" uid="uid://bykr5d5eflhrp" path="res://misc/button_fase.tscn" id="22_a67l4"]
 [ext_resource type="PackedScene" uid="uid://ukws5fq4c27f" path="res://enemies/enemy_dash_blue.tscn" id="23_a67l4"]
+[ext_resource type="PackedScene" uid="uid://bwocruie8366c" path="res://enemies/enemy_jump_walk.tscn" id="24_wljie"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -2570,7 +2571,7 @@ position = Vector2(1456, 541)
 position = Vector2(2417, 526)
 
 [node name="InimigoApenasAnda" parent="." unique_id=888062514 instance=ExtResource("14_iju0m")]
-position = Vector2(385, 438)
+position = Vector2(1198, 521)
 
 [node name="InimigoApenasAnda2" parent="." unique_id=1031498132 instance=ExtResource("14_iju0m")]
 position = Vector2(857, 569)
@@ -2611,7 +2612,11 @@ position = Vector2(2686, 481)
 position = Vector2(2575, 560)
 
 [node name="Enemy" parent="." unique_id=2126496526 instance=ExtResource("23_a67l4")]
-position = Vector2(675, 206)
+position = Vector2(1939, 412)
+collision_mask = 1
+
+[node name="Enemy2" parent="." unique_id=1584452874 groups=["Enemy"] instance=ExtResource("24_wljie")]
+position = Vector2(332, 572)
 collision_mask = 1
 
 [connection signal="pressed" from="Button" to="Laser" method="_on_button_pressed"]

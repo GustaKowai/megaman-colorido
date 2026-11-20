@@ -314,7 +314,6 @@ autoplay = "idle"
 [node name="mira" type="Marker2D" parent="AnimatedSprite2D" unique_id=415573693]
 unique_name_in_owner = true
 position = Vector2(16.263458, 3.5355334)
-scale = Vector2(0.3, 0.3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1462752599]
 position = Vector2(1, 11.75)

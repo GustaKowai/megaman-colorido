@@ -29,7 +29,7 @@ var blue_power:bool = false
 var yellow_power:bool = false
 var just_damaged:bool = false
 var is_game_over:bool = false
-
+var transform_disabled:bool = false
 
 func _ready() -> void:
 	green_power = PlayerManager.green_power
@@ -56,6 +56,8 @@ func _physics_process(_delta: float) -> void:
 		move_and_slide()
 
 func check_color():
+	if transform_disabled:
+		return
 	if Input.is_action_just_pressed("cor-1") and green.process_mode != Node.PROCESS_MODE_INHERIT and green_power:
 		color_change.play()
 		animationeffect.play("transform_green")
@@ -114,3 +116,7 @@ func update_powers(_color:String):
 	magent_power = PlayerManager.magent_power
 	blue_power = PlayerManager.blue_power
 	yellow_power = PlayerManager.yellow_power
+
+func disable_transform():
+	transform_disabled = true
+	

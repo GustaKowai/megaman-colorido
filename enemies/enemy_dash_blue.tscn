@@ -192,7 +192,6 @@ size = Vector2(15, 17)
 [node name="Enemy" type="CharacterBody2D" unique_id=2126496526 groups=["Enemy"]]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_6hyjd")
 metadata/_custom_type_script = "uid://cckunixtvck0o"
 
@@ -218,6 +217,7 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://cuate20qfi753"
 
 [node name="Timer" type="Timer" parent="State_machine/Idle" unique_id=538251089]
+wait_time = 0.8
 
 [node name="Dash" type="Node" parent="State_machine" unique_id=2062260913 node_paths=PackedStringArray("target")]
 script = ExtResource("4_67vh7")
@@ -225,7 +225,7 @@ target = NodePath("../..")
 metadata/_custom_type_script = "uid://clw74w2tpd83f"
 
 [node name="Timer" type="Timer" parent="State_machine/Dash" unique_id=443179572]
-wait_time = 0.2
+wait_time = 0.3
 
 [node name="Walk" type="Node" parent="State_machine" unique_id=1292525513 node_paths=PackedStringArray("target")]
 script = ExtResource("5_e4tvx")
@@ -271,6 +271,7 @@ script = ExtResource("9_e4tvx")
 target = NodePath("..")
 max_life = 2
 knockback = 200
+invulnerability_time = 5.0
 metadata/_custom_type_script = "uid://b4ks34rhdjoli"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=978546158]

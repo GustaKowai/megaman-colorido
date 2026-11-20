@@ -6,11 +6,15 @@ var morreu:bool = false
 
 func Enter():
 	morreu = true
+	target.velocity.x = 0
+	target.velocity.y = 0
+	
 	#get_parent().print_tree_pretty()
 	print_debug("died")
 	die_sound.play()
 	if target.is_in_group("Player"):
 		target.set_collision_mask_value(2,false)
+		target.disable_transform()
 		target.animation_player.play("die")
 	if target.is_in_group("Enemy"):
 		sprite = target.sprite

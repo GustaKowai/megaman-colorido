@@ -1,25 +1,13 @@
 [gd_scene format=3 uid="uid://bt2o0j8bo45av"]
 
 [ext_resource type="Texture2D" uid="uid://8cc6w1v0i0r4" path="res://Sprites/Protagonista/reais/Laser.png" id="1_qhf7j"]
-[ext_resource type="Texture2D" uid="uid://vrwhv6orlq60" path="res://Sprites/bomb-placeholder.png" id="1_wa8qf"]
+[ext_resource type="Texture2D" uid="uid://h82h5qxrdhqb" path="res://Sprites/enemies/bomb.png" id="1_wa8qf"]
 [ext_resource type="Script" uid="uid://cobocbprc0trk" path="res://misc/bullet.gd" id="2_wa8qf"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="3_or4ei"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_px4nh"]
 atlas = ExtResource("1_wa8qf")
-region = Rect2(0, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ysdtc"]
-atlas = ExtResource("1_wa8qf")
-region = Rect2(15, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jo8ii"]
-atlas = ExtResource("1_wa8qf")
-region = Rect2(30, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_deeqq"]
-atlas = ExtResource("1_wa8qf")
-region = Rect2(45, 0, 15, 15)
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wa8qf"]
 atlas = ExtResource("1_qhf7j")
@@ -54,15 +42,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_px4nh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ysdtc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jo8ii")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_deeqq")
 }],
 "loop": 1,
 "name": &"bomb",
@@ -95,8 +74,8 @@ animations = [{
 "speed": 9.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwusa"]
-size = Vector2(13, 15)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ysdtc"]
+radius = 6.519202
 
 [node name="Node2D" type="AnimatedSprite2D" unique_id=1670673235]
 self_modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
@@ -108,7 +87,7 @@ script = ExtResource("2_wa8qf")
 speed = 500.0
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=582098113]
-rect = Rect2(-6, -4, 13, 5)
+rect = Rect2(-7, -7, 15, 14)
 
 [node name="DamageBox" type="Area2D" parent="." unique_id=787630589]
 collision_mask = 3
@@ -118,8 +97,8 @@ damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=1583376466]
-position = Vector2(0.5, -1.5)
-shape = SubResource("RectangleShape2D_lwusa")
+position = Vector2(-0.5, 0.5)
+shape = SubResource("CircleShape2D_ysdtc")
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
 [connection signal="area_entered" from="DamageBox" to="DamageBox" method="_on_area_entered"]

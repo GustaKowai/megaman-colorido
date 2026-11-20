@@ -60,9 +60,8 @@ radius = 70.00714
 [node name="Fly_blue" type="CharacterBody2D" unique_id=483940872 groups=["Enemy"]]
 scale = Vector2(2, 2)
 collision_layer = 2
-collision_mask = 3
 script = ExtResource("1_yium3")
-speed = 700.0
+speed = 350.0
 metadata/_custom_type_script = "uid://cckunixtvck0o"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1572445547]
@@ -131,6 +130,7 @@ metadata/_custom_type_script = "uid://b4ks34rhdjoli"
 shape = SubResource("RectangleShape2D_qy2vx")
 
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="." unique_id=634947570]
+rect = Rect2(-70.5, -71.5, 141, 142.5)
 
 [node name="Player_chaser" type="Area2D" parent="." unique_id=589882268]
 

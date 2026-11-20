@@ -297,17 +297,17 @@ repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D3" unique_id=336340635]
 z_index = -2
-position = Vector2(1668, 162)
-scale = Vector2(4.568359, 638.99994)
+position = Vector2(1668, 186)
+scale = Vector2(5.719, 800)
 texture = SubResource("GradientTexture1D_g6jd5")
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=1423745219]
 scroll_scale = Vector2(0, 1)
 
 [node name="Sol" type="Sprite2D" parent="Parallax2D" unique_id=671824561]
-modulate = Color(0, 2.253, 0, 1)
+modulate = Color(0, 1.8307776, 0, 1)
 z_index = -2
-position = Vector2(601, 330)
+position = Vector2(601, 316)
 texture = ExtResource("3_m7ux3")
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=2141399371]
@@ -318,7 +318,7 @@ autoscroll = Vector2(-50, 0)
 repeat_times = 3
 
 [node name="nuvem" type="Sprite2D" parent="Parallax2D2" unique_id=1993104356]
-modulate = Color(2.253293, 2.253293, 2.253293, 1)
+modulate = Color(0, 2.253293, 0, 1)
 z_index = -2
 position = Vector2(682, 158)
 texture = ExtResource("4_ihasm")

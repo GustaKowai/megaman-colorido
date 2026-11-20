@@ -2,9 +2,11 @@ extends State
 class_name DamageState
 @export var damage_color:Color = Color(1.437, 1.437, 1.437)
 @onready var damage_sound: AudioStreamPlayer = $damage_sound
+var original_color:Color
 
 func _ready() -> void:
 	super()
+	original_color = target.modulate
 	#print_tree_pretty()
 
 func Enter():
@@ -38,4 +40,4 @@ func Exit():
 		#hurtbox.process_mode = Node.PROCESS_MODE_INHERIT
 	#target.just_damaged = false
 	target.velocity.x = 0
-	target.modulate = Color.WHITE
+	target.modulate = original_color

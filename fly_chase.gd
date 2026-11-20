@@ -6,6 +6,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("Player"):
 		print_debug("achei de verdade")
 		target_player = body
+		target.speed = 700
 	if not target_player:
 		get_target()
 
