@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv3fhxmrvasnb"
-path="res://.godot/imported/disquete.png-6ed24d226a03f516898dede4afe68beb.ctex"
+uid="uid://dxgrx260w873d"
+path="res://.godot/imported/cassete_tape.png-9e0d8691ad7b799f98730cec97269051.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/disquete.png"
-dest_files=["res://.godot/imported/disquete.png-6ed24d226a03f516898dede4afe68beb.ctex"]
+source_file="res://Sprites/itens/cassete_tape.png"
+dest_files=["res://.godot/imported/cassete_tape.png-9e0d8691ad7b799f98730cec97269051.ctex"]
 
 [params]
 

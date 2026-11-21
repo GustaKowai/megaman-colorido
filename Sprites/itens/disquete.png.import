@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rvpps4vnms04"
-path="res://.godot/imported/orbs.png-5f8e2e9672e0ba6f4f0cf950cd89d5c6.ctex"
+uid="uid://cnmfji677x3po"
+path="res://.godot/imported/disquete.png-e46e99dfd226b5f76f54c522e3cf5c09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/orbs.png"
-dest_files=["res://.godot/imported/orbs.png-5f8e2e9672e0ba6f4f0cf950cd89d5c6.ctex"]
+source_file="res://Sprites/itens/disquete.png"
+dest_files=["res://.godot/imported/disquete.png-e46e99dfd226b5f76f54c522e3cf5c09.ctex"]
 
 [params]
 

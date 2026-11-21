@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ygtxmot352ec" path="res://UI/ui_jogador.tscn" id="1_xol2f"]
 [ext_resource type="Script" uid="uid://c04nnjx582b50" path="res://misc/camera_2d.gd" id="2_efggn"]
+[ext_resource type="PackedScene" uid="uid://unvhyjtqpd54" path="res://enemies/inimigo_atira.tscn" id="3_4ages"]
 [ext_resource type="Texture2D" uid="uid://ca0blee2ghsqo" path="res://Sprites/sol.png" id="3_vo88v"]
 [ext_resource type="Texture2D" uid="uid://cdf5yf1ah1fis" path="res://Sprites/montanha.png" id="4_b6fnc"]
 [ext_resource type="Texture2D" uid="uid://cf1h6qoaun33d" path="res://Sprites/dhb1jbx-b8a645c3-7f45-4aef-b43a-7cc4fa6fe703.png" id="5_6de2u"]
@@ -11,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bp1rv6n6j82yg" path="res://Sprites/tileset/tileset_luzes.png" id="9_g3wqc"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="10_tjoqr"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="13_j564f"]
-[ext_resource type="PackedScene" uid="uid://dtrg2tbom02p3" path="res://enemies/inimigo_atira_diagonal.tscn" id="14_4ages"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_7w85l"]
 [ext_resource type="PackedScene" uid="uid://msmtxba6mxv0" path="res://enemies/inimigo_atira_parabola.tscn" id="23_efggn"]
 
@@ -2662,11 +2662,16 @@ visible = false
 [node name="Exit" parent="Exits" unique_id=1854873059 instance=ExtResource("10_tjoqr")]
 position = Vector2(2884, 509)
 
-[node name="InimigoApenasAnda" parent="." unique_id=164572135 instance=ExtResource("14_7w85l")]
+[node name="InimigoApenasAnda" parent="." unique_id=1041181229 instance=ExtResource("14_7w85l")]
 position = Vector2(93, 198)
 
 [node name="InimigoApenasAnda2" parent="." unique_id=825274212 instance=ExtResource("14_7w85l")]
 position = Vector2(323, 326)
+
+[node name="InimigoAtira" parent="." unique_id=164572135 instance=ExtResource("3_4ages")]
+position = Vector2(444, 371)
+inclinacao_tiro = 45.0
+is_fliped = true
 
 [node name="InimigoApenasAnda3" parent="." unique_id=396981289 instance=ExtResource("14_7w85l")]
 position = Vector2(258, 359)
@@ -2689,8 +2694,5 @@ metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Fall damage/DamageBox" unique_id=912994389]
 position = Vector2(2905.1465, 57.386414)
 shape = SubResource("RectangleShape2D_hgjhj")
-
-[node name="InimigoAtiraDi" parent="." unique_id=2055198483 instance=ExtResource("14_4ages")]
-position = Vector2(449, 360)
 
 [connection signal="area_entered" from="Fall damage/DamageBox" to="Fall damage/DamageBox" method="_on_area_entered"]

@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bb0hbxmjlch2m" path="res://fase_silencio.tscn" id="6_b2e3t"]
 [ext_resource type="PackedScene" uid="uid://eddrhnv6hwjl" path="res://fases/level_selection.tscn" id="6_c4i2l"]
 [ext_resource type="Texture2D" uid="uid://ccnh67jc6yhdv" path="res://Sprites/janela_placeholder.png" id="7_b2e3t"]
+[ext_resource type="PackedScene" uid="uid://c1bsacsd1xmne" path="res://UI/Notification.tscn" id="9_e2j1u"]
 
 [node name="MainScene" type="Node2D" unique_id=740554838]
 script = ExtResource("1_h5lnh")
@@ -66,6 +67,8 @@ text = "Tentar de novo"
 [node name="level_selection" type="Button" parent="Game_over_window/VBoxContainer" unique_id=827994266]
 layout_mode = 2
 text = "Voltar para a seleção de fases"
+
+[node name="Overlay" parent="." unique_id=877182645 instance=ExtResource("9_e2j1u")]
 
 [connection signal="pressed" from="Game_over_window/VBoxContainer/restart_level" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="Game_over_window/VBoxContainer/level_selection" to="." method="_on_level_selection_pressed"]

@@ -3,6 +3,7 @@ class_name ShootEnemy
 @onready var timer: Timer = $Timer
 @export var bullet:PackedScene
 @onready var mira: Marker2D = %mira
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var enemy:Enemy
 
@@ -13,7 +14,8 @@ func _ready() -> void:
 func Enter():
 	if enemy.sprite:
 		enemy.sprite.play("shoot")
-	
+	if audio_stream_player.stream:
+		audio_stream_player.play()
 	#print_debug("atirei!")
 	var b = bullet.instantiate()
 	if enemy.sprite.flip_h:

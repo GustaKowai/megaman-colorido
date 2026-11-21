@@ -260,6 +260,7 @@ level_number = 4
 
 [node name="Exit5" parent="Exits" unique_id=312917500 instance=ExtResource("4_whp7c")]
 position = Vector2(881, 528)
+level_number = 5
 
 [node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("7_85421")]
 position = Vector2(100, 530)

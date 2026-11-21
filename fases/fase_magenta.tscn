@@ -31,6 +31,8 @@
 [ext_resource type="PackedScene" uid="uid://dvf2ot0r8cb53" path="res://misc/enemy_despawner.tscn" id="28_j4ljj"]
 [ext_resource type="PackedScene" uid="uid://unvhyjtqpd54" path="res://enemies/inimigo_atira.tscn" id="29_bt0fn"]
 [ext_resource type="PackedScene" uid="uid://bykr5d5eflhrp" path="res://misc/button_fase.tscn" id="29_ffcsb"]
+[ext_resource type="PackedScene" uid="uid://bilvqwqsyop7v" path="res://fita_cassete.tscn" id="31_ffcsb"]
+[ext_resource type="PackedScene" uid="uid://c8tfoclidipp3" path="res://disquete.tscn" id="32_d8oaf"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -871,6 +873,49 @@ curve = SubResource("Curve2D_xvfpr")
 [node name="movingPlatform5" parent="MovingPlatforms" unique_id=1774209677 instance=ExtResource("15_eaqgv")]
 position = Vector2(6479, -98)
 curve = SubResource("Curve2D_ffcsb")
+
+[node name="Coletaveis" type="Node2D" parent="." unique_id=257595938]
+position = Vector2(993, 586)
+
+[node name="fita_cassete2" parent="Coletaveis" unique_id=1660121172 instance=ExtResource("31_ffcsb")]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(6638.6064, -488.3047)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="fita_cassete3" parent="Coletaveis" unique_id=339315306 instance=ExtResource("31_ffcsb")]
+position = Vector2(6187.3164, -487.30292)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="fita_cassete" parent="Coletaveis" unique_id=858106142 instance=ExtResource("31_ffcsb")]
+position = Vector2(3728.8818, -323.5664)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="fita_cassete4" parent="Coletaveis" unique_id=1552109499 instance=ExtResource("31_ffcsb")]
+position = Vector2(5853.9756, -125.18341)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="fita_cassete5" parent="Coletaveis" unique_id=1584791336 instance=ExtResource("31_ffcsb")]
+position = Vector2(2638.9885, -173.35129)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="fita_cassete6" parent="Coletaveis" unique_id=1719747956 instance=ExtResource("31_ffcsb")]
+position = Vector2(320.27515, -5.2564697)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="fita_cassete7" parent="Coletaveis" unique_id=355864412 instance=ExtResource("31_ffcsb")]
+position = Vector2(1766.9424, -75.923096)
+fita_color = "magenta"
+metadata/_scene_painted = true
+
+[node name="Disquete" parent="Coletaveis" unique_id=792744894 instance=ExtResource("32_d8oaf")]
+position = Vector2(3146, -13)
+disquete_color = "magenta"
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=296106273]
 stream = ExtResource("26_dt6v0")

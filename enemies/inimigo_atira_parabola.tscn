@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="12_ktpas"]
 [ext_resource type="Texture2D" uid="uid://1k3wr1ygt2kt" path="res://Sprites/enemies/bomber_parts.png" id="13_4hf6a"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="13_rdiev"]
+[ext_resource type="AudioStream" uid="uid://cymwf83gwalo7" path="res://sfx/tiro inimigo 2.wav" id="13_xwuy6"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="15_tnak6"]
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="17_ffc5m"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="18_ifoot"]
@@ -296,6 +297,10 @@ target = NodePath("../..")
 
 [node name="Timer" type="Timer" parent="State_machine/Shoot" unique_id=2098592835]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="State_machine/Shoot" unique_id=45852746]
+stream = ExtResource("13_xwuy6")
+volume_db = -5.0
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=312388926]
 position = Vector2(0, 4.7683716e-07)
