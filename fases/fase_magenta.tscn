@@ -26,6 +26,8 @@
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="17_vnjwu"]
 [ext_resource type="Texture2D" uid="uid://leji55a4wawg" path="res://Sprites/cenarios/hidrante.png" id="18_bt0fn"]
 [ext_resource type="Texture2D" uid="uid://0t766v0wrxa6" path="res://Sprites/cenarios/poste.png" id="19_y4af3"]
+[ext_resource type="Texture2D" uid="uid://bfwkoruxs0gn" path="res://Sprites/cenarios/conetran.png" id="20_ys6uj"]
+[ext_resource type="Texture2D" uid="uid://b6728vbjdtksf" path="res://Sprites/cenarios/cavalete.png" id="21_vp3dx"]
 [ext_resource type="AudioStream" uid="uid://d4m7y7y2fgo" path="res://musics/fase magenta new.wav" id="26_dt6v0"]
 [ext_resource type="PackedScene" uid="uid://c2272i2utbpeo" path="res://misc/laser.tscn" id="28_2g727"]
 [ext_resource type="PackedScene" uid="uid://dvf2ot0r8cb53" path="res://misc/enemy_despawner.tscn" id="28_j4ljj"]
@@ -623,6 +625,131 @@ texture = ExtResource("19_y4af3")
 position = Vector2(7576, 408)
 texture = ExtResource("19_y4af3")
 
+[node name="Conetran" type="Sprite2D" parent="branco/decorações" unique_id=1087454544]
+position = Vector2(1109, 390)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran2" type="Sprite2D" parent="branco/decorações" unique_id=1159055856]
+position = Vector2(1888, 520)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran3" type="Sprite2D" parent="branco/decorações" unique_id=796803689]
+position = Vector2(2288, 520)
+texture = ExtResource("20_ys6uj")
+
+[node name="Cavalete" type="Sprite2D" parent="branco/decorações" unique_id=950053049]
+position = Vector2(2528, 504)
+texture = ExtResource("21_vp3dx")
+
+[node name="Cavalete2" type="Sprite2D" parent="branco/decorações" unique_id=1065661624]
+position = Vector2(1952, 504)
+texture = ExtResource("21_vp3dx")
+
+[node name="Cavalete3" type="Sprite2D" parent="branco/decorações" unique_id=480762305]
+position = Vector2(3416, 568)
+texture = ExtResource("21_vp3dx")
+
+[node name="Cavalete4" type="Sprite2D" parent="branco/decorações" unique_id=1453899721]
+position = Vector2(3744, 568)
+texture = ExtResource("21_vp3dx")
+flip_h = true
+
+[node name="Conetran4" type="Sprite2D" parent="branco/decorações" unique_id=558278253]
+position = Vector2(4328, 424)
+texture = ExtResource("20_ys6uj")
+
+[node name="Poste16" type="Sprite2D" parent="branco/decorações" unique_id=1663030752]
+position = Vector2(4136, 64)
+texture = ExtResource("19_y4af3")
+
+[node name="Conetran6" type="Sprite2D" parent="branco/decorações" unique_id=1756438552]
+position = Vector2(5160, 168)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran7" type="Sprite2D" parent="branco/decorações" unique_id=1004777217]
+position = Vector2(5264, 488)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran8" type="Sprite2D" parent="branco/decorações" unique_id=123736239]
+position = Vector2(5272, 496)
+texture = ExtResource("20_ys6uj")
+
+[node name="Poste17" type="Sprite2D" parent="branco/decorações" unique_id=464365601]
+position = Vector2(5656, 504)
+texture = ExtResource("19_y4af3")
+
+[node name="Poste18" type="Sprite2D" parent="branco/decorações" unique_id=1763971739]
+position = Vector2(5552, 184)
+texture = ExtResource("19_y4af3")
+
+[node name="Poste19" type="Sprite2D" parent="branco/decorações" unique_id=1693800796]
+position = Vector2(6032, 184)
+texture = ExtResource("19_y4af3")
+
+[node name="Poste20" type="Sprite2D" parent="branco/decorações" unique_id=2145295663]
+position = Vector2(5288, 120)
+texture = ExtResource("19_y4af3")
+
+[node name="Hidrante4" type="Sprite2D" parent="branco/decorações" unique_id=1736478407]
+position = Vector2(6208, 200)
+texture = ExtResource("18_bt0fn")
+
+[node name="Conetran5" type="Sprite2D" parent="branco/decorações" unique_id=829796131]
+position = Vector2(6032, 456)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran9" type="Sprite2D" parent="branco/decorações" unique_id=2028554906]
+position = Vector2(5768, 520)
+texture = ExtResource("20_ys6uj")
+
+[node name="Hidrante5" type="Sprite2D" parent="branco/decorações" unique_id=2007052425]
+position = Vector2(6288, 456)
+texture = ExtResource("18_bt0fn")
+
+[node name="Cavalete5" type="Sprite2D" parent="branco/decorações" unique_id=999159431]
+position = Vector2(7864, 568)
+texture = ExtResource("21_vp3dx")
+
+[node name="Poste21" type="Sprite2D" parent="branco/decorações" unique_id=635606141]
+position = Vector2(6848, 536)
+texture = ExtResource("19_y4af3")
+
+[node name="Conetran12" type="Sprite2D" parent="branco/decorações" unique_id=1054590598]
+position = Vector2(6768, 200)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran10" type="Sprite2D" parent="branco/decorações" unique_id=1214060092]
+position = Vector2(6744, 200)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran11" type="Sprite2D" parent="branco/decorações" unique_id=20666329]
+position = Vector2(6800, 200)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran13" type="Sprite2D" parent="branco/decorações" unique_id=1607950885]
+position = Vector2(6832, 200)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran14" type="Sprite2D" parent="branco/decorações" unique_id=2127111217]
+position = Vector2(6760, 208)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran15" type="Sprite2D" parent="branco/decorações" unique_id=1942358608]
+position = Vector2(6784, 208)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran16" type="Sprite2D" parent="branco/decorações" unique_id=199110756]
+position = Vector2(6816, 208)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran17" type="Sprite2D" parent="branco/decorações" unique_id=180603305]
+position = Vector2(6848, 208)
+texture = ExtResource("20_ys6uj")
+
+[node name="Conetran18" type="Sprite2D" parent="branco/decorações" unique_id=1802426900]
+position = Vector2(7592, 584)
+texture = ExtResource("20_ys6uj")
+
 [node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("9_vnjwu")]
 position = Vector2(151, 402)
 
@@ -773,11 +900,11 @@ is_fliped = true
 position = Vector2(4768, 320)
 
 [node name="InimigoAtira4" parent="Inimigos" unique_id=54282039 instance=ExtResource("29_bt0fn")]
-position = Vector2(1886, 389)
+position = Vector2(1920, 384)
 is_fliped = true
 
 [node name="InimigoAtira6" parent="Inimigos" unique_id=165954286 instance=ExtResource("29_bt0fn")]
-position = Vector2(2782, 322)
+position = Vector2(2840, 320)
 is_fliped = true
 
 [node name="enemy_despawner" parent="Inimigos" unique_id=1402376853 instance=ExtResource("28_j4ljj")]

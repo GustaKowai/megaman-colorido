@@ -7,6 +7,8 @@ var direction:int = 1
 
 func _ready() -> void:
 	super()
+	if target.is_fliped:
+		direction *= -1
 	enemy = target
 
 func Enter():
