@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://cp4gbasyd3ja1" path="res://estados/enemies/enemy_shoot.gd" id="10_wf33q"]
 [ext_resource type="PackedScene" uid="uid://bfu800jtnysoh" path="res://misc/enemy_bullet.tscn" id="11_ai6ou"]
 [ext_resource type="Texture2D" uid="uid://rsnupal5gu06" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 1/13.png" id="12_xehki"]
+[ext_resource type="AudioStream" uid="uid://dtg0gq7a2tmih" path="res://sfx/enemy shot.wav" id="13_a1awe"]
 [ext_resource type="Texture2D" uid="uid://ddl875mvgta8v" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png" id="13_dabmh"]
 [ext_resource type="Texture2D" uid="uid://dr2scahtxedib" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/1_Cat_Idle-Sheet.png" id="14_tk68b"]
 [ext_resource type="Texture2D" uid="uid://bggq6ebeuba5g" path="res://Sprites/FreeCatCharacterAnimations/FreeCatCharacterAnimations/3_Cat_Jump-Sheet.png" id="15_rqgn5"]
@@ -328,6 +329,9 @@ target = NodePath("../..")
 
 [node name="Timer" type="Timer" parent="State_machine/Shoot" unique_id=2098592835]
 one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="State_machine/Shoot" unique_id=463106402]
+stream = ExtResource("13_a1awe")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2065122107]
 texture_filter = 1

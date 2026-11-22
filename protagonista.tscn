@@ -9,9 +9,13 @@
 [ext_resource type="Texture2D" uid="uid://ch3crmnnmvger" path="res://Sprites/Protagonista/YELLOW.png" id="6_6l04p"]
 [ext_resource type="Texture2D" uid="uid://u54nw6o0tj1h" path="res://Sprites/Effect and FX Pixel All Free/Free/Part 9/449.png" id="6_08yp7"]
 [ext_resource type="Script" uid="uid://b4ks34rhdjoli" path="res://estados/vida.gd" id="6_vsclo"]
+[ext_resource type="Texture2D" uid="uid://bvdgmrrrixwtf" path="res://Sprites/efeitos/white_death_explosion.png" id="7_lo0s8"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="7_w3lgh"]
+[ext_resource type="Texture2D" uid="uid://cdfosm4w30mfk" path="res://Sprites/efeitos/green_death_explosion.png" id="7_yccas"]
 [ext_resource type="Script" uid="uid://b08x5anyr8prf" path="res://estados/player/walk.gd" id="8_jf1wn"]
+[ext_resource type="Texture2D" uid="uid://chmlhpuqm76ka" path="res://Sprites/efeitos/magenta_death_explosion.png" id="8_lo0s8"]
 [ext_resource type="Script" uid="uid://78jsshc00u13" path="res://estados/player/idle.gd" id="9_fr6an"]
+[ext_resource type="Texture2D" uid="uid://cep2aqpofquq6" path="res://Sprites/efeitos/yellow_death_explosion.png" id="10_broa1"]
 [ext_resource type="Script" uid="uid://drxidm0h68s70" path="res://estados/player/jump.gd" id="10_yl78u"]
 [ext_resource type="Script" uid="uid://cpi2mttyl4hp8" path="res://estados/player/fall.gd" id="11_wp1p8"]
 [ext_resource type="Script" uid="uid://dloljbsxxhcn2" path="res://estados/player/shoot.gd" id="12_lwusa"]
@@ -30,6 +34,7 @@
 [ext_resource type="Texture2D" uid="uid://dkj68g56il2d2" path="res://Sprites/heal-effect.png" id="28_g24kp"]
 [ext_resource type="AudioStream" uid="uid://mpr01jru8vq1" path="res://sfx/shield.wav" id="28_x5f4j"]
 [ext_resource type="AudioStream" uid="uid://f5kfuidt1fd4" path="res://sfx/colour change.wav" id="30_6i4w8"]
+[ext_resource type="Texture2D" uid="uid://dhs1fbkclefut" path="res://Sprites/efeitos/death_explosion.png" id="31_6l04p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
 size = Vector2(20, 57)
@@ -62,6 +67,42 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosion:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
 }
 
 [sub_resource type="Animation" id="Animation_g24kp"]
@@ -156,6 +197,42 @@ tracks/1/keys = {
 "args": [],
 "method": &"call_game_over"
 }]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1.1666666),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Explosion:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1.1666666, 1.5666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Explosion:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1.1666666, 1.2333333, 1.3, 1.3666667, 1.4333333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
 }
 
 [sub_resource type="Animation" id="Animation_lwusa"]
@@ -481,6 +558,11 @@ sprite_green = ExtResource("3_g24kp")
 sprite_magent = ExtResource("4_x5f4j")
 sprite_blue = ExtResource("5_6i4w8")
 sprite_yellow = ExtResource("6_6l04p")
+sprite_gray_explosion = ExtResource("7_lo0s8")
+sprite_green_explosion = ExtResource("7_yccas")
+sprite_magent_explosion = ExtResource("8_lo0s8")
+sprite_blue_explosion = ExtResource("31_6l04p")
+sprite_yellow_explosion = ExtResource("10_broa1")
 
 [node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=525152556]
 current = true
@@ -703,7 +785,7 @@ stream = ExtResource("17_g24kp")
 [node name="heal" type="Node" parent="green" unique_id=1191231804 node_paths=PackedStringArray("hurtbox", "particles", "target")]
 script = ExtResource("17_vsclo")
 heal_amount = 1
-heal_speed = 1.0
+heal_speed = 0.5
 heal_bar_max = 5
 hurtbox = NodePath("../../Hurt_box")
 particles = NodePath("../../CPUParticles2D")
@@ -793,3 +875,10 @@ color_ramp = SubResource("Gradient_hgjhj")
 
 [node name="color_change" type="AudioStreamPlayer" parent="." unique_id=1830515613]
 stream = ExtResource("30_6i4w8")
+
+[node name="Explosion" type="Sprite2D" parent="." unique_id=1085526624]
+visible = false
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("31_6l04p")
+hframes = 6

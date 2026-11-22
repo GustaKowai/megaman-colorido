@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b7p4iysdmwxy" path="res://Sprites/enemies/BeetleSpS.png" id="2_1q8uq"]
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="3_cbdsk"]
 [ext_resource type="Texture2D" uid="uid://cwjqx18bfycut" path="res://Sprites/enemies/idleBeetle.png" id="3_fqh66"]
+[ext_resource type="Texture2D" uid="uid://cdfosm4w30mfk" path="res://Sprites/efeitos/green_death_explosion.png" id="3_usjxl"]
 [ext_resource type="Script" uid="uid://kr4si5okvxq8" path="res://estados/enemies/walk_fly.gd" id="4_0asbm"]
 [ext_resource type="Script" uid="uid://c7wsjo5v2msm5" path="res://estados/enemies/idle_fly.gd" id="5_6mpov"]
 [ext_resource type="Script" uid="uid://cq4myp7eo5mts" path="res://estados/enemies/damage_fly.gd" id="6_1q8uq"]
@@ -24,9 +25,29 @@ region = Rect2(0, 0, 32, 32)
 atlas = ExtResource("2_1q8uq")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_usjxl"]
-atlas = ExtResource("3_fqh66")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnti5"]
+atlas = ExtResource("3_usjxl")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t18ts"]
+atlas = ExtResource("3_usjxl")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cokyl"]
+atlas = ExtResource("3_usjxl")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mkkf"]
+atlas = ExtResource("3_usjxl")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rvaff"]
+atlas = ExtResource("3_usjxl")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lhpp5"]
+atlas = ExtResource("3_usjxl")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hb3m"]
 atlas = ExtResource("3_fqh66")
@@ -47,11 +68,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_usjxl")
+"texture": SubResource("AtlasTexture_cnti5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t18ts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cokyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mkkf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rvaff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lhpp5")
 }],
 "loop": 0,
 "name": &"die",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -96,7 +132,7 @@ modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 texture_filter = 3
 position = Vector2(-1, -12)
 sprite_frames = SubResource("SpriteFrames_hgjhj")
-animation = &"die"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="State_machine" type="Node" parent="." unique_id=301085884 node_paths=PackedStringArray("initial_state")]

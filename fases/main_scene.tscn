@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ccnh67jc6yhdv" path="res://Sprites/janela_placeholder.png" id="7_b2e3t"]
 [ext_resource type="Script" uid="uid://cjbrsop3fkr3k" path="res://fases/pause_menu.gd" id="9_e2j1u"]
 [ext_resource type="PackedScene" uid="uid://cwlf4vwjc7xtf" path="res://UI/Menu/main_menu_options.tscn" id="10_hndne"]
+[ext_resource type="PackedScene" uid="uid://c1bsacsd1xmne" path="res://UI/Notification.tscn" id="9_e2j1u"]
 
 [node name="MainScene" type="Node2D" unique_id=740554838]
 script = ExtResource("1_h5lnh")
@@ -150,6 +151,8 @@ text = "Seleção de fases"
 layout_mode = 2
 theme_override_font_sizes/font_size = 38
 text = "Voltar ao menu principal"
+
+[node name="Overlay" parent="." unique_id=877182645 instance=ExtResource("9_e2j1u")]
 
 [connection signal="pressed" from="Game_over_window/VBoxContainer/restart_level" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="Game_over_window/VBoxContainer/level_selection" to="." method="_on_level_selection_pressed"]

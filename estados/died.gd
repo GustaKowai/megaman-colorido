@@ -5,6 +5,9 @@ var sprite
 var morreu:bool = false
 
 func Enter():
+	target.modulate = Color(1.825, 1.825, 1.825, 1.0)
+	target.scale.x = 1
+	target.scale.y = 1
 	morreu = true
 	target.velocity.x = 0
 	target.velocity.y = 0

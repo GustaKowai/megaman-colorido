@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="13_j564f"]
 [ext_resource type="PackedScene" uid="uid://dtrg2tbom02p3" path="res://enemies/inimigo_atira_diagonal.tscn" id="14_4ages"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_7w85l"]
+[ext_resource type="AudioStream" uid="uid://diphhyka615yy" path="res://musics/fase vermelha (glitch).wav" id="15_0cp54"]
 [ext_resource type="PackedScene" uid="uid://msmtxba6mxv0" path="res://enemies/inimigo_atira_parabola.tscn" id="23_efggn"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
@@ -2692,5 +2693,10 @@ shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="InimigoAtiraDi" parent="." unique_id=2055198483 instance=ExtResource("14_4ages")]
 position = Vector2(449, 360)
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=613159622]
+stream = ExtResource("15_0cp54")
+volume_db = 10.0
+bus = &"Music"
 
 [connection signal="area_entered" from="Fall damage/DamageBox" to="Fall damage/DamageBox" method="_on_area_entered"]

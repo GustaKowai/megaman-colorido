@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://1pt326tnyysx" path="res://estados/player/state_machine.gd" id="2_12tug"]
 [ext_resource type="Texture2D" uid="uid://cgorlwcqmfnfh" path="res://Sprites/enemies/motorcycle.png" id="2_qsvyg"]
 [ext_resource type="Script" uid="uid://5kfw5vtv0l6d" path="res://enemies/idle_dash_blue.gd" id="3_6hyjd"]
+[ext_resource type="Texture2D" uid="uid://dhs1fbkclefut" path="res://Sprites/efeitos/death_explosion.png" id="3_qsvyg"]
 [ext_resource type="Script" uid="uid://bvpkk7aujetw0" path="res://estados/enemies/dash_enemy_blue.gd" id="4_67vh7"]
 [ext_resource type="Script" uid="uid://rex2amr3hsmf" path="res://estados/enemies/enemy_walk_state.gd" id="5_e4tvx"]
 [ext_resource type="Script" uid="uid://d3bikxrs38522" path="res://estados/enemies/enemy_fall_state.gd" id="7_67vh7"]
@@ -22,9 +23,29 @@ region = Rect2(64, 0, 64, 32)
 atlas = ExtResource("2_qsvyg")
 region = Rect2(0, 0, 64, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gp4k5"]
-atlas = ExtResource("2_qsvyg")
-region = Rect2(64, 0, 64, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ru2b"]
+atlas = ExtResource("3_qsvyg")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j4o80"]
+atlas = ExtResource("3_qsvyg")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6nmf"]
+atlas = ExtResource("3_qsvyg")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub1nf"]
+atlas = ExtResource("3_qsvyg")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6rgaj"]
+atlas = ExtResource("3_qsvyg")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2shgy"]
+atlas = ExtResource("3_qsvyg")
+region = Rect2(320, 0, 64, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jh4tv"]
 atlas = ExtResource("2_qsvyg")
@@ -62,11 +83,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gp4k5")
+"texture": SubResource("AtlasTexture_3ru2b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j4o80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6nmf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub1nf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6rgaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2shgy")
 }],
 "loop": 0,
 "name": &"die",
-"speed": 5.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -100,7 +136,7 @@ animations = [{
 size = Vector2(59, 24)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hgjhj"]
-size = Vector2(64, 24)
+size = Vector2(64, 29)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e2r5q"]
 size = Vector2(64, 24)
@@ -113,7 +149,7 @@ metadata/_custom_type_script = "uid://cckunixtvck0o"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251774122]
 sprite_frames = SubResource("SpriteFrames_hgjhj")
-animation = &"walk"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1955257958]
@@ -178,7 +214,7 @@ damage = 1
 metadata/_custom_type_script = "uid://c8lgnqwadv5ie"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DamageBox" unique_id=2122663400]
-position = Vector2(0, 4)
+position = Vector2(0, 6.5)
 shape = SubResource("RectangleShape2D_hgjhj")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=416456176 node_paths=PackedStringArray("target") groups=["Enemy"]]

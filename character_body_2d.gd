@@ -9,6 +9,7 @@ signal game_over
 @onready var blue: State_machine = $blue
 @onready var yellow: State_machine = $yellow
 @onready var sprite: Sprite2D = $Sprite2D
+@onready var explosion: Sprite2D = $Explosion
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var efeitos: Sprite2D = $efeitos
 @onready var animationeffect: AnimationPlayer = $Animationeffect
@@ -20,6 +21,13 @@ signal game_over
 @export var sprite_magent:Texture2D
 @export var sprite_blue:Texture2D
 @export var sprite_yellow:Texture2D
+
+@export var sprite_gray_explosion:Texture2D
+@export var sprite_green_explosion:Texture2D
+@export var sprite_magent_explosion:Texture2D
+@export var sprite_blue_explosion:Texture2D
+@export var sprite_yellow_explosion:Texture2D
+
 
 @export var max_speed = 300.0
 const JUMP_VELOCITY = -450.0
@@ -38,6 +46,7 @@ func _ready() -> void:
 	yellow_power = PlayerManager.yellow_power
 	#print_debug(green,magent)
 	sprite.texture = sprite_gray
+	explosion.texture = sprite_gray_explosion
 	PlayerManager.change_UI_color.emit("off")
 	gray.process_mode = Node.PROCESS_MODE_INHERIT
 	green.process_mode = Node.PROCESS_MODE_DISABLED
@@ -64,6 +73,7 @@ func check_color():
 		print_debug("verde")
 		point_light_2d.color = Color.GREEN
 		sprite.texture = sprite_green
+		explosion.texture = sprite_green_explosion
 		green.process_mode = Node.PROCESS_MODE_INHERIT
 		magent.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
@@ -76,6 +86,7 @@ func check_color():
 		print_debug("magenta")
 		point_light_2d.color = Color.MAGENTA
 		sprite.texture = sprite_magent
+		explosion.texture = sprite_magent_explosion
 		magent.process_mode = Node.PROCESS_MODE_INHERIT
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
@@ -88,6 +99,7 @@ func check_color():
 		print_debug("azul")
 		point_light_2d.color = Color.POWDER_BLUE
 		sprite.texture = sprite_blue
+		explosion.texture = sprite_blue_explosion
 		blue.process_mode = Node.PROCESS_MODE_INHERIT
 		magent.process_mode = Node.PROCESS_MODE_DISABLED
 		green.process_mode = Node.PROCESS_MODE_DISABLED
@@ -100,6 +112,7 @@ func check_color():
 		print_debug("amarelo")
 		point_light_2d.color = Color.YELLOW
 		sprite.texture = sprite_yellow
+		explosion.texture = sprite_yellow_explosion
 		yellow.process_mode = Node.PROCESS_MODE_INHERIT
 		magent.process_mode = Node.PROCESS_MODE_DISABLED
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
