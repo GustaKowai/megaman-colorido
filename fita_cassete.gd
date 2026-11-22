@@ -10,7 +10,7 @@ func _ready():
 		"magenta":
 			modulate = Color(Color(4.416, 0.0, 3.003, 1.0))
 		"azul":
-			modulate = Color(Color(0.0, 0.0, 4.416, 1.0))
+			modulate = Color(Color(0.0, 1.643, 1.825))
 		"amarelo":
 			modulate = Color(Color(4.416, 4.283, 0.0, 1.0))
 		"vermelho":
