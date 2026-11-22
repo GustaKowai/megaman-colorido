@@ -11,6 +11,9 @@ script = ExtResource("1_v5tbv")
 [node name="Options_menu" parent="." unique_id=359546675 instance=ExtResource("2_v5tbv")]
 visible = false
 
+[node name="CheckBox" parent="Options_menu" index="2" unique_id=912795425]
+toggle_mode = false
+
 [node name="Main_menu" parent="." unique_id=644176744 instance=ExtResource("1_v0182")]
 anchors_preset = 0
 anchor_right = 0.0

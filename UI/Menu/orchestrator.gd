@@ -2,10 +2,20 @@ extends Node
 
 @onready var main_menu = $Main_menu
 @onready var options_menu = $Options_menu
+@onready var check_box: CheckBox = $Options_menu/CheckBox
+
 
 @export 
 var bus_name : String
 var bus_index: int
+
+func _ready() -> void:
+	if DisplayServer.WINDOW_MODE_FULLSCREEN || DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		check_box.toggle_mode = true
+		check_box.button_pressed = true
+	if DisplayServer.WINDOW_MODE_WINDOWED: 
+		check_box.toggle_mode = false
+		check_box.button_pressed = false
 
 #Seção principal
 func _on_start_button_pressed() -> void:

@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bb0hbxmjlch2m" path="res://fase_silencio.tscn" id="6_b2e3t"]
 [ext_resource type="PackedScene" uid="uid://eddrhnv6hwjl" path="res://fases/level_selection.tscn" id="6_c4i2l"]
 [ext_resource type="Texture2D" uid="uid://ccnh67jc6yhdv" path="res://Sprites/janela_placeholder.png" id="7_b2e3t"]
+[ext_resource type="Script" uid="uid://cjbrsop3fkr3k" path="res://fases/pause_menu.gd" id="9_e2j1u"]
+[ext_resource type="PackedScene" uid="uid://cwlf4vwjc7xtf" path="res://UI/Menu/main_menu_options.tscn" id="10_hndne"]
 
 [node name="MainScene" type="Node2D" unique_id=740554838]
 script = ExtResource("1_h5lnh")
@@ -67,5 +69,95 @@ text = "Tentar de novo"
 layout_mode = 2
 text = "Voltar para a seleção de fases"
 
+[node name="Pause_menu" type="Window" parent="." unique_id=20402890]
+process_mode = 2
+transparent_bg = true
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(1156, 648)
+visible = false
+unresizable = true
+borderless = true
+transparent = true
+script = ExtResource("9_e2j1u")
+
+[node name="Options_menu" parent="Pause_menu" unique_id=941874461 instance=ExtResource("10_hndne")]
+process_mode = 2
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Pause_menu/Options_menu" unique_id=408265173]
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 645.0
+mouse_filter = 2
+color = Color(1, 1, 1, 0.4745098)
+
+[node name="MarginContainer" parent="Pause_menu/Options_menu" index="1" unique_id=680127589]
+theme_override_constants/margin_top = 101
+theme_override_constants/margin_bottom = 46
+
+[node name="config_section" parent="Pause_menu/Options_menu/MarginContainer" index="0" unique_id=2069276515]
+theme_override_font_sizes/font_size = 11
+
+[node name="Main_section" type="ColorRect" parent="Pause_menu" unique_id=1901158689]
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 1152.0
+offset_bottom = 644.0
+color = Color(0.6862745, 0.6862745, 0.6862745, 0.64705884)
+
+[node name="Label" type="Label" parent="Pause_menu/Main_section" unique_id=1186473749]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 38.0
+offset_right = 1154.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 62
+text = "Pausa"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pause_menu/Main_section" unique_id=704946958]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -229.0
+offset_top = -150.5
+offset_right = 231.0
+offset_bottom = 153.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="resume_button" type="Button" parent="Pause_menu/Main_section/VBoxContainer" unique_id=1970232967]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Resumir"
+
+[node name="options_button" type="Button" parent="Pause_menu/Main_section/VBoxContainer" unique_id=499850565]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Opções"
+
+[node name="level_selection_button" type="Button" parent="Pause_menu/Main_section/VBoxContainer" unique_id=1950670265]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Seleção de fases"
+
+[node name="main_menu_button" type="Button" parent="Pause_menu/Main_section/VBoxContainer" unique_id=1892911651]
+layout_mode = 2
+theme_override_font_sizes/font_size = 38
+text = "Voltar ao menu principal"
+
 [connection signal="pressed" from="Game_over_window/VBoxContainer/restart_level" to="." method="_on_restart_level_pressed"]
 [connection signal="pressed" from="Game_over_window/VBoxContainer/level_selection" to="." method="_on_level_selection_pressed"]
+[connection signal="pressed" from="Pause_menu/Options_menu/MarginContainer/VBoxContainer/back_button" to="Pause_menu" method="_on_back_button_pressed"]
+[connection signal="toggled" from="Pause_menu/Options_menu/CheckBox" to="Pause_menu" method="_on_check_box_toggled"]
+[connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/resume_button" to="Pause_menu" method="_on_resume_button_pressed"]
+[connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/options_button" to="Pause_menu" method="_on_options_button_pressed"]
+[connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/level_selection_button" to="Pause_menu" method="_on_level_selection_button_pressed"]
+[connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/main_menu_button" to="Pause_menu" method="_on_main_menu_button_pressed"]
+
+[editable path="Pause_menu/Options_menu"]

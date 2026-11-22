@@ -5,9 +5,8 @@ var bus_index: int
 
 func _ready() -> void:
 	bus_index = AudioServer.get_bus_index(bus_name)
-	value_changed.connect(_on_value_changed)
 	
-	# Para futuro uso caso faça um menu pausa
+	# Para uso do menu de pausa
 	# Value pega o valor atual do slider e o mantém
 	value = db_to_linear(AudioServer.get_bus_volume_db(bus_index))
 

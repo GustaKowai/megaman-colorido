@@ -1,11 +1,14 @@
 extends Node2D
 var current_level:Node2D
 @onready var game_over_window = $Game_over_window
+@onready var pause_menu: Window = $Pause_menu
+
 @export var level_list:Array[PackedScene]
 var current_level_number:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	get_tree().paused = false
 	current_level = get_node("LevelRoot")
 	_load_level(0)
 
@@ -56,3 +59,9 @@ func _on_restart_level_pressed() -> void:
 func _on_level_selection_pressed() -> void:
 	game_over_window.visible = false
 	_load_level(0)
+
+func _input(_event: InputEvent) -> void:
+	if Input.is_action_just_pressed("pausa"):
+		pause_menu.visible = true
+		get_tree().paused = true
+		
