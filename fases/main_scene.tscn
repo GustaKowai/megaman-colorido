@@ -158,6 +158,7 @@ text = "Voltar ao menu principal"
 [connection signal="pressed" from="Game_over_window/VBoxContainer/level_selection" to="." method="_on_level_selection_pressed"]
 [connection signal="pressed" from="Pause_menu/Options_menu/MarginContainer/VBoxContainer/back_button" to="Pause_menu" method="_on_back_button_pressed"]
 [connection signal="toggled" from="Pause_menu/Options_menu/CheckBox" to="Pause_menu" method="_on_check_box_toggled"]
+[connection signal="toggled" from="Pause_menu/Options_menu/CheckBox2" to="Pause_menu" method="_on_check_box_2_toggled"]
 [connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/resume_button" to="Pause_menu" method="_on_resume_button_pressed"]
 [connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/options_button" to="Pause_menu" method="_on_options_button_pressed"]
 [connection signal="pressed" from="Pause_menu/Main_section/VBoxContainer/level_selection_button" to="Pause_menu" method="_on_level_selection_button_pressed"]

@@ -33,5 +33,5 @@ func Physics_update(_delta: float):
 		player.velocity.x = move_toward(player.velocity.x, 0, player.max_speed)
 	if Input.is_action_just_pressed("action"):
 		do_action()
-	if Input.is_action_just_released("ui_up"):
+	if Input.is_action_just_released("ui_up") and GameManager.pulo_controlavel:
 		player.velocity.y = 0

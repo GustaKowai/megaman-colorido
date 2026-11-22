@@ -83,6 +83,16 @@ theme_override_icons/checked = ExtResource("3_j2jce")
 theme_override_icons/unchecked = ExtResource("3_xquk8")
 button_pressed = true
 
+[node name="CheckBox2" type="CheckBox" parent="." unique_id=650438118]
+layout_mode = 0
+offset_left = 570.0
+offset_top = 377.0
+offset_right = 623.0
+offset_bottom = 430.0
+theme_override_icons/checked = ExtResource("3_j2jce")
+theme_override_icons/unchecked = ExtResource("3_xquk8")
+button_pressed = true
+
 [node name="label_fullscreen" type="Label" parent="." unique_id=1111356327]
 layout_mode = 0
 offset_left = 328.0
@@ -93,5 +103,16 @@ size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_bqwea")
 theme_override_font_sizes/font_size = 38
 text = "fullscreen"
+
+[node name="label_pulo" type="Label" parent="." unique_id=921540754]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 385.0
+offset_right = 565.0
+offset_bottom = 420.0
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("1_bqwea")
+theme_override_font_sizes/font_size = 38
+text = "Pulo variavel"
 
 [connection signal="value_changed" from="master volume/master_slider" to="master volume/master_slider" method="_on_value_changed"]

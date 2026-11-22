@@ -48,3 +48,8 @@ func _on_check_box_toggled(toggled_on: bool) -> void:
 		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	#else:
 		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_check_box_2_toggled(toggled_on: bool) -> void:
+	print_debug(GameManager.pulo_controlavel)
+	GameManager.pulo_controlavel = toggled_on

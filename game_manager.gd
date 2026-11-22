@@ -1,7 +1,7 @@
 extends Node
 
 #opçoes jogador:
-var pulo_controlavel:bool = false
+var pulo_controlavel:bool = true
 var is_fullscreen:bool = true
 
 
