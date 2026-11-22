@@ -5,10 +5,10 @@ extends Window
 
 func _ready() -> void:
 	if DisplayServer.WINDOW_MODE_FULLSCREEN || DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
-		check_box.toggle_mode = true
+		#check_box.toggle_mode = true
 		check_box.button_pressed = true
 	if DisplayServer.WINDOW_MODE_WINDOWED: 
-		check_box.toggle_mode = false
+		#check_box.toggle_mode = false
 		check_box.button_pressed = false
 
 func _on_resume_button_pressed() -> void:
@@ -37,6 +37,7 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
+	GameManager.is_fullscreen = toggled_on
 	if toggled_on:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 	else:

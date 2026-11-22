@@ -10,12 +10,15 @@ var bus_name : String
 var bus_index: int
 
 func _ready() -> void:
-	if DisplayServer.WINDOW_MODE_FULLSCREEN || DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
-		check_box.toggle_mode = true
-		check_box.button_pressed = true
-	if DisplayServer.WINDOW_MODE_WINDOWED: 
-		check_box.toggle_mode = false
-		check_box.button_pressed = false
+	#check_box.toggle_mode = GameManager.is_fullscreen
+	check_box.button_pressed = GameManager.is_fullscreen
+	
+	#if DisplayServer.WINDOW_MODE_FULLSCREEN || DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		#check_box.toggle_mode = true
+		#check_box.button_pressed = true
+	#if DisplayServer.WINDOW_MODE_WINDOWED: 
+		#check_box.toggle_mode = false
+		#check_box.button_pressed = false
 
 #Seção principal
 func _on_start_button_pressed() -> void:
@@ -38,7 +41,10 @@ func _on_back_button_pressed() -> void:
 
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
-	if toggled_on:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	GameManager.is_fullscreen = toggled_on
+	print_debug(GameManager.is_fullscreen)
+	GameManager.change_screen_size()
+	#if toggled_on:
+		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	#else:
+		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

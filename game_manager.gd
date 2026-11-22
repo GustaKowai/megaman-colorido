@@ -1,4 +1,18 @@
 extends Node
+
+#opçoes jogador:
+var pulo_controlavel:bool = false
+var is_fullscreen:bool = true
+
+
+func change_screen_size():
+	print_debug("tentei")
+	if is_fullscreen:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
 # Disquetes
 var disquete_number_max = {"verde":2,"magenta":1,"azul":0,"amarelo":0,"vermelho":0}
 var disquetes_coletados = {"verde":0,"magenta":0,"azul":0,"amarelo":0,"vermelho":0}
