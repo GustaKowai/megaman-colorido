@@ -50,3 +50,6 @@ func end_heal():
 		Transitioned.emit(self,"idle")
 	else:
 		Transitioned.emit(self,"walk")
+
+func Exit():
+	player.animation_player.play("idle")

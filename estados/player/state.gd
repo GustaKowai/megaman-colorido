@@ -6,6 +6,7 @@ signal Transitioned
 
 func _ready() -> void:
 	#target.print_tree_pretty()
+	PlayerManager.change_UI_color.connect(exit_when_change_color)
 	var target_childrens = target.get_children()
 	for children in target_childrens:
 		if children is HurtBox:
@@ -13,6 +14,7 @@ func _ready() -> void:
 			#get_parent().print_tree_pretty()
 			children.damaged.connect(on_hurt_box_damaged)
 			children.died.connect(on_hurt_box_died)
+			
 
 func Enter():
 	pass
@@ -54,3 +56,7 @@ func do_action():
 			Transitioned.emit(self,"dash")
 		_:
 			pass
+
+func exit_when_change_color(arg):
+	Transitioned.emit(self,"idle")
+	Exit()

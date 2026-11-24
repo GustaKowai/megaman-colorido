@@ -107,6 +107,7 @@ func check_color():
 		gray.process_mode = Node.PROCESS_MODE_DISABLED
 		PlayerManager.change_UI_color.emit("blue")
 	if Input.is_action_just_pressed("cor-4") and yellow.process_mode != Node.PROCESS_MODE_INHERIT and yellow_power:
+		PlayerManager.change_UI_color.emit("yellow")
 		color_change.play()
 		animationeffect.play("transform_yellow")
 		print_debug("amarelo")
@@ -118,7 +119,6 @@ func check_color():
 		blue.process_mode = Node.PROCESS_MODE_DISABLED
 		green.process_mode = Node.PROCESS_MODE_DISABLED
 		gray.process_mode = Node.PROCESS_MODE_DISABLED
-		PlayerManager.change_UI_color.emit("yellow")
 
 func call_game_over():
 	is_game_over = true

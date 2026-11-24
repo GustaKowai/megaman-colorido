@@ -1412,10 +1412,6 @@ position = Vector2(86, 537)
 [node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("11_i8j74")]
 position = Vector2(5413, 566)
 
-[node name="Color_power" parent="Exits" unique_id=1565800654 instance=ExtResource("13_0flv3")]
-position = Vector2(5377, 564)
-power_color = "blue"
-
 [node name="Inimigos" type="Node2D" parent="." unique_id=1673940055]
 
 [node name="Enemy10" parent="Inimigos" unique_id=785848965 instance=ExtResource("4_ahmj5")]
@@ -1620,12 +1616,6 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAEAAMAAAAAAAEAAQADAAMAAAD/////AQACAAM
 dano = 2
 metadata/_scene_painted = true
 
-[node name="breakableWall15" parent="walls" unique_id=1403853329 instance=ExtResource("13_d5n1v")]
-position = Vector2(3104, 160)
-tile_map_data = PackedByteArray("AAAAAAAAAQAEAAMAAAAAAAEAAQADAAMAAAD/////AQACAAMAAAD+////AQABAAMAAAD9////AQABAAMAAAD8////AQABAAMAAAD7////AQABAAMAAAD6////AQABAAMAAAD5////AQAAAAMAAAD///7/AAAGAAIAAAD+//7/AAAGAAMAAAD9//7/AAAGAAMAAAD8//7/AAAGAAMAAAD7//7/AAAGAAMAAAD6//7/AAAGAAMAAAD5//7/AAAGAAEAAAD//wAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAA=")
-dano = 2
-metadata/_scene_painted = true
-
 [node name="breakableWall16" parent="walls" unique_id=378490145 instance=ExtResource("13_d5n1v")]
 position = Vector2(3360, 96)
 tile_map_data = PackedByteArray("AAAAAAAAAQADAAMAAAAAAP//AQAFAAMAAAAAAP7/AQAFAAMAAAAAAP3/AQAEAAMAAAA=")
@@ -1671,6 +1661,16 @@ metadata/_scene_painted = true
 [node name="fita_cassete3" parent="Coletaveis" unique_id=758728502 instance=ExtResource("16_oxkh2")]
 position = Vector2(3898.3083, 26.594616)
 fita_color = "azul"
+metadata/_scene_painted = true
+
+[node name="Color_power" parent="Coletaveis" unique_id=1565800654 instance=ExtResource("13_0flv3")]
+position = Vector2(5354, 573)
+power_color = "blue"
+
+[node name="breakableWall15" parent="." unique_id=1403853329 instance=ExtResource("13_d5n1v")]
+position = Vector2(3104, 160)
+tile_map_data = PackedByteArray("AAAAAAAAAQAEAAMAAAAAAAEAAQADAAMAAAD/////AQACAAMAAAD+////AQABAAMAAAD9////AQABAAMAAAD8////AQABAAMAAAD7////AQABAAMAAAD6////AQABAAMAAAD5////AQAAAAMAAAD///7/AAAGAAIAAAD+//7/AAAGAAMAAAD9//7/AAAGAAMAAAD8//7/AAAGAAMAAAD7//7/AAAGAAMAAAD6//7/AAAGAAMAAAD5//7/AAAGAAEAAAD//wAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAA=")
+dano = 2
 metadata/_scene_painted = true
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1521612627]
