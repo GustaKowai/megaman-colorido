@@ -18,7 +18,7 @@ func Enter():
 
 func Physics_update(_delta: float):
 	super(_delta)
-	if Input.is_action_just_pressed("ui_up") and jump_atual < jump_max:
+	if Input.is_action_just_pressed("jump") and jump_atual < jump_max:
 		#print_debug(jump_atual)
 	#if jump_atual < jump_max:
 		#if Input.is_action_just_pressed("ui_up"):

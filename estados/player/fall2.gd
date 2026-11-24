@@ -5,5 +5,5 @@ func Enter():
 
 func Physics_update(_delta: float):
 	super(_delta)
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("jump"):
 		Transitioned.emit(self,"jump")

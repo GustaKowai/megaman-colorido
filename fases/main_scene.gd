@@ -2,6 +2,7 @@ extends Node2D
 var current_level:Node2D
 @onready var game_over_window = $Game_over_window
 @onready var pause_menu: Window = $Pause_menu
+@export var restart_level: Button
 
 @export var level_list:Array[PackedScene]
 var current_level_number:int = 0
@@ -49,6 +50,7 @@ func _on_exit_exit_level(body,level_number):
 
 func restart_game_over():
 	game_over_window.visible = true
+	restart_level.grab_focus()
 	#_load_level(current_level_number)
 
 

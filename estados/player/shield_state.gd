@@ -23,7 +23,7 @@ func Update(delta: float):
 	
 func Physics_update(_delta: float):
 	target.velocity += target.get_gravity() * _delta
-	if Input.is_action_just_pressed("ui_up") and target.is_on_floor():
+	if Input.is_action_just_pressed("jump") and target.is_on_floor():
 			target.velocity.y = target.JUMP_VELOCITY
 	var direction := Input.get_axis("ui_left", "ui_right")
 	if direction:

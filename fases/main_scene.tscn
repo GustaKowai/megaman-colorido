@@ -12,8 +12,9 @@
 [ext_resource type="Script" uid="uid://cjbrsop3fkr3k" path="res://fases/pause_menu.gd" id="9_jd57w"]
 [ext_resource type="PackedScene" uid="uid://cwlf4vwjc7xtf" path="res://UI/Menu/main_menu_options.tscn" id="10_hndne"]
 
-[node name="MainScene" type="Node2D" unique_id=740554838 node_paths=PackedStringArray("resume_button")]
+[node name="MainScene" type="Node2D" unique_id=740554838 node_paths=PackedStringArray("restart_level", "resume_button")]
 script = ExtResource("1_h5lnh")
+restart_level = NodePath("Game_over_window/VBoxContainer/restart_level")
 level_list = Array[PackedScene]([ExtResource("6_c4i2l"), ExtResource("4_mx8uv"), ExtResource("5_c4i2l"), ExtResource("5_xvf5r"), ExtResource("3_mx8uv"), ExtResource("6_b2e3t")])
 resume_button = NodePath("Pause_menu/Main_section/VBoxContainer/resume_button")
 
