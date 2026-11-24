@@ -5,6 +5,7 @@ var current_level:Node2D
 
 @export var level_list:Array[PackedScene]
 var current_level_number:int = 0
+@export var resume_button: Button
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -64,4 +65,4 @@ func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("pausa"):
 		pause_menu.visible = true
 		get_tree().paused = true
-		
+		resume_button.grab_focus()

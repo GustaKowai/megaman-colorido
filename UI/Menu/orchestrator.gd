@@ -3,6 +3,8 @@ extends Node
 @onready var main_menu = $Main_menu
 @onready var options_menu = $Options_menu
 @onready var check_box: CheckBox = $Options_menu/CheckBox
+@export var start_button: Button
+@export var back_button: Button
 
 
 @export 
@@ -10,6 +12,7 @@ var bus_name : String
 var bus_index: int
 
 func _ready() -> void:
+	start_button.grab_focus()
 	#check_box.toggle_mode = GameManager.is_fullscreen
 	check_box.button_pressed = GameManager.is_fullscreen
 	
@@ -26,6 +29,7 @@ func _on_start_button_pressed() -> void:
 
 func _on_options_button_pressed() -> void:
 	main_menu.visible = false
+	back_button.grab_focus()
 	options_menu.visible = true
 	
 
@@ -36,6 +40,7 @@ func _on_exit_button_pressed() -> void:
 #Seção opções
 func _on_back_button_pressed() -> void:
 	main_menu.visible = true
+	start_button.grab_focus()
 	options_menu.visible = false
 	
 

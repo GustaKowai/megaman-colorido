@@ -5,11 +5,21 @@
 [ext_resource type="PackedScene" uid="uid://cwlf4vwjc7xtf" path="res://UI/Menu/main_menu_options.tscn" id="2_v5tbv"]
 [ext_resource type="AudioStream" uid="uid://vry67nok53k7" path="res://musics/menu teste.wav" id="4_7y12v"]
 
-[node name="Orchestrator" type="Node" unique_id=286638297]
+[node name="Orchestrator" type="Node" unique_id=286638297 node_paths=PackedStringArray("start_button", "back_button")]
 script = ExtResource("1_v5tbv")
+start_button = NodePath("Main_menu/VBoxContainer/start_button")
+back_button = NodePath("Options_menu/MarginContainer/VBoxContainer/back_button")
 
 [node name="Options_menu" parent="." unique_id=359546675 instance=ExtResource("2_v5tbv")]
 visible = false
+
+[node name="back_button" parent="Options_menu/MarginContainer/VBoxContainer" parent_id_path=PackedInt32Array(359546675, 119832546) index="0" unique_id=10112583]
+focus_neighbor_left = NodePath("../../../label_pulo")
+focus_neighbor_top = NodePath("../../../label_pulo")
+focus_neighbor_right = NodePath("../../../master volume/master_slider")
+focus_neighbor_bottom = NodePath("../../../master volume/master_slider")
+focus_next = NodePath("../../../master volume/master_slider")
+focus_previous = NodePath("../../../label_pulo")
 
 [node name="Main_menu" parent="." unique_id=644176744 instance=ExtResource("1_v0182")]
 anchors_preset = 0
@@ -18,6 +28,14 @@ anchor_bottom = 0.0
 offset_top = 27.0
 offset_right = 1152.0
 offset_bottom = 648.0
+
+[node name="start_button" parent="Main_menu/VBoxContainer" parent_id_path=PackedInt32Array(644176744, 1455635306) index="0" unique_id=740623059]
+focus_neighbor_left = NodePath("../exit_button")
+focus_neighbor_top = NodePath("../exit_button")
+focus_neighbor_right = NodePath("../options_button")
+focus_neighbor_bottom = NodePath("../options_button")
+focus_next = NodePath("../options_button")
+focus_previous = NodePath("../exit_button")
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1306567199]
 stream = ExtResource("4_7y12v")

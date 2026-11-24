@@ -3,6 +3,8 @@ extends Window
 @onready var options_menu: Control = $Options_menu
 @onready var check_box: CheckBox = $Options_menu/CheckBox
 @onready var check_box_2: CheckBox = $Options_menu/CheckBox2
+@export var resume_button: Button
+@export var back_button: Button
 
 func _ready() -> void:
 	if DisplayServer.WINDOW_MODE_FULLSCREEN || DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
@@ -20,6 +22,7 @@ func _on_resume_button_pressed() -> void:
 
 func _on_options_button_pressed() -> void:
 	options_menu.visible = true
+	back_button.grab_focus()
 	main_section.visible = false
 
 
@@ -36,7 +39,7 @@ func _on_main_menu_button_pressed() -> void:
 func _on_back_button_pressed() -> void:
 	options_menu.visible = false
 	main_section.visible = true
-
+	resume_button.grab_focus()
 
 func _on_check_box_toggled(toggled_on: bool) -> void:
 	GameManager.is_fullscreen = toggled_on
