@@ -29,6 +29,7 @@ animations = [{
 size = Vector2(32, 5)
 
 [node name="Button" type="Area2D" unique_id=713022281]
+collision_mask = 5
 script = ExtResource("1_lra4t")
 
 [node name="sprite" type="AnimatedSprite2D" parent="." unique_id=1297373007]

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bilvqwqsyop7v"]
 
 [ext_resource type="Texture2D" uid="uid://dxgrx260w873d" path="res://Sprites/itens/cassete_tape.png" id="1_nscec"]
-[ext_resource type="Script" uid="uid://bp05c5py2y4a6" path="res://fita_cassete.gd" id="2_nscec"]
+[ext_resource type="Script" uid="uid://bp05c5py2y4a6" path="res://itens/fita_cassete.gd" id="2_nscec"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_no1f5"]
 atlas = ExtResource("1_nscec")
@@ -120,6 +120,7 @@ animations = [{
 size = Vector2(32, 32)
 
 [node name="fita_cassete" type="AnimatedSprite2D" unique_id=1660121172]
+visibility_layer = 5
 z_index = -1
 sprite_frames = SubResource("SpriteFrames_hgjhj")
 autoplay = "default"
@@ -127,6 +128,7 @@ frame_progress = 0.025049042
 script = ExtResource("2_nscec")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2113028788]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=390933696]
 shape = SubResource("RectangleShape2D_hgjhj")

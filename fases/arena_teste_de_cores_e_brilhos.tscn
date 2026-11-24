@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://43cwtln4sauj" path="res://enemies/inimigo_escudo.tscn" id="13_ac47k"]
 [ext_resource type="PackedScene" uid="uid://bpaj5og7nhi1j" path="res://enemies/inimigo_apenas_anda.tscn" id="14_iju0m"]
 [ext_resource type="PackedScene" uid="uid://ckoxi5fijqmih" path="res://enemies/enemy_fly.tscn" id="15_niidi"]
-[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="16_63hu3"]
+[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://misc/moving_platform.tscn" id="16_63hu3"]
 [ext_resource type="PackedScene" uid="uid://c7rsjsls8vfaj" path="res://enemies/inimigo_pedra.tscn" id="17_olwow"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="18_2w0qk"]
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="18_weddg"]

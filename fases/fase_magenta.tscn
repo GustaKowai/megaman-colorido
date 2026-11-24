@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bahviumn07wpj" path="res://Sprites/cenarios/windows6.png" id="12_1wr6d"]
 [ext_resource type="PackedScene" uid="uid://msmtxba6mxv0" path="res://enemies/inimigo_atira_parabola.tscn" id="13_vlqwk"]
 [ext_resource type="PackedScene" uid="uid://ddmr0usbcxq4e" path="res://misc/breakable_wall.tscn" id="14_eaqgv"]
-[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://moving_platform.tscn" id="15_eaqgv"]
+[ext_resource type="PackedScene" uid="uid://db3s85havr48h" path="res://misc/moving_platform.tscn" id="15_eaqgv"]
 [ext_resource type="PackedScene" uid="uid://c8mmy5stagu6n" path="res://enemies/enemy_spawner.tscn" id="16_h3bdf"]
 [ext_resource type="PackedScene" uid="uid://c7jjd16y7khes" path="res://enemies/enemy_broca.tscn" id="17_vnjwu"]
 [ext_resource type="Texture2D" uid="uid://leji55a4wawg" path="res://Sprites/cenarios/hidrante.png" id="18_bt0fn"]
@@ -33,8 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://dvf2ot0r8cb53" path="res://misc/enemy_despawner.tscn" id="28_j4ljj"]
 [ext_resource type="PackedScene" uid="uid://unvhyjtqpd54" path="res://enemies/inimigo_atira.tscn" id="29_bt0fn"]
 [ext_resource type="PackedScene" uid="uid://bykr5d5eflhrp" path="res://misc/button_fase.tscn" id="29_ffcsb"]
-[ext_resource type="PackedScene" uid="uid://bilvqwqsyop7v" path="res://fita_cassete.tscn" id="31_ffcsb"]
-[ext_resource type="PackedScene" uid="uid://c8tfoclidipp3" path="res://disquete.tscn" id="32_d8oaf"]
+[ext_resource type="PackedScene" uid="uid://f38qtl5lxfan" path="res://itens/color_power.tscn" id="29_ielxq"]
+[ext_resource type="PackedScene" uid="uid://bilvqwqsyop7v" path="res://itens/fita_cassete.tscn" id="31_ffcsb"]
+[ext_resource type="PackedScene" uid="uid://c8tfoclidipp3" path="res://itens/disquete.tscn" id="32_d8oaf"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -940,6 +941,10 @@ is_fliped = true
 
 [node name="InimigoAtiraPar8" parent="Inimigos" unique_id=1690173311 instance=ExtResource("13_vlqwk")]
 position = Vector2(6964, 266)
+
+[node name="Color_power" parent="Inimigos" unique_id=1565800654 instance=ExtResource("29_ielxq")]
+position = Vector2(7936, 568)
+power_color = "magent"
 
 [node name="wall" type="Node2D" parent="." unique_id=1489406286]
 modulate = Color(1.825, 0, 1.231, 1)

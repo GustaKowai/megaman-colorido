@@ -29,3 +29,4 @@ func Physics_update(_delta: float):
 		Transitioned.emit(self,"fall")
 	if Input.is_action_just_pressed("action"):
 		do_action()
+	player.velocity.x = 0

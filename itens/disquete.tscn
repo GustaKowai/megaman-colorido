@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c8tfoclidipp3"]
 
 [ext_resource type="Texture2D" uid="uid://cnmfji677x3po" path="res://Sprites/itens/disquete.png" id="1_l20fm"]
-[ext_resource type="Script" uid="uid://cpk6ftnpvlqci" path="res://disquete.gd" id="2_l20fm"]
+[ext_resource type="Script" uid="uid://cpk6ftnpvlqci" path="res://itens/disquete.gd" id="2_l20fm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wnwir"]
 atlas = ExtResource("1_l20fm")
@@ -141,6 +141,7 @@ frame_progress = 0.010994326
 script = ExtResource("2_l20fm")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=2113028788]
+collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=390933696]
 shape = SubResource("RectangleShape2D_hgjhj")

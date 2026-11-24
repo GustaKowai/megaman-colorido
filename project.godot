@@ -116,7 +116,6 @@ jump={
 
 [layer_names]
 
-2d_physics/layer_1="Protagonista e cenário"
 2d_physics/layer_2="Inimigos"
 2d_physics/layer_3="protagonista"
 

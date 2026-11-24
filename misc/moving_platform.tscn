@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://db3s85havr48h"]
 
-[ext_resource type="Script" uid="uid://k0jlli8s73ig" path="res://platform_moving.gd" id="1_hrpga"]
+[ext_resource type="Script" uid="uid://k0jlli8s73ig" path="res://misc/platform_moving.gd" id="1_hrpga"]
 [ext_resource type="Texture2D" uid="uid://b8dsiipsj7dyq" path="res://Sprites/platform.png" id="2_hrpga"]
 
 [sub_resource type="Curve2D" id="Curve2D_f8lbu"]

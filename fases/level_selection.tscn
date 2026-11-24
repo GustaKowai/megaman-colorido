@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://blvn3g5tjopqp" path="res://Sprites/tileset/tileset_complet_2_-_Copia.png" id="4_fqxop"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="4_whp7c"]
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="7_85421"]
-[ext_resource type="PackedScene" uid="uid://f38qtl5lxfan" path="res://color_power.tscn" id="7_wula7"]
+[ext_resource type="PackedScene" uid="uid://f38qtl5lxfan" path="res://itens/color_power.tscn" id="7_wula7"]
 [ext_resource type="AudioStream" uid="uid://k78gk7b8pwh2" path="res://musics/selecao_de_fase.mp3" id="8_85421"]
 
 [sub_resource type="Environment" id="Environment_rv05k"]
@@ -266,23 +266,9 @@ level_number = 5
 [node name="Protagonista" parent="." unique_id=2054658706 instance=ExtResource("7_85421")]
 position = Vector2(100, 530)
 
-[node name="Color_power" parent="." unique_id=1565800654 instance=ExtResource("7_wula7")]
-modulate = Color(2.4383342, 2.4383342, 2.4383342, 1)
-position = Vector2(326, 523)
-
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1688347986]
 stream = ExtResource("8_85421")
 bus = &"Music"
-
-[node name="Color_power2" parent="." unique_id=1698319474 instance=ExtResource("7_wula7")]
-modulate = Color(2.438, 2.438, 2.438, 1)
-position = Vector2(472, 519)
-power_color = "magent"
-
-[node name="Color_power3" parent="." unique_id=2107555310 instance=ExtResource("7_wula7")]
-modulate = Color(2.4383342, 2.4383342, 2.4383342, 1)
-position = Vector2(623, 519)
-power_color = "blue"
 
 [node name="Color_power4" parent="." unique_id=828035768 instance=ExtResource("7_wula7")]
 modulate = Color(2.4383342, 2.4383342, 2.4383342, 1)

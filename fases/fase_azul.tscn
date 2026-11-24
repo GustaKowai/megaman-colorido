@@ -13,11 +13,12 @@
 [ext_resource type="Script" uid="uid://c8lgnqwadv5ie" path="res://estados/damage_area.gd" id="9_kslax"]
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="10_dcew5"]
 [ext_resource type="PackedScene" uid="uid://b7kwscd8pe5c2" path="res://misc/exit.tscn" id="11_i8j74"]
+[ext_resource type="PackedScene" uid="uid://f38qtl5lxfan" path="res://itens/color_power.tscn" id="13_0flv3"]
 [ext_resource type="PackedScene" uid="uid://ddmr0usbcxq4e" path="res://misc/breakable_wall.tscn" id="13_d5n1v"]
 [ext_resource type="PackedScene" uid="uid://dux3i3pi70unw" path="res://enemies/fly_blue.tscn" id="13_jgxo4"]
 [ext_resource type="PackedScene" uid="uid://bwocruie8366c" path="res://enemies/enemy_jump_walk.tscn" id="14_3trhg"]
 [ext_resource type="Texture2D" uid="uid://5gw3bb7mdqry" path="res://Sprites/gamso_teste-sheet.png" id="16_2eqxr"]
-[ext_resource type="PackedScene" uid="uid://bilvqwqsyop7v" path="res://fita_cassete.tscn" id="16_oxkh2"]
+[ext_resource type="PackedScene" uid="uid://bilvqwqsyop7v" path="res://itens/fita_cassete.tscn" id="16_oxkh2"]
 [ext_resource type="Texture2D" uid="uid://o7mq6y2quvgv" path="res://Sprites/bod-propaganda.png" id="17_i8j74"]
 [ext_resource type="Texture2D" uid="uid://h8yeyi1gtpln" path="res://Sprites/chaotic_propaganda.png" id="17_kslax"]
 [ext_resource type="Texture2D" uid="uid://b5eqx7a2worqd" path="res://Sprites/vnm_propaganda.png" id="19_dcew5"]
@@ -1410,6 +1411,10 @@ position = Vector2(86, 537)
 
 [node name="Exit2" parent="Exits" unique_id=1996210108 instance=ExtResource("11_i8j74")]
 position = Vector2(5413, 566)
+
+[node name="Color_power" parent="Exits" unique_id=1565800654 instance=ExtResource("13_0flv3")]
+position = Vector2(5377, 564)
+power_color = "blue"
 
 [node name="Inimigos" type="Node2D" parent="." unique_id=1673940055]
 
