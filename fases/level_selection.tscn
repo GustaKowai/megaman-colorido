@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bl6v8q8705nla" path="res://protagonista.tscn" id="7_85421"]
 [ext_resource type="PackedScene" uid="uid://f38qtl5lxfan" path="res://itens/color_power.tscn" id="7_wula7"]
 [ext_resource type="AudioStream" uid="uid://k78gk7b8pwh2" path="res://musics/selecao_de_fase.mp3" id="8_85421"]
+[ext_resource type="PackedScene" uid="uid://d5hg3q8k1ugx" path="res://UI_teste.tscn" id="10_8431k"]
 
 [sub_resource type="Environment" id="Environment_rv05k"]
 background_mode = 3
@@ -274,3 +275,7 @@ bus = &"Music"
 modulate = Color(2.4383342, 2.4383342, 2.4383342, 1)
 position = Vector2(780, 532)
 power_color = "yellow"
+
+[node name="Node2D" parent="." unique_id=1919831750 instance=ExtResource("10_8431k")]
+modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
+position = Vector2(0, 152)

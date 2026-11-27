@@ -58,5 +58,6 @@ func do_action():
 			pass
 
 func exit_when_change_color(arg):
-	Transitioned.emit(self,"idle")
-	Exit()
+	if get_parent().get_parent().is_in_group("Player"):
+		Transitioned.emit(self,"idle")
+		Exit()

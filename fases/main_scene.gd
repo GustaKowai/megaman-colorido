@@ -12,7 +12,10 @@ var current_level_number:int = 0
 func _ready() -> void:
 	get_tree().paused = false
 	current_level = get_node("LevelRoot")
-	_load_level(0)
+	if PlayerManager.green_power:
+		_load_level(0)
+	else:
+		_load_level(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

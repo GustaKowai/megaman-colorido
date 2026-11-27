@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://c8tfoclidipp3" path="res://itens/disquete.tscn" id="26_luqc2"]
 [ext_resource type="PackedScene" uid="uid://bilvqwqsyop7v" path="res://itens/fita_cassete.tscn" id="27_2d721"]
 [ext_resource type="PackedScene" uid="uid://f38qtl5lxfan" path="res://itens/color_power.tscn" id="28_mky8j"]
+[ext_resource type="PackedScene" uid="uid://d5hg3q8k1ugx" path="res://UI_teste.tscn" id="29_oyx2r"]
 
 [sub_resource type="Environment" id="Environment_2lcb2"]
 background_mode = 3
@@ -477,8 +478,8 @@ texture = ExtResource("14_mky8j")
 position = Vector2(7202, 77)
 texture = ExtResource("11_02pa6")
 
-[node name="Arbusto" type="Sprite2D" parent="branco/Decorações/Colgumelo12" unique_id=561936234]
-position = Vector2(-4366, 446)
+[node name="Arbusto9" type="Sprite2D" parent="branco/Decorações" unique_id=561936234]
+position = Vector2(2836, 523)
 texture = ExtResource("12_luqc2")
 
 [node name="Colgumelo13" type="Sprite2D" parent="branco/Decorações" unique_id=1888083476]
@@ -678,6 +679,10 @@ fita_color = "verde"
 
 [node name="Color_power" parent="." unique_id=1565800654 instance=ExtResource("28_mky8j")]
 position = Vector2(7743, 573)
+
+[node name="Node2D" parent="." unique_id=1919831750 instance=ExtResource("29_oyx2r")]
+modulate = Color(0, 1.825, 0, 1)
+position = Vector2(-1, 88)
 
 [connection signal="area_entered" from="branco/DamageBox" to="branco/DamageBox" method="_on_area_entered"]
 [connection signal="area_entered" from="branco/Fall damage/DamageBox" to="branco/Fall damage/DamageBox" method="_on_area_entered"]
