@@ -247,7 +247,7 @@ modulate = Color(1.8247963, 1.8247963, 1.8247963, 1)
 sprite_frames = SubResource("SpriteFrames_hgjhj")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.9745627
+frame_progress = 0.5288069
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=560745223]
 position = Vector2(1.25, 1)

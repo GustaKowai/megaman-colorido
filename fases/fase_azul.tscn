@@ -1646,6 +1646,12 @@ tile_map_data = PackedByteArray("AAAAAAAAAQAEAAMAAAAAAAEAAQAFAAMAAAAAAAIAAQAFAAM
 dano = 2
 metadata/_scene_painted = true
 
+[node name="breakableWall15" parent="walls" unique_id=1403853329 instance=ExtResource("13_d5n1v")]
+position = Vector2(3104, 160)
+tile_map_data = PackedByteArray("AAAAAAAAAQAEAAMAAAAAAAEAAQADAAMAAAD/////AQACAAMAAAD+////AQABAAMAAAD9////AQABAAMAAAD8////AQABAAMAAAD7////AQABAAMAAAD6////AQABAAMAAAD5////AQAAAAMAAAD///7/AAAGAAIAAAD+//7/AAAGAAMAAAD9//7/AAAGAAMAAAD8//7/AAAGAAMAAAD7//7/AAAGAAMAAAD6//7/AAAGAAMAAAD5//7/AAAGAAEAAAD//wAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAA=")
+dano = 2
+metadata/_scene_painted = true
+
 [node name="Coletaveis" type="Node2D" parent="." unique_id=994727566]
 
 [node name="fita_cassete" parent="Coletaveis" unique_id=1660121172 instance=ExtResource("16_oxkh2")]
@@ -1666,12 +1672,6 @@ metadata/_scene_painted = true
 [node name="Color_power" parent="Coletaveis" unique_id=1565800654 instance=ExtResource("13_0flv3")]
 position = Vector2(5354, 573)
 power_color = "blue"
-
-[node name="breakableWall15" parent="." unique_id=1403853329 instance=ExtResource("13_d5n1v")]
-position = Vector2(3104, 160)
-tile_map_data = PackedByteArray("AAAAAAAAAQAEAAMAAAAAAAEAAQADAAMAAAD/////AQACAAMAAAD+////AQABAAMAAAD9////AQABAAMAAAD8////AQABAAMAAAD7////AQABAAMAAAD6////AQABAAMAAAD5////AQAAAAMAAAD///7/AAAGAAIAAAD+//7/AAAGAAMAAAD9//7/AAAGAAMAAAD8//7/AAAGAAMAAAD7//7/AAAGAAMAAAD6//7/AAAGAAMAAAD5//7/AAAGAAEAAAD//wAAAAABAAEAAAD+/wAAAAABAAEAAAD9/wAAAAABAAEAAAD8/wAAAAABAAEAAAD7/wAAAAABAAEAAAD6/wAAAAABAAEAAAD5/wAAAAABAAEAAAD5/wEAAAABAAEAAAD6/wEAAAABAAEAAAD7/wEAAAABAAEAAAD8/wEAAAABAAEAAAD9/wEAAAABAAEAAAD+/wEAAAABAAEAAAD//wEAAAABAAEAAAA=")
-dano = 2
-metadata/_scene_painted = true
 
 [node name="music" type="AudioStreamPlayer" parent="." unique_id=1521612627]
 bus = &"Music"
